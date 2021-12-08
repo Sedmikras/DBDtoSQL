@@ -1,0 +1,28 @@
+       DBD NAME=ORDRMR,ACCESS=(HDAM,OSAM),                             X00010022
+               RMNAME=(DFSHDC40,2,5)                                            
+       DATASET DD1=ORDRMR,SIZE=2048                                     00030014
+*                                                                       00040003
+       SEGM NAME=XXORDER,PARENT=0,BYTES=8,PTR=(T)                       00050017
+       FIELD NAME=(ID,SEQ,U),BYTES=4,START=1,DATATYPE=INT               00060018
+       FIELD NAME=ORDID,BYTES=4,START=5,DATATYPE=INT                    00070014
+*                                                                       00080003
+       SEGM NAME=XXCUST,PARENT=XXORDER,BYTES=28,PTR=(T)                 00090017
+       FIELD NAME=(ID,SEQ,U),BYTES=4,START=1,DATATYPE=INT               00100014
+       FIELD NAME=NAME,BYTES=24,START=5,TYPE=C                          00110003
+*                                                                       00130003
+       SEGM NAME=XXPROD,PARENT=XXORDER,BYTES=34,PTR=(T)                 00131017
+       FIELD NAME=(ID,SEQ,U),BYTES=4,START=1,DATATYPE=INT               00132014
+       FIELD NAME=NAME,BYTES=24,START=5,TYPE=C                          00133004
+       FIELD NAME=PRICE,BYTES=6,START=29,DATATYPE=DECIMAL(10,2)         00134014
+*                                                                       00135004
+       SEGM NAME=XXSTORE,PARENT=XXORDER,BYTES=24,PTR=(T)                00140017
+       FIELD NAME=(ID,SEQ,U),BYTES=4,START=1,DATATYPE=INT               00150014
+       FIELD NAME=NAME,BYTES=20,START=5,TYPE=C                          00160003
+*                                                                       00180003
+       SEGM NAME=XXSALES,PARENT=XXSTORE,BYTES=24,PTR=(T)                00190017
+       FIELD NAME=(ID,SEQ,U),BYTES=4,START=1,DATATYPE=INT               00200014
+       FIELD NAME=NAME,BYTES=20,START=5,TYPE=C                          00210003
+*                                                                       00290004
+       DBDGEN                                                           00300004
+       FINISH                                                           00310004
+       END                                                              00320004
