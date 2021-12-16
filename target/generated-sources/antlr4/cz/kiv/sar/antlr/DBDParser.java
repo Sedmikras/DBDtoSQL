@@ -1,4 +1,4 @@
-// Generated from C:/git/DBDtoSQL/grammar\Test.g4 by ANTLR 4.9.2
+// Generated from cz\kiv\sar\antlr\DBD.g4 by ANTLR 4.9.3
 package cz.kiv.sar.antlr;
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
@@ -10,8 +10,8 @@ import java.util.Iterator;
 import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
-public class TestParser extends Parser {
-	static { RuntimeMetaData.checkVersion("4.9.2", RuntimeMetaData.VERSION); }
+public class DBDParser extends Parser {
+	static { RuntimeMetaData.checkVersion("4.9.3", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
 	protected static final PredictionContextCache _sharedContextCache =
@@ -73,7 +73,7 @@ public class TestParser extends Parser {
 	}
 
 	@Override
-	public String getGrammarFileName() { return "Test.g4"; }
+	public String getGrammarFileName() { return "DBD.g4"; }
 
 	@Override
 	public String[] getRuleNames() { return ruleNames; }
@@ -84,7 +84,7 @@ public class TestParser extends Parser {
 	@Override
 	public ATN getATN() { return _ATN; }
 
-	public TestParser(TokenStream input) {
+	public DBDParser(TokenStream input) {
 		super(input);
 		_interp = new ParserATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
 	}
@@ -99,16 +99,11 @@ public class TestParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_main; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof TestListener ) ((TestListener)listener).enterMain(this);
+			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterMain(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof TestListener ) ((TestListener)listener).exitMain(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof TestVisitor ) return ((TestVisitor<? extends T>)visitor).visitMain(this);
-			else return visitor.visitChildren(this);
+			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitMain(this);
 		}
 	}
 
@@ -138,9 +133,9 @@ public class TestParser extends Parser {
 	}
 
 	public static class NameContext extends ParserRuleContext {
-		public List<TerminalNode> ANY() { return getTokens(TestParser.ANY); }
+		public List<TerminalNode> ANY() { return getTokens(DBDParser.ANY); }
 		public TerminalNode ANY(int i) {
-			return getToken(TestParser.ANY, i);
+			return getToken(DBDParser.ANY, i);
 		}
 		public NameContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -148,16 +143,11 @@ public class TestParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_name; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof TestListener ) ((TestListener)listener).enterName(this);
+			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterName(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof TestListener ) ((TestListener)listener).exitName(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof TestVisitor ) return ((TestVisitor<? extends T>)visitor).visitName(this);
-			else return visitor.visitChildren(this);
+			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitName(this);
 		}
 	}
 
