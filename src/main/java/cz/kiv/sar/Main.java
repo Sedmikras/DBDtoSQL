@@ -11,10 +11,10 @@ public class Main {
         System.out.println("Hello world!");
 
         try {
-            DBDLexer lexer = new DBDLexer(CharStreams.fromFileName("resources/test.dbd"));
+            DBDLexer lexer = new DBDLexer(CharStreams.fromFileName("resources/test-file1.dbd"));
             DBDParser parser = new DBDParser(new CommonTokenStream(lexer));
             parser.setBuildParseTree(true);
-            ParseTree tree = parser.main();
+            ParseTree tree = parser.source();
         } catch (Exception e) {
             if (e.getMessage() != null) {
                 System.err.println(e.getMessage());
