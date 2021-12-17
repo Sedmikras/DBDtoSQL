@@ -11,7 +11,7 @@ public class Main {
         System.out.println("Hello world!");
 
         try {
-            DBDLexer lexer = new DBDLexer(CharStreams.fromFileName("resources/test-file1.dbd"));
+            DBDLexer lexer = new DBDLexer(CharStreams.fromFileName("resources/test-file2.dbd"));
             DBDParser parser = new DBDParser(new CommonTokenStream(lexer));
             parser.setBuildParseTree(true);
             ParseTree tree = parser.source();

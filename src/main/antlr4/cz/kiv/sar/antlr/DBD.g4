@@ -1,6 +1,6 @@
 grammar DBD;
 
-source: dbd dataset segments end;
+source: dbd dataset segment* end;
 
 dbd: 'DBD ' dbd_params;
 
@@ -25,23 +25,24 @@ dbd_name: 'NAME=' NAME;
 dbd_access: 'ACCESS=' dbd_access_value;
 
 dbd_access_value
-    : access_method
-    | '(' access_method ',' operating_method ')'
+    : '(' access_method ',' operating_method ')'
+    | access_method
     ;
 
-dbd_rmname: 'RMNAME' dbd_rmname_value;
+dbd_rmname: 'RMNAME=' dbd_rmname_value;
 
 dbd_rmname_value
-    : NAME
-    | '(' NAME ',' NUMBER ')'
-    | '(' NAME ',' NUMBER ',' NUMBER ')'
-    | '(' NAME ',' NUMBER ',' NUMBER ',' NUMBER ')'
+    : '(' NAME ',' STRING ',' STRING ',' STRING ')'
+    | '(' NAME ',' STRING ',' STRING ')'
+    | '(' NAME ',' STRING ')'
+    | NAME
     ;
 
-dbd_dbver: 'DBVER=' NUMBER;
+dbd_dbver: 'DBVER=' Number;
 
 dbd_passwd: 'PASSWD=' bool_string;
 
+// todo ignoring other exit types
 dbd_exit: 'EXIT=(NONE)';
 
 dbd_version: 'VERSION=' NAME;
@@ -75,13 +76,90 @@ operating_method
     | 'OSAM'
     ;
 
-dataset: 'DATASET ' dataset_dd1;
+dataset
+    : dataset_without_label
+    | dataset_with_label ;
+
+dataset_with_label: STRING 'DATASET ' dataset_params;
+
+dataset_without_label: 'DATASET ' dataset_params;
+
+dataset_params
+    : dataset_param ',' dataset_params
+    | dataset_param ;
+
+dataset_param
+    : dataset_dd1
+    | dataset_size
+    | dataset_block
+    | dataset_device
+    | dataset_scan
+    | dataset_frspc
+    | dataset_searcha
+    | dataset_remarks ;
 
 dataset_dd1: 'DD1=' NAME;
 
-dataset_size: 'SIZE=' NUMBER;
+dataset_size: 'SIZE=' STRING;
 
-segments: 'todo';
+dataset_block: 'BLOCK=' STRING;
+
+dataset_device: 'DEVICE=' STRING;
+
+dataset_scan: 'SCAN=' STRING;
+
+dataset_frspc: 'FRSPC=(' STRING ')';
+
+dataset_searcha: 'SEARCHA=' Number;
+
+dataset_remarks: 'REMARKS=' STRING;
+
+segment: segment_definition field*;
+
+segment_definition: 'SEGM ' segment_params ;
+
+segment_params
+    : segment_param ',' segment_params
+    | segment_param ;
+
+segment_param
+    : segment_name
+    | segment_parent
+    | segment_bytes
+    | segment_ptr ;
+
+segment_name: 'NAME=' NAME;
+
+segment_parent: 'PARENT=' STRING;
+
+segment_bytes: 'BYTES=' STRING;
+
+segment_ptr: 'PTR=(T)';
+
+field: 'FIELD ' field_params ;
+
+field_params
+    : field_param ',' field_params
+    | field_param ;
+
+field_param
+    : field_name
+    | field_bytes
+    | field_start
+    | field_datatype
+    | field_type ;
+
+field_name
+    : 'NAME=' NAME
+    | 'NAME=(' STRING ',' STRING ',' STRING ')';
+
+field_bytes: 'BYTES=' STRING;
+
+field_start: 'START=' STRING;
+
+field_datatype: 'DATATYPE=' STRING;
+
+field_type: 'TYPE=' STRING;
 
 end: 'todo';
 
@@ -91,7 +169,21 @@ bool_string
     ;
 
 NAME: [a-zA-Z][a-zA-Z0-9]*;
-STRING: [a-zA-Z][a-zA-Z0-9]*;
-NUMBER: [1-9][0-9]*;
+STRING: [a-zA-Z0-9]+;
+//NUMBER: [1-9][0-9]*;
 ANY: .;
-WS : [ \t\r\n]+ -> skip ;
+
+Number
+ : Int ( '.' Digit* )?
+ ;
+
+WS: [ \t\r\n]+ -> skip ;
+
+fragment Int
+ : [1-9] Digit*
+ | '0'
+ ;
+
+fragment Digit
+ : [0-9]
+ ;

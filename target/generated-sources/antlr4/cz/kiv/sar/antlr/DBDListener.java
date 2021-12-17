@@ -198,6 +198,46 @@ public interface DBDListener extends ParseTreeListener {
 	 */
 	void exitDataset(DBDParser.DatasetContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link DBDParser#dataset_with_label}.
+	 * @param ctx the parse tree
+	 */
+	void enterDataset_with_label(DBDParser.Dataset_with_labelContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#dataset_with_label}.
+	 * @param ctx the parse tree
+	 */
+	void exitDataset_with_label(DBDParser.Dataset_with_labelContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#dataset_without_label}.
+	 * @param ctx the parse tree
+	 */
+	void enterDataset_without_label(DBDParser.Dataset_without_labelContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#dataset_without_label}.
+	 * @param ctx the parse tree
+	 */
+	void exitDataset_without_label(DBDParser.Dataset_without_labelContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#dataset_params}.
+	 * @param ctx the parse tree
+	 */
+	void enterDataset_params(DBDParser.Dataset_paramsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#dataset_params}.
+	 * @param ctx the parse tree
+	 */
+	void exitDataset_params(DBDParser.Dataset_paramsContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#dataset_param}.
+	 * @param ctx the parse tree
+	 */
+	void enterDataset_param(DBDParser.Dataset_paramContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#dataset_param}.
+	 * @param ctx the parse tree
+	 */
+	void exitDataset_param(DBDParser.Dataset_paramContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link DBDParser#dataset_dd1}.
 	 * @param ctx the parse tree
 	 */
@@ -218,15 +258,225 @@ public interface DBDListener extends ParseTreeListener {
 	 */
 	void exitDataset_size(DBDParser.Dataset_sizeContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link DBDParser#segments}.
+	 * Enter a parse tree produced by {@link DBDParser#dataset_block}.
 	 * @param ctx the parse tree
 	 */
-	void enterSegments(DBDParser.SegmentsContext ctx);
+	void enterDataset_block(DBDParser.Dataset_blockContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link DBDParser#segments}.
+	 * Exit a parse tree produced by {@link DBDParser#dataset_block}.
 	 * @param ctx the parse tree
 	 */
-	void exitSegments(DBDParser.SegmentsContext ctx);
+	void exitDataset_block(DBDParser.Dataset_blockContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#dataset_device}.
+	 * @param ctx the parse tree
+	 */
+	void enterDataset_device(DBDParser.Dataset_deviceContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#dataset_device}.
+	 * @param ctx the parse tree
+	 */
+	void exitDataset_device(DBDParser.Dataset_deviceContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#dataset_scan}.
+	 * @param ctx the parse tree
+	 */
+	void enterDataset_scan(DBDParser.Dataset_scanContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#dataset_scan}.
+	 * @param ctx the parse tree
+	 */
+	void exitDataset_scan(DBDParser.Dataset_scanContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#dataset_frspc}.
+	 * @param ctx the parse tree
+	 */
+	void enterDataset_frspc(DBDParser.Dataset_frspcContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#dataset_frspc}.
+	 * @param ctx the parse tree
+	 */
+	void exitDataset_frspc(DBDParser.Dataset_frspcContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#dataset_searcha}.
+	 * @param ctx the parse tree
+	 */
+	void enterDataset_searcha(DBDParser.Dataset_searchaContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#dataset_searcha}.
+	 * @param ctx the parse tree
+	 */
+	void exitDataset_searcha(DBDParser.Dataset_searchaContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#dataset_remarks}.
+	 * @param ctx the parse tree
+	 */
+	void enterDataset_remarks(DBDParser.Dataset_remarksContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#dataset_remarks}.
+	 * @param ctx the parse tree
+	 */
+	void exitDataset_remarks(DBDParser.Dataset_remarksContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#segment}.
+	 * @param ctx the parse tree
+	 */
+	void enterSegment(DBDParser.SegmentContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#segment}.
+	 * @param ctx the parse tree
+	 */
+	void exitSegment(DBDParser.SegmentContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#segment_definition}.
+	 * @param ctx the parse tree
+	 */
+	void enterSegment_definition(DBDParser.Segment_definitionContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#segment_definition}.
+	 * @param ctx the parse tree
+	 */
+	void exitSegment_definition(DBDParser.Segment_definitionContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#segment_params}.
+	 * @param ctx the parse tree
+	 */
+	void enterSegment_params(DBDParser.Segment_paramsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#segment_params}.
+	 * @param ctx the parse tree
+	 */
+	void exitSegment_params(DBDParser.Segment_paramsContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#segment_param}.
+	 * @param ctx the parse tree
+	 */
+	void enterSegment_param(DBDParser.Segment_paramContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#segment_param}.
+	 * @param ctx the parse tree
+	 */
+	void exitSegment_param(DBDParser.Segment_paramContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#segment_name}.
+	 * @param ctx the parse tree
+	 */
+	void enterSegment_name(DBDParser.Segment_nameContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#segment_name}.
+	 * @param ctx the parse tree
+	 */
+	void exitSegment_name(DBDParser.Segment_nameContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#segment_parent}.
+	 * @param ctx the parse tree
+	 */
+	void enterSegment_parent(DBDParser.Segment_parentContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#segment_parent}.
+	 * @param ctx the parse tree
+	 */
+	void exitSegment_parent(DBDParser.Segment_parentContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#segment_bytes}.
+	 * @param ctx the parse tree
+	 */
+	void enterSegment_bytes(DBDParser.Segment_bytesContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#segment_bytes}.
+	 * @param ctx the parse tree
+	 */
+	void exitSegment_bytes(DBDParser.Segment_bytesContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#segment_ptr}.
+	 * @param ctx the parse tree
+	 */
+	void enterSegment_ptr(DBDParser.Segment_ptrContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#segment_ptr}.
+	 * @param ctx the parse tree
+	 */
+	void exitSegment_ptr(DBDParser.Segment_ptrContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#field}.
+	 * @param ctx the parse tree
+	 */
+	void enterField(DBDParser.FieldContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#field}.
+	 * @param ctx the parse tree
+	 */
+	void exitField(DBDParser.FieldContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#field_params}.
+	 * @param ctx the parse tree
+	 */
+	void enterField_params(DBDParser.Field_paramsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#field_params}.
+	 * @param ctx the parse tree
+	 */
+	void exitField_params(DBDParser.Field_paramsContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#field_param}.
+	 * @param ctx the parse tree
+	 */
+	void enterField_param(DBDParser.Field_paramContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#field_param}.
+	 * @param ctx the parse tree
+	 */
+	void exitField_param(DBDParser.Field_paramContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#field_name}.
+	 * @param ctx the parse tree
+	 */
+	void enterField_name(DBDParser.Field_nameContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#field_name}.
+	 * @param ctx the parse tree
+	 */
+	void exitField_name(DBDParser.Field_nameContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#field_bytes}.
+	 * @param ctx the parse tree
+	 */
+	void enterField_bytes(DBDParser.Field_bytesContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#field_bytes}.
+	 * @param ctx the parse tree
+	 */
+	void exitField_bytes(DBDParser.Field_bytesContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#field_start}.
+	 * @param ctx the parse tree
+	 */
+	void enterField_start(DBDParser.Field_startContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#field_start}.
+	 * @param ctx the parse tree
+	 */
+	void exitField_start(DBDParser.Field_startContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#field_datatype}.
+	 * @param ctx the parse tree
+	 */
+	void enterField_datatype(DBDParser.Field_datatypeContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#field_datatype}.
+	 * @param ctx the parse tree
+	 */
+	void exitField_datatype(DBDParser.Field_datatypeContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#field_type}.
+	 * @param ctx the parse tree
+	 */
+	void enterField_type(DBDParser.Field_typeContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#field_type}.
+	 * @param ctx the parse tree
+	 */
+	void exitField_type(DBDParser.Field_typeContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link DBDParser#end}.
 	 * @param ctx the parse tree
