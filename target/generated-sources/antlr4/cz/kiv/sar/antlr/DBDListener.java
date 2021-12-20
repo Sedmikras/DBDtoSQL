@@ -368,6 +368,16 @@ public interface DBDListener extends ParseTreeListener {
 	 */
 	void exitSegment_name(DBDParser.Segment_nameContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link DBDParser#segment_external_name}.
+	 * @param ctx the parse tree
+	 */
+	void enterSegment_external_name(DBDParser.Segment_external_nameContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#segment_external_name}.
+	 * @param ctx the parse tree
+	 */
+	void exitSegment_external_name(DBDParser.Segment_external_nameContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link DBDParser#segment_parent}.
 	 * @param ctx the parse tree
 	 */
@@ -377,6 +387,66 @@ public interface DBDListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitSegment_parent(DBDParser.Segment_parentContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#segment_parent_value}.
+	 * @param ctx the parse tree
+	 */
+	void enterSegment_parent_value(DBDParser.Segment_parent_valueContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#segment_parent_value}.
+	 * @param ctx the parse tree
+	 */
+	void exitSegment_parent_value(DBDParser.Segment_parent_valueContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#segment_parent_value_1}.
+	 * @param ctx the parse tree
+	 */
+	void enterSegment_parent_value_1(DBDParser.Segment_parent_value_1Context ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#segment_parent_value_1}.
+	 * @param ctx the parse tree
+	 */
+	void exitSegment_parent_value_1(DBDParser.Segment_parent_value_1Context ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#segment_parent_type_1}.
+	 * @param ctx the parse tree
+	 */
+	void enterSegment_parent_type_1(DBDParser.Segment_parent_type_1Context ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#segment_parent_type_1}.
+	 * @param ctx the parse tree
+	 */
+	void exitSegment_parent_type_1(DBDParser.Segment_parent_type_1Context ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#segment_parent_value_2}.
+	 * @param ctx the parse tree
+	 */
+	void enterSegment_parent_value_2(DBDParser.Segment_parent_value_2Context ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#segment_parent_value_2}.
+	 * @param ctx the parse tree
+	 */
+	void exitSegment_parent_value_2(DBDParser.Segment_parent_value_2Context ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#segment_parent_type_2}.
+	 * @param ctx the parse tree
+	 */
+	void enterSegment_parent_type_2(DBDParser.Segment_parent_type_2Context ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#segment_parent_type_2}.
+	 * @param ctx the parse tree
+	 */
+	void exitSegment_parent_type_2(DBDParser.Segment_parent_type_2Context ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#segment_source}.
+	 * @param ctx the parse tree
+	 */
+	void enterSegment_source(DBDParser.Segment_sourceContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#segment_source}.
+	 * @param ctx the parse tree
+	 */
+	void exitSegment_source(DBDParser.Segment_sourceContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link DBDParser#segment_bytes}.
 	 * @param ctx the parse tree
@@ -388,6 +458,26 @@ public interface DBDListener extends ParseTreeListener {
 	 */
 	void exitSegment_bytes(DBDParser.Segment_bytesContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link DBDParser#segment_bytes_value}.
+	 * @param ctx the parse tree
+	 */
+	void enterSegment_bytes_value(DBDParser.Segment_bytes_valueContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#segment_bytes_value}.
+	 * @param ctx the parse tree
+	 */
+	void exitSegment_bytes_value(DBDParser.Segment_bytes_valueContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#segment_freq}.
+	 * @param ctx the parse tree
+	 */
+	void enterSegment_freq(DBDParser.Segment_freqContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#segment_freq}.
+	 * @param ctx the parse tree
+	 */
+	void exitSegment_freq(DBDParser.Segment_freqContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link DBDParser#segment_ptr}.
 	 * @param ctx the parse tree
 	 */
@@ -397,6 +487,136 @@ public interface DBDListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitSegment_ptr(DBDParser.Segment_ptrContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#segment_ptr_value}.
+	 * @param ctx the parse tree
+	 */
+	void enterSegment_ptr_value(DBDParser.Segment_ptr_valueContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#segment_ptr_value}.
+	 * @param ctx the parse tree
+	 */
+	void exitSegment_ptr_value(DBDParser.Segment_ptr_valueContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#segment_ptr_type_1}.
+	 * @param ctx the parse tree
+	 */
+	void enterSegment_ptr_type_1(DBDParser.Segment_ptr_type_1Context ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#segment_ptr_type_1}.
+	 * @param ctx the parse tree
+	 */
+	void exitSegment_ptr_type_1(DBDParser.Segment_ptr_type_1Context ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#segment_ptr_type_2}.
+	 * @param ctx the parse tree
+	 */
+	void enterSegment_ptr_type_2(DBDParser.Segment_ptr_type_2Context ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#segment_ptr_type_2}.
+	 * @param ctx the parse tree
+	 */
+	void exitSegment_ptr_type_2(DBDParser.Segment_ptr_type_2Context ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#segment_rules}.
+	 * @param ctx the parse tree
+	 */
+	void enterSegment_rules(DBDParser.Segment_rulesContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#segment_rules}.
+	 * @param ctx the parse tree
+	 */
+	void exitSegment_rules(DBDParser.Segment_rulesContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#segment_rules_value}.
+	 * @param ctx the parse tree
+	 */
+	void enterSegment_rules_value(DBDParser.Segment_rules_valueContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#segment_rules_value}.
+	 * @param ctx the parse tree
+	 */
+	void exitSegment_rules_value(DBDParser.Segment_rules_valueContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#segment_rules_type_1}.
+	 * @param ctx the parse tree
+	 */
+	void enterSegment_rules_type_1(DBDParser.Segment_rules_type_1Context ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#segment_rules_type_1}.
+	 * @param ctx the parse tree
+	 */
+	void exitSegment_rules_type_1(DBDParser.Segment_rules_type_1Context ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#segment_rules_type_2}.
+	 * @param ctx the parse tree
+	 */
+	void enterSegment_rules_type_2(DBDParser.Segment_rules_type_2Context ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#segment_rules_type_2}.
+	 * @param ctx the parse tree
+	 */
+	void exitSegment_rules_type_2(DBDParser.Segment_rules_type_2Context ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#segment_rules_type_3}.
+	 * @param ctx the parse tree
+	 */
+	void enterSegment_rules_type_3(DBDParser.Segment_rules_type_3Context ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#segment_rules_type_3}.
+	 * @param ctx the parse tree
+	 */
+	void exitSegment_rules_type_3(DBDParser.Segment_rules_type_3Context ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#segment_rules_type_4}.
+	 * @param ctx the parse tree
+	 */
+	void enterSegment_rules_type_4(DBDParser.Segment_rules_type_4Context ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#segment_rules_type_4}.
+	 * @param ctx the parse tree
+	 */
+	void exitSegment_rules_type_4(DBDParser.Segment_rules_type_4Context ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#segment_exit}.
+	 * @param ctx the parse tree
+	 */
+	void enterSegment_exit(DBDParser.Segment_exitContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#segment_exit}.
+	 * @param ctx the parse tree
+	 */
+	void exitSegment_exit(DBDParser.Segment_exitContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#segment_comprtn}.
+	 * @param ctx the parse tree
+	 */
+	void enterSegment_comprtn(DBDParser.Segment_comprtnContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#segment_comprtn}.
+	 * @param ctx the parse tree
+	 */
+	void exitSegment_comprtn(DBDParser.Segment_comprtnContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#segment_encoding}.
+	 * @param ctx the parse tree
+	 */
+	void enterSegment_encoding(DBDParser.Segment_encodingContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#segment_encoding}.
+	 * @param ctx the parse tree
+	 */
+	void exitSegment_encoding(DBDParser.Segment_encodingContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#segment_remarks}.
+	 * @param ctx the parse tree
+	 */
+	void enterSegment_remarks(DBDParser.Segment_remarksContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#segment_remarks}.
+	 * @param ctx the parse tree
+	 */
+	void exitSegment_remarks(DBDParser.Segment_remarksContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link DBDParser#field}.
 	 * @param ctx the parse tree
@@ -438,6 +658,36 @@ public interface DBDListener extends ParseTreeListener {
 	 */
 	void exitField_name(DBDParser.Field_nameContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link DBDParser#field_name_value}.
+	 * @param ctx the parse tree
+	 */
+	void enterField_name_value(DBDParser.Field_name_valueContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#field_name_value}.
+	 * @param ctx the parse tree
+	 */
+	void exitField_name_value(DBDParser.Field_name_valueContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#field_name_value_type}.
+	 * @param ctx the parse tree
+	 */
+	void enterField_name_value_type(DBDParser.Field_name_value_typeContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#field_name_value_type}.
+	 * @param ctx the parse tree
+	 */
+	void exitField_name_value_type(DBDParser.Field_name_value_typeContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#field_external_name}.
+	 * @param ctx the parse tree
+	 */
+	void enterField_external_name(DBDParser.Field_external_nameContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#field_external_name}.
+	 * @param ctx the parse tree
+	 */
+	void exitField_external_name(DBDParser.Field_external_nameContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link DBDParser#field_bytes}.
 	 * @param ctx the parse tree
 	 */
@@ -447,6 +697,16 @@ public interface DBDListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitField_bytes(DBDParser.Field_bytesContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#field_max_bytes}.
+	 * @param ctx the parse tree
+	 */
+	void enterField_max_bytes(DBDParser.Field_max_bytesContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#field_max_bytes}.
+	 * @param ctx the parse tree
+	 */
+	void exitField_max_bytes(DBDParser.Field_max_bytesContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link DBDParser#field_start}.
 	 * @param ctx the parse tree
@@ -458,6 +718,26 @@ public interface DBDListener extends ParseTreeListener {
 	 */
 	void exitField_start(DBDParser.Field_startContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link DBDParser#field_start_after}.
+	 * @param ctx the parse tree
+	 */
+	void enterField_start_after(DBDParser.Field_start_afterContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#field_start_after}.
+	 * @param ctx the parse tree
+	 */
+	void exitField_start_after(DBDParser.Field_start_afterContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#field_rel_start}.
+	 * @param ctx the parse tree
+	 */
+	void enterField_rel_start(DBDParser.Field_rel_startContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#field_rel_start}.
+	 * @param ctx the parse tree
+	 */
+	void exitField_rel_start(DBDParser.Field_rel_startContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link DBDParser#field_datatype}.
 	 * @param ctx the parse tree
 	 */
@@ -468,6 +748,16 @@ public interface DBDListener extends ParseTreeListener {
 	 */
 	void exitField_datatype(DBDParser.Field_datatypeContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link DBDParser#field_datatype_value}.
+	 * @param ctx the parse tree
+	 */
+	void enterField_datatype_value(DBDParser.Field_datatype_valueContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#field_datatype_value}.
+	 * @param ctx the parse tree
+	 */
+	void exitField_datatype_value(DBDParser.Field_datatype_valueContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link DBDParser#field_type}.
 	 * @param ctx the parse tree
 	 */
@@ -477,6 +767,86 @@ public interface DBDListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitField_type(DBDParser.Field_typeContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#field_type_value}.
+	 * @param ctx the parse tree
+	 */
+	void enterField_type_value(DBDParser.Field_type_valueContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#field_type_value}.
+	 * @param ctx the parse tree
+	 */
+	void exitField_type_value(DBDParser.Field_type_valueContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#field_case_name}.
+	 * @param ctx the parse tree
+	 */
+	void enterField_case_name(DBDParser.Field_case_nameContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#field_case_name}.
+	 * @param ctx the parse tree
+	 */
+	void exitField_case_name(DBDParser.Field_case_nameContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#field_dependson}.
+	 * @param ctx the parse tree
+	 */
+	void enterField_dependson(DBDParser.Field_dependsonContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#field_dependson}.
+	 * @param ctx the parse tree
+	 */
+	void exitField_dependson(DBDParser.Field_dependsonContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#field_min_occurs}.
+	 * @param ctx the parse tree
+	 */
+	void enterField_min_occurs(DBDParser.Field_min_occursContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#field_min_occurs}.
+	 * @param ctx the parse tree
+	 */
+	void exitField_min_occurs(DBDParser.Field_min_occursContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#field_max_occurs}.
+	 * @param ctx the parse tree
+	 */
+	void enterField_max_occurs(DBDParser.Field_max_occursContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#field_max_occurs}.
+	 * @param ctx the parse tree
+	 */
+	void exitField_max_occurs(DBDParser.Field_max_occursContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#field_parent}.
+	 * @param ctx the parse tree
+	 */
+	void enterField_parent(DBDParser.Field_parentContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#field_parent}.
+	 * @param ctx the parse tree
+	 */
+	void exitField_parent(DBDParser.Field_parentContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#field_redefines}.
+	 * @param ctx the parse tree
+	 */
+	void enterField_redefines(DBDParser.Field_redefinesContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#field_redefines}.
+	 * @param ctx the parse tree
+	 */
+	void exitField_redefines(DBDParser.Field_redefinesContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#field_remarks}.
+	 * @param ctx the parse tree
+	 */
+	void enterField_remarks(DBDParser.Field_remarksContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#field_remarks}.
+	 * @param ctx the parse tree
+	 */
+	void exitField_remarks(DBDParser.Field_remarksContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link DBDParser#end}.
 	 * @param ctx the parse tree

@@ -20,7 +20,7 @@ dbd_param
     | dbd_encoding
     | dbd_remarks ;
 
-dbd_name: 'NAME=' NAME;
+dbd_name: 'NAME=' String;
 
 dbd_access: 'ACCESS=' dbd_access_value;
 
@@ -32,10 +32,10 @@ dbd_access_value
 dbd_rmname: 'RMNAME=' dbd_rmname_value;
 
 dbd_rmname_value
-    : '(' NAME ',' STRING ',' STRING ',' STRING ')'
-    | '(' NAME ',' STRING ',' STRING ')'
-    | '(' NAME ',' STRING ')'
-    | NAME
+    : '(' String ',' String ',' String ',' String ')'
+    | '(' String ',' String ',' String ')'
+    | '(' String ',' String ')'
+    | String
     ;
 
 dbd_dbver: 'DBVER=' Number;
@@ -45,13 +45,13 @@ dbd_passwd: 'PASSWD=' bool_string;
 // todo ignoring other exit types
 dbd_exit: 'EXIT=(NONE)';
 
-dbd_version: 'VERSION=' NAME;
+dbd_version: 'VERSION=' String;
 
 dbd_datxexit: 'DATXEXIT=' bool_string;
 
-dbd_encoding: 'ENCODING=' NAME;
+dbd_encoding: 'ENCODING=' String;
 
-dbd_remarks: 'REMARKS=\'' STRING '\'';
+dbd_remarks: 'REMARKS=' String ;
 
 access_method
     : 'GSAM'
@@ -80,7 +80,7 @@ dataset
     : dataset_without_label
     | dataset_with_label ;
 
-dataset_with_label: STRING 'DATASET ' dataset_params;
+dataset_with_label: String 'DATASET ' dataset_params;
 
 dataset_without_label: 'DATASET ' dataset_params;
 
@@ -98,21 +98,21 @@ dataset_param
     | dataset_searcha
     | dataset_remarks ;
 
-dataset_dd1: 'DD1=' NAME;
+dataset_dd1: 'DD1=' String;
 
-dataset_size: 'SIZE=' STRING;
+dataset_size: 'SIZE=' String;
 
-dataset_block: 'BLOCK=' STRING;
+dataset_block: 'BLOCK=' String;
 
-dataset_device: 'DEVICE=' STRING;
+dataset_device: 'DEVICE=' String;
 
-dataset_scan: 'SCAN=' STRING;
+dataset_scan: 'SCAN=' String;
 
-dataset_frspc: 'FRSPC=(' STRING ')';
+dataset_frspc: 'FRSPC=(' String ')';
 
 dataset_searcha: 'SEARCHA=' Number;
 
-dataset_remarks: 'REMARKS=' STRING;
+dataset_remarks: 'REMARKS=' String;
 
 segment: segment_definition field*;
 
@@ -124,17 +124,107 @@ segment_params
 
 segment_param
     : segment_name
+    | segment_external_name
     | segment_parent
+    | segment_source
     | segment_bytes
-    | segment_ptr ;
+    | segment_freq
+    | segment_ptr
+    | segment_rules
+    | segment_exit
+    | segment_comprtn
+    | segment_encoding
+    | segment_remarks;
 
-segment_name: 'NAME=' NAME;
+segment_name: 'NAME=' String;
 
-segment_parent: 'PARENT=' STRING;
+segment_external_name: 'EXTERNALNAME=' String;
 
-segment_bytes: 'BYTES=' STRING;
+segment_parent: 'PARENT=' segment_parent_value;
 
-segment_ptr: 'PTR=(T)';
+segment_parent_value
+    : '(' segment_parent_value_1 ',' segment_parent_value_2 ')'
+    | '(' segment_parent_value_1 ')'
+    | String ;
+
+segment_parent_value_1
+    : String ',' segment_parent_type_1
+    | String ;
+
+segment_parent_type_1
+    : 'SNGL'
+    | 'DBLE' ;
+
+segment_parent_value_2
+    : '(' String ',' segment_parent_type_2 ',' String ')'
+    | '(' String ',' segment_parent_type_2 ')'
+    | '(' String ')' ;
+
+segment_parent_type_2
+    : 'VIRTUAL'
+    | 'PHYSICAL' ;
+
+segment_source: 'SOURCE=(' String ',' 'DATA' ',' String ')';
+
+segment_bytes: 'BYTES=' segment_bytes_value;
+
+segment_bytes_value
+    : '(' String ',' String ')'
+    | String ;
+
+segment_freq: 'FREQ=' String;
+
+segment_ptr
+    : 'POINTER=(' segment_ptr_value ')'
+    | 'PTR=(' segment_ptr_value ')' ;
+
+segment_ptr_value
+    : segment_ptr_type_1 (',' segment_ptr_type_2)? ',LPARNT'? ',CTR'? ',PAIRED'? ;
+
+segment_ptr_type_1
+    : 'HIER' | 'H'
+    | 'HIERBWD' | 'HB'
+    | 'TWIN' | 'T'
+    | 'TWINBWD' | 'TB'
+    | 'NOTWIN' | 'NT' ;
+
+segment_ptr_type_2
+    : 'LTWIN' | 'LT'
+    | 'LTWINBWD' | 'LTB' ;
+
+segment_rules: 'RULES=(' segment_rules_value ')';
+
+segment_rules_value: segment_rules_type_1 segment_rules_type_2 segment_rules_type_3 ',' segment_rules_type_4 ;
+
+segment_rules_type_1
+    : 'L'
+    | 'P'
+    | 'V' ;
+
+segment_rules_type_2
+    : 'L'
+    | 'P'
+    | 'V'
+    | 'B' ;
+
+segment_rules_type_3
+    : 'L'
+    | 'P'
+    | 'V' ;
+
+segment_rules_type_4
+    : 'LAST'
+    | 'FIRST'
+    | 'HERE' ;
+
+// todo ignoring other exit types
+segment_exit: 'EXIT=(NONE)' ;
+
+segment_comprtn: 'COMPRTN=(' String ')';
+
+segment_encoding: 'ENCODING=' String;
+
+segment_remarks: 'REMARKS=' String;
 
 field: 'FIELD ' field_params ;
 
@@ -144,34 +234,100 @@ field_params
 
 field_param
     : field_name
+    | field_external_name
     | field_bytes
     | field_start
+    | field_max_bytes
+    | field_start_after
+    | field_rel_start
     | field_datatype
-    | field_type ;
+    | field_type
+    | field_case_name
+    | field_dependson
+    | field_min_occurs
+    | field_max_occurs
+    | field_parent
+    | field_redefines
+    | field_remarks ;
 
-field_name
-    : 'NAME=' NAME
-    | 'NAME=(' STRING ',' STRING ',' STRING ')';
+field_name: 'NAME=' field_name_value;
 
-field_bytes: 'BYTES=' STRING;
+field_name_value
+    : '(' String ',' 'SEQ' ',' field_name_value_type ')'
+    | String ;
 
-field_start: 'START=' STRING;
+field_name_value_type
+    : 'U'
+    | 'M' ;
 
-field_datatype: 'DATATYPE=' STRING;
+field_external_name: 'EXTERALNAME=' String;
 
-field_type: 'TYPE=' STRING;
+field_bytes: 'BYTES=' String;
 
-end: 'todo';
+field_max_bytes: 'MAXBYTES=' String;
+
+field_start: 'START=' String;
+
+field_start_after: 'STARTAFTER=' String;
+
+field_rel_start: 'RELSTART=' String;
+
+field_datatype: 'DATATYPE=' field_datatype_value;
+
+field_datatype_value
+    : 'ARRAY'
+    | 'BINARY'
+    | 'BIT'
+    | 'BYTE'
+    | 'UBYTE'
+    | 'CHAR'
+    | 'DATE'
+    | 'DECIMAL(' String ',' String ')'
+    | 'DOUBLE'
+    | 'FLOAT'
+    | 'INT'
+    | 'UINT'
+    | 'LONG'
+    | 'ULONG'
+    | 'OTHER'
+    | 'SHORT'
+    | 'USHORT'
+    | 'STRUCT'
+    | 'TIME'
+    | 'TIMESTAMP'
+    | 'XML' ;
+
+field_type: 'TYPE=' field_type_value;
+
+field_type_value
+    : 'C'
+    | 'X'
+    | 'P' ;
+
+field_case_name: 'CASENAME=' String;
+
+field_dependson: 'DEPENDSON=' String;
+
+field_min_occurs: 'MINOCCURS=' String;
+
+field_max_occurs: 'MAXOCCURS=' String;
+
+field_parent: 'PARENT=' String;
+
+field_redefines: 'REDEFINES=' String;
+
+field_remarks: 'REMARKS=' String;
+
+end: 'DBDGEN' 'FINISH'? 'END';
 
 bool_string
     : 'YES'
     | 'NO'
     ;
 
-NAME: [a-zA-Z][a-zA-Z0-9]*;
-STRING: [a-zA-Z0-9]+;
-//NUMBER: [1-9][0-9]*;
-ANY: .;
+String
+    : [a-zA-Z0-9]+
+    | Number;
 
 Number
  : Int ( '.' Digit* )?
@@ -179,11 +335,11 @@ Number
 
 WS: [ \t\r\n]+ -> skip ;
 
-fragment Int
+Int
  : [1-9] Digit*
  | '0'
  ;
 
-fragment Digit
+Digit
  : [0-9]
  ;
