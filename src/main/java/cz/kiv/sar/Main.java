@@ -1,5 +1,6 @@
 package cz.kiv.sar;
 
+import cz.kiv.sar.antlr.DBDBaseVisitor;
 import cz.kiv.sar.antlr.DBDLexer;
 import cz.kiv.sar.antlr.DBDParser;
 import cz.kiv.sar.preprocessing.Configuration;
@@ -17,7 +18,8 @@ public class Main {
             DBDParser parser = new DBDParser(new CommonTokenStream(lexer));
             parser.setBuildParseTree(true);
             ParseTree tree = parser.source();
-            System.out.println(tree.getText());
+            DBDBaseVisitor v = new DBDBaseVisitor<Object>();
+            v.visit(tree);
         } catch (Exception e) {
             if (e.getMessage() != null) {
                 System.err.println(e.getMessage());
