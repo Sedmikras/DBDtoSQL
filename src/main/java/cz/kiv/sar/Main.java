@@ -17,6 +17,7 @@ public class Main {
             DBDParser parser = new DBDParser(new CommonTokenStream(lexer));
             parser.setBuildParseTree(true);
             ParseTree tree = parser.source();
+            System.out.println(tree.getText());
         } catch (Exception e) {
             if (e.getMessage() != null) {
                 System.err.println(e.getMessage());
