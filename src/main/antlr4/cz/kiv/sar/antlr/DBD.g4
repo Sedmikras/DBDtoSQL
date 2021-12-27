@@ -2,7 +2,7 @@ grammar DBD;
 
 source: dbd dataset segment* end;
 
-dbd: 'DBD ' dbd_params;
+dbd: DBD dbd_params;
 
 dbd_params
     : dbd_param ',' dbd_params
@@ -20,16 +20,16 @@ dbd_param
     | dbd_encoding
     | dbd_remarks ;
 
-dbd_name: 'NAME=' String;
+dbd_name: NAME '=' String;
 
-dbd_access: 'ACCESS=' dbd_access_value;
+dbd_access: ACCESS '=' dbd_access_value;
 
 dbd_access_value
     : '(' access_method ',' operating_method ')'
     | access_method
     ;
 
-dbd_rmname: 'RMNAME=' dbd_rmname_value;
+dbd_rmname: RMNAME '=' dbd_rmname_value;
 
 dbd_rmname_value
     : '(' String ',' String ',' String ',' String ')'
@@ -38,20 +38,20 @@ dbd_rmname_value
     | String
     ;
 
-dbd_dbver: 'DBVER=' Number;
+dbd_dbver: DBVER '=' Number;
 
-dbd_passwd: 'PASSWD=' bool_string;
+dbd_passwd: PASSWD '=' bool_string;
 
 // todo ignoring other exit types
-dbd_exit: 'EXIT=(NONE)';
+dbd_exit: EXIT '=' '(' NONE ')';
 
-dbd_version: 'VERSION=' String;
+dbd_version: VERSION '=' String;
 
-dbd_datxexit: 'DATXEXIT=' bool_string;
+dbd_datxexit: DATXEXIT '=' bool_string;
 
-dbd_encoding: 'ENCODING=' String;
+dbd_encoding: ENCODING '=' String;
 
-dbd_remarks: 'REMARKS=' String ;
+dbd_remarks: REMARKS '=' String ;
 
 access_method
     : 'GSAM'
@@ -80,9 +80,9 @@ dataset
     : dataset_without_label
     | dataset_with_label ;
 
-dataset_with_label: String 'DATASET ' dataset_params;
+dataset_with_label: String DATASET dataset_params;
 
-dataset_without_label: 'DATASET ' dataset_params;
+dataset_without_label: DATASET dataset_params;
 
 dataset_params
     : dataset_param ',' dataset_params
@@ -98,25 +98,25 @@ dataset_param
     | dataset_searcha
     | dataset_remarks ;
 
-dataset_dd1: 'DD1=' String;
+dataset_dd1: DD1 '=' String;
 
-dataset_size: 'SIZE=' String;
+dataset_size: SIZE '=' String;
 
-dataset_block: 'BLOCK=' String;
+dataset_block: BLOCK '=' String;
 
-dataset_device: 'DEVICE=' String;
+dataset_device: DEVICE '=' String;
 
-dataset_scan: 'SCAN=' String;
+dataset_scan: SCAN '=' String;
 
-dataset_frspc: 'FRSPC=(' String ')';
+dataset_frspc: FRSPC '=' '(' String ')';
 
-dataset_searcha: 'SEARCHA=' Number;
+dataset_searcha: SEARCHA '=' Number;
 
-dataset_remarks: 'REMARKS=' String;
+dataset_remarks: REMARKS '=' String;
 
 segment: segment_definition (field | lchild)*;
 
-segment_definition: 'SEGM ' segment_params ;
+segment_definition: SEGM segment_params ;
 
 segment_params
     : segment_param ',' segment_params
@@ -136,11 +136,11 @@ segment_param
     | segment_encoding
     | segment_remarks;
 
-segment_name: 'NAME=' String;
+segment_name: NAME '=' String;
 
-segment_external_name: 'EXTERNALNAME=' String;
+segment_external_name: EXTERNAL_NAME '=' String;
 
-segment_parent: 'PARENT=' segment_parent_value;
+segment_parent: PARENT '=' segment_parent_value;
 
 segment_parent_value
     : '(' segment_parent_value_1 ',' segment_parent_value_2 ')'
@@ -164,19 +164,17 @@ segment_parent_type_2
     : 'VIRTUAL'
     | 'PHYSICAL' ;
 
-segment_source: 'SOURCE=(' String ',' 'DATA' ',' String ')';
+segment_source: SOURCE '=' '(' String ',' DATA ',' String ')';
 
-segment_bytes: 'BYTES=' segment_bytes_value;
+segment_bytes: BYTES '=' segment_bytes_value;
 
 segment_bytes_value
     : '(' String ',' String ')'
     | String ;
 
-segment_freq: 'FREQ=' String;
+segment_freq: FREQ '=' String;
 
-segment_ptr
-    : 'POINTER=(' segment_ptr_value ')'
-    | 'PTR=(' segment_ptr_value ')' ;
+segment_ptr: POINTER '=' '(' segment_ptr_value ')';
 
 segment_ptr_value
     : segment_ptr_type_1 (',' segment_ptr_type_2)? ',LPARNT'? ',CTR'? ',PAIRED'? ;
@@ -192,7 +190,7 @@ segment_ptr_type_2
     : 'LTWIN' | 'LT'
     | 'LTWINBWD' | 'LTB' ;
 
-segment_rules: 'RULES=(' segment_rules_value ')';
+segment_rules: RULES '=' '(' segment_rules_value ')';
 
 segment_rules_value: segment_rules_type_1 segment_rules_type_2 segment_rules_type_3 ',' segment_rules_type_4 ;
 
@@ -218,15 +216,15 @@ segment_rules_type_4
     | 'HERE' ;
 
 // todo ignoring other exit types
-segment_exit: 'EXIT=(NONE)' ;
+segment_exit: EXIT '=' '(' NONE ')' ;
 
-segment_comprtn: 'COMPRTN=(' String ')';
+segment_comprtn: COMPRTN '=' '(' String ')';
 
-segment_encoding: 'ENCODING=' String;
+segment_encoding: ENCODING '=' String;
 
-segment_remarks: 'REMARKS=' String;
+segment_remarks: REMARKS '=' String;
 
-field: 'FIELD ' field_params ;
+field: FIELD field_params ;
 
 field_params
     : field_param ',' field_params
@@ -250,29 +248,29 @@ field_param
     | field_redefines
     | field_remarks ;
 
-field_name: 'NAME=' field_name_value;
+field_name: NAME '=' field_name_value;
 
 field_name_value
-    : '(' String ',' 'SEQ' ',' field_name_value_type ')'
+    : '(' String ',' SEQ ',' field_name_value_type ')'
     | String ;
 
 field_name_value_type
     : 'U'
     | 'M' ;
 
-field_external_name: 'EXTERALNAME=' String;
+field_external_name: EXTERNAL_NAME '=' String;
 
-field_bytes: 'BYTES=' String;
+field_bytes: BYTES '=' String;
 
-field_max_bytes: 'MAXBYTES=' String;
+field_max_bytes: MAXBYTES '=' String;
 
-field_start: 'START=' String;
+field_start: START '=' String;
 
-field_start_after: 'STARTAFTER=' String;
+field_start_after: STARTAFTER '=' String;
 
-field_rel_start: 'RELSTART=' String;
+field_rel_start: RELSTART '=' String;
 
-field_datatype: 'DATATYPE=' field_datatype_value;
+field_datatype: DATATYPE '=' field_datatype_value;
 
 field_datatype_value
     : 'ARRAY'
@@ -297,28 +295,28 @@ field_datatype_value
     | 'TIMESTAMP'
     | 'XML' ;
 
-field_type: 'TYPE=' field_type_value;
+field_type: TYPE '=' field_type_value;
 
 field_type_value
     : 'C'
     | 'X'
     | 'P' ;
 
-field_case_name: 'CASENAME=' String;
+field_case_name: CASENAME '=' String;
 
-field_dependson: 'DEPENDSON=' String;
+field_dependson: DEPENDSON '=' String;
 
-field_min_occurs: 'MINOCCURS=' String;
+field_min_occurs: MINOCCURS '=' String;
 
-field_max_occurs: 'MAXOCCURS=' String;
+field_max_occurs: MAXOCCURS '=' String;
 
-field_parent: 'PARENT=' String;
+field_parent: PARENT '=' String;
 
-field_redefines: 'REDEFINES=' String;
+field_redefines: REDEFINES '=' String;
 
-field_remarks: 'REMARKS=' String;
+field_remarks: REMARKS '=' String;
 
-lchild: 'LCHILD ' lchild_params xdfld+;
+lchild: LCHILD lchild_params xdfld+;
 
 lchild_params
     : lchild_param ',' lchild_params
@@ -331,14 +329,12 @@ lchild_param
     | lchild_rules
     | lchild_remarks ;
 
-lchild_name: 'NAME=' lchild_name_params;
+lchild_name: NAME '=' lchild_name_params;
 
 lchild_name_params
     : '(' String ',' String ')' ;
 
-lchild_ptr
-    : 'POINTER=' lchild_ptr_type
-    | 'PTR=' lchild_ptr_type ;
+lchild_ptr: POINTER '=' lchild_ptr_type;
 
 lchild_ptr_type
     : 'SNGL'
@@ -347,18 +343,18 @@ lchild_ptr_type
     | 'SYMB'
     | 'INDX';
 
-lchild_pair: 'PAIR=' String ;
+lchild_pair: PAIR '=' String ;
 
-lchild_rules: 'RULES=' lchild_rules_type ;
+lchild_rules: RULES '=' lchild_rules_type ;
 
 lchild_rules_type
     : 'LAST'
     | 'FIRST'
     | 'HERE' ;
 
-lchild_remarks: 'REMARKS=' String;
+lchild_remarks: REMARKS '=' String;
 
-xdfld: 'XDFLD ' xdfld_params;
+xdfld: XDFLD xdfld_params;
 
 xdfld_params
     : xdfld_param ',' xdfld_params
@@ -376,47 +372,107 @@ xdfld_param
     | xdfld_remarks
     | xdfld_externalname ;
 
-xdfld_name: 'NAME=' String;
+xdfld_name: NAME '=' String;
 
-xdfld_segment: 'SEGMENT=' String;
+xdfld_segment: SEGMENT '=' String;
 
-xdfld_const: 'CONST=' String;
+xdfld_const: CONST '=' String;
 
-xdfld_srch: 'SRCH=' String;
+xdfld_srch: SRCH '=' String;
 
-xdfld_subseq: 'SUBSEQ=' String;
+xdfld_subseq: SUBSEQ '=' String;
 
-xdfld_ddata: 'DDATA=' String;
+xdfld_ddata: DDATA '=' String;
 
-xdfld_nullval: 'NULLVAL=' String;
+xdfld_nullval: NULLVAL '=' String;
 
-xdfld_extrtn: 'EXTRTN=' String;
+xdfld_extrtn: EXTRTN '=' String;
 
-xdfld_remarks: 'REMARKS=' String;
+xdfld_remarks: REMARKS '=' String;
 
-xdfld_externalname: 'EXTERNALNAME=' String;
+xdfld_externalname: EXTERNAL_NAME '=' String;
 
-end: 'DBDGEN' 'FINISH'? 'END';
+end: DBD_GEN FINISH? END;
 
 bool_string
     : 'YES'
     | 'NO'
     ;
 
-String
-    : [a-zA-Z0-9]+
-    | Number;
+DBD: 'DBD';
+DBD_GEN: 'DBDGEN';
+FINISH: 'FINISH';
+END: 'END';
+
+NAME: 'NAME';
+ACCESS: 'ACCESS';
+RMNAME: 'RMNAME';
+DBVER: 'DBVER';
+PASSWD: 'PASSWD';
+EXIT: 'EXIT';
+NONE: 'NONE';
+VERSION: 'VERSION';
+DATXEXIT: 'DATXEXIT';
+ENCODING: 'ENCODING';
+REMARKS: 'REMARKS';
+
+DATASET: 'DATASET';
+DD1: 'DD1';
+SIZE: 'SIZE';
+BLOCK: 'BLOCK';
+DEVICE: 'DEVICE';
+SCAN: 'SCAN';
+FRSPC: 'FRSPC';
+SEARCHA: 'SEARCHA';
+
+SEGM: 'SEGM';
+EXTERNAL_NAME: 'EXTERNALNAME';
+PARENT: 'PARENT';
+SOURCE: 'SOURCE';
+BYTES: 'BYTES';
+DATA: 'DATA';
+FREQ: 'FREQ';
+POINTER: 'POINTER' | 'PTR';
+RULES: 'RULES';
+COMPRTN: 'COMPRTN';
+
+FIELD: 'FIELD';
+SEQ: 'SEQ';
+MAXBYTES: 'MAXBYTES';
+START: 'START';
+STARTAFTER: 'STARTAFTER';
+RELSTART: 'RELSTART';
+DATATYPE: 'DATATYPE';
+TYPE: 'TYPE';
+CASENAME: 'CASENAME';
+DEPENDSON: 'DEPENDSON';
+MINOCCURS: 'MINOCCURS';
+MAXOCCURS: 'MAXOCCURS';
+REDEFINES: 'REDEFINES';
+
+LCHILD: 'LCHILD';
+PAIR: 'PAIR';
+XDFLD: 'XDFLD';
+SEGMENT: 'SEGMENT';
+CONST: 'CONST';
+SRCH: 'SRCH';
+SUBSEQ: 'SUBSEQ';
+DDATA: 'DDATA';
+NULLVAL: 'NULLVAL';
+EXTRTN: 'EXTRTN';
+
+String: [a-zA-Z0-9]+;
+
+Int
+ : [1-9] Digit*
+ | '0'
+ ;
 
 Number
  : Int ( '.' Digit* )?
  ;
 
 WS: [ \t\r\n]+ -> skip ;
-
-Int
- : [1-9] Digit*
- | '0'
- ;
 
 Digit
  : [0-9]
