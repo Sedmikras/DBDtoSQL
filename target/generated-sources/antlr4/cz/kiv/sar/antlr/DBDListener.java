@@ -848,6 +848,246 @@ public interface DBDListener extends ParseTreeListener {
 	 */
 	void exitField_remarks(DBDParser.Field_remarksContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link DBDParser#lchild}.
+	 * @param ctx the parse tree
+	 */
+	void enterLchild(DBDParser.LchildContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#lchild}.
+	 * @param ctx the parse tree
+	 */
+	void exitLchild(DBDParser.LchildContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#lchild_params}.
+	 * @param ctx the parse tree
+	 */
+	void enterLchild_params(DBDParser.Lchild_paramsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#lchild_params}.
+	 * @param ctx the parse tree
+	 */
+	void exitLchild_params(DBDParser.Lchild_paramsContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#lchild_param}.
+	 * @param ctx the parse tree
+	 */
+	void enterLchild_param(DBDParser.Lchild_paramContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#lchild_param}.
+	 * @param ctx the parse tree
+	 */
+	void exitLchild_param(DBDParser.Lchild_paramContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#lchild_name}.
+	 * @param ctx the parse tree
+	 */
+	void enterLchild_name(DBDParser.Lchild_nameContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#lchild_name}.
+	 * @param ctx the parse tree
+	 */
+	void exitLchild_name(DBDParser.Lchild_nameContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#lchild_name_params}.
+	 * @param ctx the parse tree
+	 */
+	void enterLchild_name_params(DBDParser.Lchild_name_paramsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#lchild_name_params}.
+	 * @param ctx the parse tree
+	 */
+	void exitLchild_name_params(DBDParser.Lchild_name_paramsContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#lchild_ptr}.
+	 * @param ctx the parse tree
+	 */
+	void enterLchild_ptr(DBDParser.Lchild_ptrContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#lchild_ptr}.
+	 * @param ctx the parse tree
+	 */
+	void exitLchild_ptr(DBDParser.Lchild_ptrContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#lchild_ptr_type}.
+	 * @param ctx the parse tree
+	 */
+	void enterLchild_ptr_type(DBDParser.Lchild_ptr_typeContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#lchild_ptr_type}.
+	 * @param ctx the parse tree
+	 */
+	void exitLchild_ptr_type(DBDParser.Lchild_ptr_typeContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#lchild_pair}.
+	 * @param ctx the parse tree
+	 */
+	void enterLchild_pair(DBDParser.Lchild_pairContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#lchild_pair}.
+	 * @param ctx the parse tree
+	 */
+	void exitLchild_pair(DBDParser.Lchild_pairContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#lchild_rules}.
+	 * @param ctx the parse tree
+	 */
+	void enterLchild_rules(DBDParser.Lchild_rulesContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#lchild_rules}.
+	 * @param ctx the parse tree
+	 */
+	void exitLchild_rules(DBDParser.Lchild_rulesContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#lchild_rules_type}.
+	 * @param ctx the parse tree
+	 */
+	void enterLchild_rules_type(DBDParser.Lchild_rules_typeContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#lchild_rules_type}.
+	 * @param ctx the parse tree
+	 */
+	void exitLchild_rules_type(DBDParser.Lchild_rules_typeContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#lchild_remarks}.
+	 * @param ctx the parse tree
+	 */
+	void enterLchild_remarks(DBDParser.Lchild_remarksContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#lchild_remarks}.
+	 * @param ctx the parse tree
+	 */
+	void exitLchild_remarks(DBDParser.Lchild_remarksContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#xdfld}.
+	 * @param ctx the parse tree
+	 */
+	void enterXdfld(DBDParser.XdfldContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#xdfld}.
+	 * @param ctx the parse tree
+	 */
+	void exitXdfld(DBDParser.XdfldContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#xdfld_params}.
+	 * @param ctx the parse tree
+	 */
+	void enterXdfld_params(DBDParser.Xdfld_paramsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#xdfld_params}.
+	 * @param ctx the parse tree
+	 */
+	void exitXdfld_params(DBDParser.Xdfld_paramsContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#xdfld_param}.
+	 * @param ctx the parse tree
+	 */
+	void enterXdfld_param(DBDParser.Xdfld_paramContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#xdfld_param}.
+	 * @param ctx the parse tree
+	 */
+	void exitXdfld_param(DBDParser.Xdfld_paramContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#xdfld_name}.
+	 * @param ctx the parse tree
+	 */
+	void enterXdfld_name(DBDParser.Xdfld_nameContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#xdfld_name}.
+	 * @param ctx the parse tree
+	 */
+	void exitXdfld_name(DBDParser.Xdfld_nameContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#xdfld_segment}.
+	 * @param ctx the parse tree
+	 */
+	void enterXdfld_segment(DBDParser.Xdfld_segmentContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#xdfld_segment}.
+	 * @param ctx the parse tree
+	 */
+	void exitXdfld_segment(DBDParser.Xdfld_segmentContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#xdfld_const}.
+	 * @param ctx the parse tree
+	 */
+	void enterXdfld_const(DBDParser.Xdfld_constContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#xdfld_const}.
+	 * @param ctx the parse tree
+	 */
+	void exitXdfld_const(DBDParser.Xdfld_constContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#xdfld_srch}.
+	 * @param ctx the parse tree
+	 */
+	void enterXdfld_srch(DBDParser.Xdfld_srchContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#xdfld_srch}.
+	 * @param ctx the parse tree
+	 */
+	void exitXdfld_srch(DBDParser.Xdfld_srchContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#xdfld_subseq}.
+	 * @param ctx the parse tree
+	 */
+	void enterXdfld_subseq(DBDParser.Xdfld_subseqContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#xdfld_subseq}.
+	 * @param ctx the parse tree
+	 */
+	void exitXdfld_subseq(DBDParser.Xdfld_subseqContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#xdfld_ddata}.
+	 * @param ctx the parse tree
+	 */
+	void enterXdfld_ddata(DBDParser.Xdfld_ddataContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#xdfld_ddata}.
+	 * @param ctx the parse tree
+	 */
+	void exitXdfld_ddata(DBDParser.Xdfld_ddataContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#xdfld_nullval}.
+	 * @param ctx the parse tree
+	 */
+	void enterXdfld_nullval(DBDParser.Xdfld_nullvalContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#xdfld_nullval}.
+	 * @param ctx the parse tree
+	 */
+	void exitXdfld_nullval(DBDParser.Xdfld_nullvalContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#xdfld_extrtn}.
+	 * @param ctx the parse tree
+	 */
+	void enterXdfld_extrtn(DBDParser.Xdfld_extrtnContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#xdfld_extrtn}.
+	 * @param ctx the parse tree
+	 */
+	void exitXdfld_extrtn(DBDParser.Xdfld_extrtnContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#xdfld_remarks}.
+	 * @param ctx the parse tree
+	 */
+	void enterXdfld_remarks(DBDParser.Xdfld_remarksContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#xdfld_remarks}.
+	 * @param ctx the parse tree
+	 */
+	void exitXdfld_remarks(DBDParser.Xdfld_remarksContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link DBDParser#xdfld_externalname}.
+	 * @param ctx the parse tree
+	 */
+	void enterXdfld_externalname(DBDParser.Xdfld_externalnameContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#xdfld_externalname}.
+	 * @param ctx the parse tree
+	 */
+	void exitXdfld_externalname(DBDParser.Xdfld_externalnameContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link DBDParser#end}.
 	 * @param ctx the parse tree
 	 */
