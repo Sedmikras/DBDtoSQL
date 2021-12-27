@@ -1,5 +1,8 @@
 package cz.kiv.sar.structure;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Database {
     //utils
     private String Scheme;
@@ -9,6 +12,12 @@ public class Database {
     private String Collation;
     //utils
     private String CharacterSet;
+
+    List<Table> tables;
+
+    public Database() {
+        this.tables = new ArrayList<>();
+    }
 
     public String getScheme() {
         return Scheme;
@@ -40,5 +49,9 @@ public class Database {
 
     public void setCharacterSet(String characterSet) {
         CharacterSet = characterSet;
+    }
+
+    public void addTable(Table t) {
+        tables.add(t);
     }
 }
