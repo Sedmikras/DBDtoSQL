@@ -114,7 +114,7 @@ dataset_searcha: 'SEARCHA=' Number;
 
 dataset_remarks: 'REMARKS=' String;
 
-segment: segment_definition field*;
+segment: segment_definition (field | lchild)*;
 
 segment_definition: 'SEGM ' segment_params ;
 
@@ -317,6 +317,84 @@ field_parent: 'PARENT=' String;
 field_redefines: 'REDEFINES=' String;
 
 field_remarks: 'REMARKS=' String;
+
+lchild: 'LCHILD ' lchild_params xdfld+;
+
+lchild_params
+    : lchild_param ',' lchild_params
+    | lchild_param ;
+
+lchild_param
+    : lchild_name
+    | lchild_ptr
+    | lchild_pair
+    | lchild_rules
+    | lchild_remarks ;
+
+lchild_name: 'NAME=' lchild_name_params;
+
+lchild_name_params
+    : '(' String ',' String ')' ;
+
+lchild_ptr
+    : 'POINTER=' lchild_ptr_type
+    | 'PTR=' lchild_ptr_type ;
+
+lchild_ptr_type
+    : 'SNGL'
+    | 'DBLE'
+    | 'NONE'
+    | 'SYMB'
+    | 'INDX';
+
+lchild_pair: 'PAIR=' String ;
+
+lchild_rules: 'RULES=' lchild_rules_type ;
+
+lchild_rules_type
+    : 'LAST'
+    | 'FIRST'
+    | 'HERE' ;
+
+lchild_remarks: 'REMARKS=' String;
+
+xdfld: 'XDFLD ' xdfld_params;
+
+xdfld_params
+    : xdfld_param ',' xdfld_params
+    | xdfld_param ;
+
+xdfld_param
+    : xdfld_name
+    | xdfld_segment
+    | xdfld_const
+    | xdfld_srch
+    | xdfld_subseq
+    | xdfld_ddata
+    | xdfld_nullval
+    | xdfld_extrtn
+    | xdfld_remarks
+    | xdfld_externalname ;
+
+xdfld_name: 'NAME=' String;
+
+xdfld_segment: 'SEGMENT=' String;
+
+xdfld_const: 'CONST=' String;
+
+xdfld_srch: 'SRCH=' String;
+
+xdfld_subseq: 'SUBSEQ=' String;
+
+xdfld_ddata: 'DDATA=' String;
+
+xdfld_nullval: 'NULLVAL=' String;
+
+xdfld_extrtn: 'EXTRTN=' String;
+
+xdfld_remarks: 'REMARKS=' String;
+
+xdfld_externalname: 'EXTERNALNAME=' String;
 
 end: 'DBDGEN' 'FINISH'? 'END';
 
