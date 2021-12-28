@@ -3,8 +3,8 @@ package cz.kiv.sar.visitors;
 import cz.kiv.sar.antlr.DBDParser;
 import cz.kiv.sar.antlr.DBDParserBaseVisitor;
 import cz.kiv.sar.structure.ControlCharacters;
-import cz.kiv.sar.structure.DataSet;
-import cz.kiv.sar.structure.DatasetParam;
+import cz.kiv.sar.structure.dbd.DataSet;
+import cz.kiv.sar.structure.dbd.DatasetParam;
 import org.antlr.v4.runtime.tree.ParseTree;
 
 import java.util.ArrayList;

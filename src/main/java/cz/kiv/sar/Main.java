@@ -4,7 +4,7 @@ import cz.kiv.sar.antlr.DBDLexer;
 import cz.kiv.sar.antlr.DBDParser;
 import cz.kiv.sar.preprocessing.Configuration;
 import cz.kiv.sar.preprocessing.SimpleProcessor;
-import cz.kiv.sar.structure.Database;
+import cz.kiv.sar.structure.sql.Database;
 import cz.kiv.sar.visitors.SourceVisitor;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CommonTokenStream;

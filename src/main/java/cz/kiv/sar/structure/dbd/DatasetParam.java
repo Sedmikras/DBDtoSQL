@@ -1,4 +1,4 @@
-package cz.kiv.sar.structure;
+package cz.kiv.sar.structure.dbd;
 
 public class DatasetParam {
     String key;

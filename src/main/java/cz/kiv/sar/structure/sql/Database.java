@@ -1,4 +1,4 @@
-package cz.kiv.sar.structure;
+package cz.kiv.sar.structure.sql;
 
 import java.util.ArrayList;
 import java.util.List;

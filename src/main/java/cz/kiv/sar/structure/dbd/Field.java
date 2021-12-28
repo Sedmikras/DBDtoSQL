@@ -1,4 +1,4 @@
-package cz.kiv.sar.structure;
+package cz.kiv.sar.structure.dbd;
 
 import java.util.List;
 import java.util.ArrayList;

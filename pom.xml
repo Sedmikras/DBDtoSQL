@@ -28,6 +28,12 @@
             <version>${antlr4.version}</version>
             <scope>compile</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.jooq</groupId>
+            <artifactId>jooq</artifactId>
+            <version>3.15.5</version>
+        </dependency>
     </dependencies>
 
     <build>

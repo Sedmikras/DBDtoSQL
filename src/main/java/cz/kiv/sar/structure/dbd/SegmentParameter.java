@@ -1,15 +1,15 @@
-package cz.kiv.sar.structure;
+package cz.kiv.sar.structure.dbd;
 
-public class DBDParameter {
+public class SegmentParameter {
     String key;
     String value;
 
-    public DBDParameter(String key, String value) {
+    public SegmentParameter(String key, String value) {
         this.key = key;
         this.value = value;
     }
 
-    public DBDParameter() {
+    public SegmentParameter() {
     }
 
     public String getKey() {

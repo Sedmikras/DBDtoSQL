@@ -3,8 +3,8 @@ package cz.kiv.sar.visitors;
 import cz.kiv.sar.antlr.DBDParser;
 import cz.kiv.sar.antlr.DBDParserBaseVisitor;
 import cz.kiv.sar.structure.ControlCharacters;
-import cz.kiv.sar.structure.DBDParameter;
-import cz.kiv.sar.structure.Database;
+import cz.kiv.sar.structure.dbd.DBDParameter;
+import cz.kiv.sar.structure.sql.Database;
 import java.util.List;
 import java.util.ArrayList;
 
