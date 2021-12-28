@@ -1,7 +1,7 @@
 package cz.kiv.sar.visitors;
 
-import cz.kiv.sar.antlr.DBDBaseVisitor;
 import cz.kiv.sar.antlr.DBDParser;
+import cz.kiv.sar.antlr.DBDParserBaseVisitor;
 import cz.kiv.sar.structure.ControlCharacters;
 import cz.kiv.sar.structure.DBDParameter;
 import cz.kiv.sar.structure.Database;
@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import cz.kiv.sar.utils.GenUtils;
 import org.antlr.v4.runtime.tree.ParseTree;
 
-public class DBDVisitor extends DBDBaseVisitor<Database> {
+public class DBDVisitor extends DBDParserBaseVisitor<Database> {
 
     @Override
     public Database visitDbd(DBDParser.DbdContext ctx) {
@@ -48,7 +48,7 @@ public class DBDVisitor extends DBDBaseVisitor<Database> {
             if(parameter == null || parameter.getKey().isEmpty()) {
                 continue;
             }
-            if (parameter.getKey().replace("=", "").equalsIgnoreCase("name")) {
+            if (parameter.getKey().equalsIgnoreCase("name")) {
                 d.setName(parameter.getValue());
             }
         }

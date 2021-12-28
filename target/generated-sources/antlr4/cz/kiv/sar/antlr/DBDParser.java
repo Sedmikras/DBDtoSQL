@@ -1,4 +1,4 @@
-// Generated from cz\kiv\sar\antlr\DBD.g4 by ANTLR 4.9.3
+// Generated from cz\kiv\sar\antlr\DBDParser.g4 by ANTLR 4.9.3
 package cz.kiv.sar.antlr;
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
@@ -17,27 +17,16 @@ public class DBDParser extends Parser {
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, T__5=6, T__6=7, T__7=8, T__8=9, 
-		T__9=10, T__10=11, T__11=12, T__12=13, T__13=14, T__14=15, T__15=16, T__16=17, 
-		T__17=18, T__18=19, T__19=20, T__20=21, T__21=22, T__22=23, T__23=24, 
-		T__24=25, T__25=26, T__26=27, T__27=28, T__28=29, T__29=30, T__30=31, 
-		T__31=32, T__32=33, T__33=34, T__34=35, T__35=36, T__36=37, T__37=38, 
-		T__38=39, T__39=40, T__40=41, T__41=42, T__42=43, T__43=44, T__44=45, 
-		T__45=46, T__46=47, T__47=48, T__48=49, T__49=50, T__50=51, T__51=52, 
-		T__52=53, T__53=54, T__54=55, T__55=56, T__56=57, T__57=58, T__58=59, 
-		T__59=60, T__60=61, T__61=62, T__62=63, T__63=64, T__64=65, T__65=66, 
-		T__66=67, T__67=68, T__68=69, T__69=70, T__70=71, T__71=72, T__72=73, 
-		T__73=74, T__74=75, T__75=76, T__76=77, T__77=78, T__78=79, T__79=80, 
-		T__80=81, T__81=82, T__82=83, T__83=84, T__84=85, T__85=86, T__86=87, 
-		T__87=88, T__88=89, T__89=90, T__90=91, T__91=92, T__92=93, T__93=94, 
-		T__94=95, T__95=96, T__96=97, T__97=98, T__98=99, T__99=100, T__100=101, 
-		T__101=102, T__102=103, T__103=104, T__104=105, T__105=106, T__106=107, 
-		T__107=108, T__108=109, T__109=110, T__110=111, T__111=112, T__112=113, 
-		T__113=114, T__114=115, T__115=116, T__116=117, T__117=118, T__118=119, 
-		T__119=120, T__120=121, T__121=122, T__122=123, T__123=124, T__124=125, 
-		T__125=126, T__126=127, T__127=128, T__128=129, T__129=130, T__130=131, 
-		T__131=132, T__132=133, T__133=134, T__134=135, T__135=136, T__136=137, 
-		T__137=138, String=139, Number=140, WS=141, Int=142, Digit=143;
+		COM=1, LPAREN=2, RPAREN=3, EQUAL=4, DBD=5, DBD_GEN=6, FINISH=7, END=8, 
+		NAME=9, ACCESS=10, RMNAME=11, DBVER=12, PASSWD=13, EXIT=14, NONE=15, VERSION=16, 
+		DATXEXIT=17, ENCODING=18, REMARKS=19, DATASET=20, DD1=21, SIZE=22, BLOCK=23, 
+		DEVICE=24, SCAN=25, FRSPC=26, SEARCHA=27, SEGM=28, EXTERNAL_NAME=29, PARENT=30, 
+		SOURCE=31, BYTES=32, DATA=33, FREQ=34, POINTER=35, RULES=36, COMPRTN=37, 
+		FIELD=38, MAXBYTES=39, START=40, STARTAFTER=41, RELSTART=42, DATATYPE=43, 
+		TYPE=44, CASENAME=45, DEPENDSON=46, MINOCCURS=47, MAXOCCURS=48, REDEFINES=49, 
+		LCHILD=50, PAIR=51, XDFLD=52, SEGMENT=53, CONST=54, SRCH=55, SUBSEQ=56, 
+		DDATA=57, NULLVAL=58, EXTRTN=59, WS=60, String=61, Int=62, Number=63, 
+		Digit=64, PARAM_WS=65, CPARAM_WS=66, PARAM_COM=67, CPARAM_RPAREN=68;
 	public static final int
 		RULE_source = 0, RULE_dbd = 1, RULE_dbd_params = 2, RULE_dbd_param = 3, 
 		RULE_dbd_name = 4, RULE_dbd_access = 5, RULE_dbd_access_value = 6, RULE_dbd_rmname = 7, 
@@ -108,46 +97,31 @@ public class DBDParser extends Parser {
 
 	private static String[] makeLiteralNames() {
 		return new String[] {
-			null, "'DBD '", "','", "'NAME='", "'ACCESS='", "'('", "')'", "'RMNAME='", 
-			"'DBVER='", "'PASSWD='", "'EXIT=(NONE)'", "'VERSION='", "'DATXEXIT='", 
-			"'ENCODING='", "'REMARKS='", "'GSAM'", "'HDAM'", "'HIDAM'", "'HISAM'", 
-			"'SHISAM'", "'HSAM'", "'SHSAM'", "'INDEX'", "'LOGICAL'", "'MSDB'", "'PHDAM'", 
-			"'PHIDAM'", "'PSINDEX'", "'DEDB'", "'BSAM'", "'VSAM'", "'OSAM'", "'DATASET '", 
-			"'DD1='", "'SIZE='", "'BLOCK='", "'DEVICE='", "'SCAN='", "'FRSPC=('", 
-			"'SEARCHA='", "'SEGM '", "'EXTERNALNAME='", "'PARENT='", "'SNGL'", "'DBLE'", 
-			"'VIRTUAL'", "'PHYSICAL'", "'SOURCE=('", "'DATA'", "'BYTES='", "'FREQ='", 
-			"'POINTER=('", "'PTR=('", "',LPARNT'", "',CTR'", "',PAIRED'", "'HIER'", 
-			"'H'", "'HIERBWD'", "'HB'", "'TWIN'", "'T'", "'TWINBWD'", "'TB'", "'NOTWIN'", 
-			"'NT'", "'LTWIN'", "'LT'", "'LTWINBWD'", "'LTB'", "'RULES=('", "'L'", 
-			"'P'", "'V'", "'B'", "'LAST'", "'FIRST'", "'HERE'", "'COMPRTN=('", "'FIELD '", 
-			"'SEQ'", "'U'", "'M'", "'EXTERALNAME='", "'MAXBYTES='", "'START='", "'STARTAFTER='", 
-			"'RELSTART='", "'DATATYPE='", "'ARRAY'", "'BINARY'", "'BIT'", "'BYTE'", 
-			"'UBYTE'", "'CHAR'", "'DATE'", "'DECIMAL('", "'DOUBLE'", "'FLOAT'", "'INT'", 
-			"'UINT'", "'LONG'", "'ULONG'", "'OTHER'", "'SHORT'", "'USHORT'", "'STRUCT'", 
-			"'TIME'", "'TIMESTAMP'", "'XML'", "'TYPE='", "'C'", "'X'", "'CASENAME='", 
-			"'DEPENDSON='", "'MINOCCURS='", "'MAXOCCURS='", "'REDEFINES='", "'LCHILD '", 
-			"'POINTER='", "'PTR='", "'NONE'", "'SYMB'", "'INDX'", "'PAIR='", "'RULES='", 
-			"'XDFLD '", "'SEGMENT='", "'CONST='", "'SRCH='", "'SUBSEQ='", "'DDATA='", 
-			"'NULLVAL='", "'EXTRTN='", "'DBDGEN'", "'FINISH'", "'END'", "'YES'", 
-			"'NO'"
+			null, null, null, null, "'='", "'DBD'", "'DBDGEN'", "'FINISH'", "'END'", 
+			"'NAME'", "'ACCESS'", "'RMNAME'", "'DBVER'", "'PASSWD'", "'EXIT'", "'NONE'", 
+			"'VERSION'", "'DATXEXIT'", "'ENCODING'", "'REMARKS'", "'DATASET'", "'DD1'", 
+			"'SIZE'", "'BLOCK'", "'DEVICE'", "'SCAN'", "'FRSPC'", "'SEARCHA'", "'SEGM'", 
+			"'EXTERNALNAME'", "'PARENT'", "'SOURCE'", "'BYTES'", "'DATA'", "'FREQ'", 
+			null, "'RULES'", "'COMPRTN'", "'FIELD'", "'MAXBYTES'", "'START'", "'STARTAFTER'", 
+			"'RELSTART'", "'DATATYPE'", "'TYPE'", "'CASENAME'", "'DEPENDSON'", "'MINOCCURS'", 
+			"'MAXOCCURS'", "'REDEFINES'", "'LCHILD'", "'PAIR'", "'XDFLD'", "'SEGMENT'", 
+			"'CONST'", "'SRCH'", "'SUBSEQ'", "'DDATA'", "'NULLVAL'", "'EXTRTN'", 
+			null, null, null, null, null, null, null, null, "')'"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
-			null, null, null, null, null, null, null, null, null, null, null, null, 
-			null, null, null, null, null, null, null, null, null, null, null, null, 
-			null, null, null, null, null, null, null, null, null, null, null, null, 
-			null, null, null, null, null, null, null, null, null, null, null, null, 
-			null, null, null, null, null, null, null, null, null, null, null, null, 
-			null, null, null, null, null, null, null, null, null, null, null, null, 
-			null, null, null, null, null, null, null, null, null, null, null, null, 
-			null, null, null, null, null, null, null, null, null, null, null, null, 
-			null, null, null, null, null, null, null, null, null, null, null, null, 
-			null, null, null, null, null, null, null, null, null, null, null, null, 
-			null, null, null, null, null, null, null, null, null, null, null, null, 
-			null, null, null, null, null, null, null, "String", "Number", "WS", "Int", 
-			"Digit"
+			null, "COM", "LPAREN", "RPAREN", "EQUAL", "DBD", "DBD_GEN", "FINISH", 
+			"END", "NAME", "ACCESS", "RMNAME", "DBVER", "PASSWD", "EXIT", "NONE", 
+			"VERSION", "DATXEXIT", "ENCODING", "REMARKS", "DATASET", "DD1", "SIZE", 
+			"BLOCK", "DEVICE", "SCAN", "FRSPC", "SEARCHA", "SEGM", "EXTERNAL_NAME", 
+			"PARENT", "SOURCE", "BYTES", "DATA", "FREQ", "POINTER", "RULES", "COMPRTN", 
+			"FIELD", "MAXBYTES", "START", "STARTAFTER", "RELSTART", "DATATYPE", "TYPE", 
+			"CASENAME", "DEPENDSON", "MINOCCURS", "MAXOCCURS", "REDEFINES", "LCHILD", 
+			"PAIR", "XDFLD", "SEGMENT", "CONST", "SRCH", "SUBSEQ", "DDATA", "NULLVAL", 
+			"EXTRTN", "WS", "String", "Int", "Number", "Digit", "PARAM_WS", "CPARAM_WS", 
+			"PARAM_COM", "CPARAM_RPAREN"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -185,7 +159,7 @@ public class DBDParser extends Parser {
 	}
 
 	@Override
-	public String getGrammarFileName() { return "DBD.g4"; }
+	public String getGrammarFileName() { return "DBDParser.g4"; }
 
 	@Override
 	public String[] getRuleNames() { return ruleNames; }
@@ -223,11 +197,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_source; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterSource(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterSource(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitSource(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitSource(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitSource(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -245,7 +224,7 @@ public class DBDParser extends Parser {
 			setState(225);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while (_la==T__39) {
+			while (_la==SEGM) {
 				{
 				{
 				setState(222);
@@ -272,6 +251,7 @@ public class DBDParser extends Parser {
 	}
 
 	public static class DbdContext extends ParserRuleContext {
+		public TerminalNode DBD() { return getToken(DBDParser.DBD, 0); }
 		public Dbd_paramsContext dbd_params() {
 			return getRuleContext(Dbd_paramsContext.class,0);
 		}
@@ -281,11 +261,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_dbd; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterDbd(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterDbd(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitDbd(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitDbd(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitDbd(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -296,7 +281,7 @@ public class DBDParser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(230);
-			match(T__0);
+			match(DBD);
 			setState(231);
 			dbd_params();
 			}
@@ -316,6 +301,7 @@ public class DBDParser extends Parser {
 		public Dbd_paramContext dbd_param() {
 			return getRuleContext(Dbd_paramContext.class,0);
 		}
+		public TerminalNode COM() { return getToken(DBDParser.COM, 0); }
 		public Dbd_paramsContext dbd_params() {
 			return getRuleContext(Dbd_paramsContext.class,0);
 		}
@@ -325,11 +311,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_dbd_params; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterDbd_params(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterDbd_params(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitDbd_params(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitDbd_params(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitDbd_params(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -346,7 +337,7 @@ public class DBDParser extends Parser {
 				setState(233);
 				dbd_param();
 				setState(234);
-				match(T__1);
+				match(COM);
 				setState(235);
 				dbd_params();
 				}
@@ -408,11 +399,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_dbd_param; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterDbd_param(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterDbd_param(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitDbd_param(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitDbd_param(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitDbd_param(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -423,70 +419,70 @@ public class DBDParser extends Parser {
 			setState(250);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
-			case T__2:
+			case NAME:
 				enterOuterAlt(_localctx, 1);
 				{
 				setState(240);
 				dbd_name();
 				}
 				break;
-			case T__3:
+			case ACCESS:
 				enterOuterAlt(_localctx, 2);
 				{
 				setState(241);
 				dbd_access();
 				}
 				break;
-			case T__6:
+			case RMNAME:
 				enterOuterAlt(_localctx, 3);
 				{
 				setState(242);
 				dbd_rmname();
 				}
 				break;
-			case T__7:
+			case DBVER:
 				enterOuterAlt(_localctx, 4);
 				{
 				setState(243);
 				dbd_dbver();
 				}
 				break;
-			case T__8:
+			case PASSWD:
 				enterOuterAlt(_localctx, 5);
 				{
 				setState(244);
 				dbd_passwd();
 				}
 				break;
-			case T__9:
+			case EXIT:
 				enterOuterAlt(_localctx, 6);
 				{
 				setState(245);
 				dbd_exit();
 				}
 				break;
-			case T__10:
+			case VERSION:
 				enterOuterAlt(_localctx, 7);
 				{
 				setState(246);
 				dbd_version();
 				}
 				break;
-			case T__11:
+			case DATXEXIT:
 				enterOuterAlt(_localctx, 8);
 				{
 				setState(247);
 				dbd_datxexit();
 				}
 				break;
-			case T__12:
+			case ENCODING:
 				enterOuterAlt(_localctx, 9);
 				{
 				setState(248);
 				dbd_encoding();
 				}
 				break;
-			case T__13:
+			case REMARKS:
 				enterOuterAlt(_localctx, 10);
 				{
 				setState(249);
@@ -509,6 +505,8 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Dbd_nameContext extends ParserRuleContext {
+		public TerminalNode NAME() { return getToken(DBDParser.NAME, 0); }
+		public TerminalNode EQUAL() { return getToken(DBDParser.EQUAL, 0); }
 		public TerminalNode String() { return getToken(DBDParser.String, 0); }
 		public Dbd_nameContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -516,11 +514,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_dbd_name; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterDbd_name(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterDbd_name(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitDbd_name(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitDbd_name(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitDbd_name(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -531,8 +534,10 @@ public class DBDParser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(252);
-			match(T__2);
+			match(NAME);
 			setState(253);
+			match(EQUAL);
+			setState(254);
 			match(String);
 			}
 		}
@@ -548,6 +553,8 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Dbd_accessContext extends ParserRuleContext {
+		public TerminalNode ACCESS() { return getToken(DBDParser.ACCESS, 0); }
+		public TerminalNode EQUAL() { return getToken(DBDParser.EQUAL, 0); }
 		public Dbd_access_valueContext dbd_access_value() {
 			return getRuleContext(Dbd_access_valueContext.class,0);
 		}
@@ -557,11 +564,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_dbd_access; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterDbd_access(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterDbd_access(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitDbd_access(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitDbd_access(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitDbd_access(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -571,9 +583,11 @@ public class DBDParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(255);
-			match(T__3);
 			setState(256);
+			match(ACCESS);
+			setState(257);
+			match(EQUAL);
+			setState(258);
 			dbd_access_value();
 			}
 		}
@@ -589,23 +603,31 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Dbd_access_valueContext extends ParserRuleContext {
+		public TerminalNode LPAREN() { return getToken(DBDParser.LPAREN, 0); }
 		public Access_methodContext access_method() {
 			return getRuleContext(Access_methodContext.class,0);
 		}
+		public TerminalNode COM() { return getToken(DBDParser.COM, 0); }
 		public Operating_methodContext operating_method() {
 			return getRuleContext(Operating_methodContext.class,0);
 		}
+		public TerminalNode RPAREN() { return getToken(DBDParser.RPAREN, 0); }
 		public Dbd_access_valueContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_dbd_access_value; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterDbd_access_value(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterDbd_access_value(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitDbd_access_value(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitDbd_access_value(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitDbd_access_value(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -613,41 +635,28 @@ public class DBDParser extends Parser {
 		Dbd_access_valueContext _localctx = new Dbd_access_valueContext(_ctx, getState());
 		enterRule(_localctx, 12, RULE_dbd_access_value);
 		try {
-			setState(265);
+			setState(267);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
-			case T__4:
+			case LPAREN:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(258);
-				match(T__4);
-				setState(259);
-				access_method();
 				setState(260);
-				match(T__1);
+				match(LPAREN);
 				setState(261);
-				operating_method();
+				access_method();
 				setState(262);
-				match(T__5);
+				match(COM);
+				setState(263);
+				operating_method();
+				setState(264);
+				match(RPAREN);
 				}
 				break;
-			case T__14:
-			case T__15:
-			case T__16:
-			case T__17:
-			case T__18:
-			case T__19:
-			case T__20:
-			case T__21:
-			case T__22:
-			case T__23:
-			case T__24:
-			case T__25:
-			case T__26:
-			case T__27:
+			case String:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(264);
+				setState(266);
 				access_method();
 				}
 				break;
@@ -667,6 +676,8 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Dbd_rmnameContext extends ParserRuleContext {
+		public TerminalNode RMNAME() { return getToken(DBDParser.RMNAME, 0); }
+		public TerminalNode EQUAL() { return getToken(DBDParser.EQUAL, 0); }
 		public Dbd_rmname_valueContext dbd_rmname_value() {
 			return getRuleContext(Dbd_rmname_valueContext.class,0);
 		}
@@ -676,11 +687,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_dbd_rmname; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterDbd_rmname(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterDbd_rmname(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitDbd_rmname(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitDbd_rmname(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitDbd_rmname(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -690,9 +706,11 @@ public class DBDParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(267);
-			match(T__6);
-			setState(268);
+			setState(269);
+			match(RMNAME);
+			setState(270);
+			match(EQUAL);
+			setState(271);
 			dbd_rmname_value();
 			}
 		}
@@ -708,21 +726,32 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Dbd_rmname_valueContext extends ParserRuleContext {
+		public TerminalNode LPAREN() { return getToken(DBDParser.LPAREN, 0); }
 		public List<TerminalNode> String() { return getTokens(DBDParser.String); }
 		public TerminalNode String(int i) {
 			return getToken(DBDParser.String, i);
 		}
+		public List<TerminalNode> COM() { return getTokens(DBDParser.COM); }
+		public TerminalNode COM(int i) {
+			return getToken(DBDParser.COM, i);
+		}
+		public TerminalNode RPAREN() { return getToken(DBDParser.RPAREN, 0); }
 		public Dbd_rmname_valueContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_dbd_rmname_value; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterDbd_rmname_value(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterDbd_rmname_value(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitDbd_rmname_value(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitDbd_rmname_value(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitDbd_rmname_value(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -730,70 +759,70 @@ public class DBDParser extends Parser {
 		Dbd_rmname_valueContext _localctx = new Dbd_rmname_valueContext(_ctx, getState());
 		enterRule(_localctx, 16, RULE_dbd_rmname_value);
 		try {
-			setState(292);
+			setState(295);
 			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,4,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(270);
-				match(T__4);
-				setState(271);
-				match(String);
-				setState(272);
-				match(T__1);
 				setState(273);
-				match(String);
+				match(LPAREN);
 				setState(274);
-				match(T__1);
+				match(String);
 				setState(275);
-				match(String);
+				match(COM);
 				setState(276);
-				match(T__1);
-				setState(277);
 				match(String);
+				setState(277);
+				match(COM);
 				setState(278);
-				match(T__5);
+				match(String);
+				setState(279);
+				match(COM);
+				setState(280);
+				match(String);
+				setState(281);
+				match(RPAREN);
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(279);
-				match(T__4);
-				setState(280);
-				match(String);
-				setState(281);
-				match(T__1);
 				setState(282);
-				match(String);
+				match(LPAREN);
 				setState(283);
-				match(T__1);
-				setState(284);
 				match(String);
+				setState(284);
+				match(COM);
 				setState(285);
-				match(T__5);
+				match(String);
+				setState(286);
+				match(COM);
+				setState(287);
+				match(String);
+				setState(288);
+				match(RPAREN);
 				}
 				break;
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(286);
-				match(T__4);
-				setState(287);
-				match(String);
-				setState(288);
-				match(T__1);
 				setState(289);
-				match(String);
+				match(LPAREN);
 				setState(290);
-				match(T__5);
+				match(String);
+				setState(291);
+				match(COM);
+				setState(292);
+				match(String);
+				setState(293);
+				match(RPAREN);
 				}
 				break;
 			case 4:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(291);
+				setState(294);
 				match(String);
 				}
 				break;
@@ -811,6 +840,8 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Dbd_dbverContext extends ParserRuleContext {
+		public TerminalNode DBVER() { return getToken(DBDParser.DBVER, 0); }
+		public TerminalNode EQUAL() { return getToken(DBDParser.EQUAL, 0); }
 		public TerminalNode Number() { return getToken(DBDParser.Number, 0); }
 		public Dbd_dbverContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -818,11 +849,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_dbd_dbver; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterDbd_dbver(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterDbd_dbver(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitDbd_dbver(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitDbd_dbver(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitDbd_dbver(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -832,9 +868,11 @@ public class DBDParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(294);
-			match(T__7);
-			setState(295);
+			setState(297);
+			match(DBVER);
+			setState(298);
+			match(EQUAL);
+			setState(299);
 			match(Number);
 			}
 		}
@@ -850,6 +888,8 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Dbd_passwdContext extends ParserRuleContext {
+		public TerminalNode PASSWD() { return getToken(DBDParser.PASSWD, 0); }
+		public TerminalNode EQUAL() { return getToken(DBDParser.EQUAL, 0); }
 		public Bool_stringContext bool_string() {
 			return getRuleContext(Bool_stringContext.class,0);
 		}
@@ -859,11 +899,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_dbd_passwd; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterDbd_passwd(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterDbd_passwd(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitDbd_passwd(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitDbd_passwd(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitDbd_passwd(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -873,9 +918,11 @@ public class DBDParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(297);
-			match(T__8);
-			setState(298);
+			setState(301);
+			match(PASSWD);
+			setState(302);
+			match(EQUAL);
+			setState(303);
 			bool_string();
 			}
 		}
@@ -891,17 +938,27 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Dbd_exitContext extends ParserRuleContext {
+		public TerminalNode EXIT() { return getToken(DBDParser.EXIT, 0); }
+		public TerminalNode EQUAL() { return getToken(DBDParser.EQUAL, 0); }
+		public TerminalNode LPAREN() { return getToken(DBDParser.LPAREN, 0); }
+		public TerminalNode NONE() { return getToken(DBDParser.NONE, 0); }
+		public TerminalNode RPAREN() { return getToken(DBDParser.RPAREN, 0); }
 		public Dbd_exitContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_dbd_exit; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterDbd_exit(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterDbd_exit(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitDbd_exit(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitDbd_exit(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitDbd_exit(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -911,8 +968,16 @@ public class DBDParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(300);
-			match(T__9);
+			setState(305);
+			match(EXIT);
+			setState(306);
+			match(EQUAL);
+			setState(307);
+			match(LPAREN);
+			setState(308);
+			match(NONE);
+			setState(309);
+			match(RPAREN);
 			}
 		}
 		catch (RecognitionException re) {
@@ -927,6 +992,8 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Dbd_versionContext extends ParserRuleContext {
+		public TerminalNode VERSION() { return getToken(DBDParser.VERSION, 0); }
+		public TerminalNode EQUAL() { return getToken(DBDParser.EQUAL, 0); }
 		public TerminalNode String() { return getToken(DBDParser.String, 0); }
 		public Dbd_versionContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -934,11 +1001,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_dbd_version; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterDbd_version(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterDbd_version(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitDbd_version(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitDbd_version(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitDbd_version(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -948,9 +1020,11 @@ public class DBDParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(302);
-			match(T__10);
-			setState(303);
+			setState(311);
+			match(VERSION);
+			setState(312);
+			match(EQUAL);
+			setState(313);
 			match(String);
 			}
 		}
@@ -966,6 +1040,8 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Dbd_datxexitContext extends ParserRuleContext {
+		public TerminalNode DATXEXIT() { return getToken(DBDParser.DATXEXIT, 0); }
+		public TerminalNode EQUAL() { return getToken(DBDParser.EQUAL, 0); }
 		public Bool_stringContext bool_string() {
 			return getRuleContext(Bool_stringContext.class,0);
 		}
@@ -975,11 +1051,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_dbd_datxexit; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterDbd_datxexit(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterDbd_datxexit(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitDbd_datxexit(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitDbd_datxexit(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitDbd_datxexit(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -989,9 +1070,11 @@ public class DBDParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(305);
-			match(T__11);
-			setState(306);
+			setState(315);
+			match(DATXEXIT);
+			setState(316);
+			match(EQUAL);
+			setState(317);
 			bool_string();
 			}
 		}
@@ -1007,6 +1090,8 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Dbd_encodingContext extends ParserRuleContext {
+		public TerminalNode ENCODING() { return getToken(DBDParser.ENCODING, 0); }
+		public TerminalNode EQUAL() { return getToken(DBDParser.EQUAL, 0); }
 		public TerminalNode String() { return getToken(DBDParser.String, 0); }
 		public Dbd_encodingContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -1014,11 +1099,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_dbd_encoding; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterDbd_encoding(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterDbd_encoding(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitDbd_encoding(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitDbd_encoding(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitDbd_encoding(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1028,9 +1118,11 @@ public class DBDParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(308);
-			match(T__12);
-			setState(309);
+			setState(319);
+			match(ENCODING);
+			setState(320);
+			match(EQUAL);
+			setState(321);
 			match(String);
 			}
 		}
@@ -1046,6 +1138,8 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Dbd_remarksContext extends ParserRuleContext {
+		public TerminalNode REMARKS() { return getToken(DBDParser.REMARKS, 0); }
+		public TerminalNode EQUAL() { return getToken(DBDParser.EQUAL, 0); }
 		public TerminalNode String() { return getToken(DBDParser.String, 0); }
 		public Dbd_remarksContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -1053,11 +1147,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_dbd_remarks; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterDbd_remarks(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterDbd_remarks(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitDbd_remarks(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitDbd_remarks(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitDbd_remarks(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1067,9 +1166,11 @@ public class DBDParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(311);
-			match(T__13);
-			setState(312);
+			setState(323);
+			match(REMARKS);
+			setState(324);
+			match(EQUAL);
+			setState(325);
 			match(String);
 			}
 		}
@@ -1085,37 +1186,34 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Access_methodContext extends ParserRuleContext {
+		public TerminalNode String() { return getToken(DBDParser.String, 0); }
 		public Access_methodContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_access_method; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterAccess_method(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterAccess_method(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitAccess_method(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitAccess_method(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitAccess_method(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
 	public final Access_methodContext access_method() throws RecognitionException {
 		Access_methodContext _localctx = new Access_methodContext(_ctx, getState());
 		enterRule(_localctx, 32, RULE_access_method);
-		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(314);
-			_la = _input.LA(1);
-			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__14) | (1L << T__15) | (1L << T__16) | (1L << T__17) | (1L << T__18) | (1L << T__19) | (1L << T__20) | (1L << T__21) | (1L << T__22) | (1L << T__23) | (1L << T__24) | (1L << T__25) | (1L << T__26) | (1L << T__27))) != 0)) ) {
-			_errHandler.recoverInline(this);
-			}
-			else {
-				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
-				_errHandler.reportMatch(this);
-				consume();
-			}
+			setState(327);
+			match(String);
 			}
 		}
 		catch (RecognitionException re) {
@@ -1130,37 +1228,34 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Operating_methodContext extends ParserRuleContext {
+		public TerminalNode String() { return getToken(DBDParser.String, 0); }
 		public Operating_methodContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_operating_method; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterOperating_method(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterOperating_method(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitOperating_method(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitOperating_method(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitOperating_method(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
 	public final Operating_methodContext operating_method() throws RecognitionException {
 		Operating_methodContext _localctx = new Operating_methodContext(_ctx, getState());
 		enterRule(_localctx, 34, RULE_operating_method);
-		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(316);
-			_la = _input.LA(1);
-			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__28) | (1L << T__29) | (1L << T__30))) != 0)) ) {
-			_errHandler.recoverInline(this);
-			}
-			else {
-				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
-				_errHandler.reportMatch(this);
-				consume();
-			}
+			setState(329);
+			match(String);
 			}
 		}
 		catch (RecognitionException re) {
@@ -1187,11 +1282,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_dataset; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterDataset(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterDataset(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitDataset(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitDataset(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitDataset(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1199,20 +1299,20 @@ public class DBDParser extends Parser {
 		DatasetContext _localctx = new DatasetContext(_ctx, getState());
 		enterRule(_localctx, 36, RULE_dataset);
 		try {
-			setState(320);
+			setState(333);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
-			case T__31:
+			case DATASET:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(318);
+				setState(331);
 				dataset_without_label();
 				}
 				break;
 			case String:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(319);
+				setState(332);
 				dataset_with_label();
 				}
 				break;
@@ -1233,6 +1333,7 @@ public class DBDParser extends Parser {
 
 	public static class Dataset_with_labelContext extends ParserRuleContext {
 		public TerminalNode String() { return getToken(DBDParser.String, 0); }
+		public TerminalNode DATASET() { return getToken(DBDParser.DATASET, 0); }
 		public Dataset_paramsContext dataset_params() {
 			return getRuleContext(Dataset_paramsContext.class,0);
 		}
@@ -1242,11 +1343,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_dataset_with_label; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterDataset_with_label(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterDataset_with_label(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitDataset_with_label(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitDataset_with_label(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitDataset_with_label(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1256,11 +1362,11 @@ public class DBDParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(322);
+			setState(335);
 			match(String);
-			setState(323);
-			match(T__31);
-			setState(324);
+			setState(336);
+			match(DATASET);
+			setState(337);
 			dataset_params();
 			}
 		}
@@ -1276,6 +1382,7 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Dataset_without_labelContext extends ParserRuleContext {
+		public TerminalNode DATASET() { return getToken(DBDParser.DATASET, 0); }
 		public Dataset_paramsContext dataset_params() {
 			return getRuleContext(Dataset_paramsContext.class,0);
 		}
@@ -1285,11 +1392,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_dataset_without_label; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterDataset_without_label(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterDataset_without_label(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitDataset_without_label(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitDataset_without_label(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitDataset_without_label(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1299,9 +1411,9 @@ public class DBDParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(326);
-			match(T__31);
-			setState(327);
+			setState(339);
+			match(DATASET);
+			setState(340);
 			dataset_params();
 			}
 		}
@@ -1320,6 +1432,7 @@ public class DBDParser extends Parser {
 		public Dataset_paramContext dataset_param() {
 			return getRuleContext(Dataset_paramContext.class,0);
 		}
+		public TerminalNode COM() { return getToken(DBDParser.COM, 0); }
 		public Dataset_paramsContext dataset_params() {
 			return getRuleContext(Dataset_paramsContext.class,0);
 		}
@@ -1329,11 +1442,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_dataset_params; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterDataset_params(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterDataset_params(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitDataset_params(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitDataset_params(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitDataset_params(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1341,24 +1459,24 @@ public class DBDParser extends Parser {
 		Dataset_paramsContext _localctx = new Dataset_paramsContext(_ctx, getState());
 		enterRule(_localctx, 42, RULE_dataset_params);
 		try {
-			setState(334);
+			setState(347);
 			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,6,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(329);
+				setState(342);
 				dataset_param();
-				setState(330);
-				match(T__1);
-				setState(331);
+				setState(343);
+				match(COM);
+				setState(344);
 				dataset_params();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(333);
+				setState(346);
 				dataset_param();
 				}
 				break;
@@ -1406,11 +1524,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_dataset_param; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterDataset_param(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterDataset_param(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitDataset_param(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitDataset_param(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitDataset_param(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1418,62 +1541,62 @@ public class DBDParser extends Parser {
 		Dataset_paramContext _localctx = new Dataset_paramContext(_ctx, getState());
 		enterRule(_localctx, 44, RULE_dataset_param);
 		try {
-			setState(344);
+			setState(357);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
-			case T__32:
+			case DD1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(336);
+				setState(349);
 				dataset_dd1();
 				}
 				break;
-			case T__33:
+			case SIZE:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(337);
+				setState(350);
 				dataset_size();
 				}
 				break;
-			case T__34:
+			case BLOCK:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(338);
+				setState(351);
 				dataset_block();
 				}
 				break;
-			case T__35:
+			case DEVICE:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(339);
+				setState(352);
 				dataset_device();
 				}
 				break;
-			case T__36:
+			case SCAN:
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(340);
+				setState(353);
 				dataset_scan();
 				}
 				break;
-			case T__37:
+			case FRSPC:
 				enterOuterAlt(_localctx, 6);
 				{
-				setState(341);
+				setState(354);
 				dataset_frspc();
 				}
 				break;
-			case T__38:
+			case SEARCHA:
 				enterOuterAlt(_localctx, 7);
 				{
-				setState(342);
+				setState(355);
 				dataset_searcha();
 				}
 				break;
-			case T__13:
+			case REMARKS:
 				enterOuterAlt(_localctx, 8);
 				{
-				setState(343);
+				setState(356);
 				dataset_remarks();
 				}
 				break;
@@ -1493,6 +1616,8 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Dataset_dd1Context extends ParserRuleContext {
+		public TerminalNode DD1() { return getToken(DBDParser.DD1, 0); }
+		public TerminalNode EQUAL() { return getToken(DBDParser.EQUAL, 0); }
 		public TerminalNode String() { return getToken(DBDParser.String, 0); }
 		public Dataset_dd1Context(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -1500,11 +1625,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_dataset_dd1; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterDataset_dd1(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterDataset_dd1(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitDataset_dd1(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitDataset_dd1(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitDataset_dd1(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1514,9 +1644,11 @@ public class DBDParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(346);
-			match(T__32);
-			setState(347);
+			setState(359);
+			match(DD1);
+			setState(360);
+			match(EQUAL);
+			setState(361);
 			match(String);
 			}
 		}
@@ -1532,6 +1664,8 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Dataset_sizeContext extends ParserRuleContext {
+		public TerminalNode SIZE() { return getToken(DBDParser.SIZE, 0); }
+		public TerminalNode EQUAL() { return getToken(DBDParser.EQUAL, 0); }
 		public TerminalNode String() { return getToken(DBDParser.String, 0); }
 		public Dataset_sizeContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -1539,11 +1673,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_dataset_size; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterDataset_size(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterDataset_size(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitDataset_size(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitDataset_size(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitDataset_size(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1553,9 +1692,11 @@ public class DBDParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(349);
-			match(T__33);
-			setState(350);
+			setState(363);
+			match(SIZE);
+			setState(364);
+			match(EQUAL);
+			setState(365);
 			match(String);
 			}
 		}
@@ -1571,6 +1712,8 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Dataset_blockContext extends ParserRuleContext {
+		public TerminalNode BLOCK() { return getToken(DBDParser.BLOCK, 0); }
+		public TerminalNode EQUAL() { return getToken(DBDParser.EQUAL, 0); }
 		public TerminalNode String() { return getToken(DBDParser.String, 0); }
 		public Dataset_blockContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -1578,11 +1721,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_dataset_block; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterDataset_block(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterDataset_block(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitDataset_block(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitDataset_block(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitDataset_block(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1592,9 +1740,11 @@ public class DBDParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(352);
-			match(T__34);
-			setState(353);
+			setState(367);
+			match(BLOCK);
+			setState(368);
+			match(EQUAL);
+			setState(369);
 			match(String);
 			}
 		}
@@ -1610,6 +1760,8 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Dataset_deviceContext extends ParserRuleContext {
+		public TerminalNode DEVICE() { return getToken(DBDParser.DEVICE, 0); }
+		public TerminalNode EQUAL() { return getToken(DBDParser.EQUAL, 0); }
 		public TerminalNode String() { return getToken(DBDParser.String, 0); }
 		public Dataset_deviceContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -1617,11 +1769,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_dataset_device; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterDataset_device(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterDataset_device(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitDataset_device(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitDataset_device(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitDataset_device(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1631,9 +1788,11 @@ public class DBDParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(355);
-			match(T__35);
-			setState(356);
+			setState(371);
+			match(DEVICE);
+			setState(372);
+			match(EQUAL);
+			setState(373);
 			match(String);
 			}
 		}
@@ -1649,6 +1808,8 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Dataset_scanContext extends ParserRuleContext {
+		public TerminalNode SCAN() { return getToken(DBDParser.SCAN, 0); }
+		public TerminalNode EQUAL() { return getToken(DBDParser.EQUAL, 0); }
 		public TerminalNode String() { return getToken(DBDParser.String, 0); }
 		public Dataset_scanContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -1656,11 +1817,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_dataset_scan; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterDataset_scan(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterDataset_scan(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitDataset_scan(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitDataset_scan(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitDataset_scan(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1670,9 +1836,11 @@ public class DBDParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(358);
-			match(T__36);
-			setState(359);
+			setState(375);
+			match(SCAN);
+			setState(376);
+			match(EQUAL);
+			setState(377);
 			match(String);
 			}
 		}
@@ -1688,18 +1856,27 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Dataset_frspcContext extends ParserRuleContext {
+		public TerminalNode FRSPC() { return getToken(DBDParser.FRSPC, 0); }
+		public TerminalNode EQUAL() { return getToken(DBDParser.EQUAL, 0); }
+		public TerminalNode LPAREN() { return getToken(DBDParser.LPAREN, 0); }
 		public TerminalNode String() { return getToken(DBDParser.String, 0); }
+		public TerminalNode RPAREN() { return getToken(DBDParser.RPAREN, 0); }
 		public Dataset_frspcContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_dataset_frspc; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterDataset_frspc(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterDataset_frspc(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitDataset_frspc(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitDataset_frspc(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitDataset_frspc(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1709,12 +1886,16 @@ public class DBDParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(361);
-			match(T__37);
-			setState(362);
+			setState(379);
+			match(FRSPC);
+			setState(380);
+			match(EQUAL);
+			setState(381);
+			match(LPAREN);
+			setState(382);
 			match(String);
-			setState(363);
-			match(T__5);
+			setState(383);
+			match(RPAREN);
 			}
 		}
 		catch (RecognitionException re) {
@@ -1729,6 +1910,8 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Dataset_searchaContext extends ParserRuleContext {
+		public TerminalNode SEARCHA() { return getToken(DBDParser.SEARCHA, 0); }
+		public TerminalNode EQUAL() { return getToken(DBDParser.EQUAL, 0); }
 		public TerminalNode Number() { return getToken(DBDParser.Number, 0); }
 		public Dataset_searchaContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -1736,11 +1919,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_dataset_searcha; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterDataset_searcha(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterDataset_searcha(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitDataset_searcha(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitDataset_searcha(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitDataset_searcha(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1750,9 +1938,11 @@ public class DBDParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(365);
-			match(T__38);
-			setState(366);
+			setState(385);
+			match(SEARCHA);
+			setState(386);
+			match(EQUAL);
+			setState(387);
 			match(Number);
 			}
 		}
@@ -1768,6 +1958,8 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Dataset_remarksContext extends ParserRuleContext {
+		public TerminalNode REMARKS() { return getToken(DBDParser.REMARKS, 0); }
+		public TerminalNode EQUAL() { return getToken(DBDParser.EQUAL, 0); }
 		public TerminalNode String() { return getToken(DBDParser.String, 0); }
 		public Dataset_remarksContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -1775,11 +1967,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_dataset_remarks; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterDataset_remarks(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterDataset_remarks(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitDataset_remarks(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitDataset_remarks(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitDataset_remarks(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1789,9 +1986,11 @@ public class DBDParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(368);
-			match(T__13);
-			setState(369);
+			setState(389);
+			match(REMARKS);
+			setState(390);
+			match(EQUAL);
+			setState(391);
 			match(String);
 			}
 		}
@@ -1828,11 +2027,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_segment; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterSegment(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterSegment(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitSegment(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitSegment(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitSegment(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1843,25 +2047,25 @@ public class DBDParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(371);
+			setState(393);
 			segment_definition();
-			setState(376);
+			setState(398);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while (_la==T__78 || _la==T__117) {
+			while (_la==FIELD || _la==LCHILD) {
 				{
-				setState(374);
+				setState(396);
 				_errHandler.sync(this);
 				switch (_input.LA(1)) {
-				case T__78:
+				case FIELD:
 					{
-					setState(372);
+					setState(394);
 					field();
 					}
 					break;
-				case T__117:
+				case LCHILD:
 					{
-					setState(373);
+					setState(395);
 					lchild();
 					}
 					break;
@@ -1869,7 +2073,7 @@ public class DBDParser extends Parser {
 					throw new NoViableAltException(this);
 				}
 				}
-				setState(378);
+				setState(400);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
@@ -1887,6 +2091,7 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Segment_definitionContext extends ParserRuleContext {
+		public TerminalNode SEGM() { return getToken(DBDParser.SEGM, 0); }
 		public Segment_paramsContext segment_params() {
 			return getRuleContext(Segment_paramsContext.class,0);
 		}
@@ -1896,11 +2101,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_segment_definition; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterSegment_definition(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterSegment_definition(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitSegment_definition(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitSegment_definition(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitSegment_definition(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1910,9 +2120,9 @@ public class DBDParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(379);
-			match(T__39);
-			setState(380);
+			setState(401);
+			match(SEGM);
+			setState(402);
 			segment_params();
 			}
 		}
@@ -1931,6 +2141,7 @@ public class DBDParser extends Parser {
 		public Segment_paramContext segment_param() {
 			return getRuleContext(Segment_paramContext.class,0);
 		}
+		public TerminalNode COM() { return getToken(DBDParser.COM, 0); }
 		public Segment_paramsContext segment_params() {
 			return getRuleContext(Segment_paramsContext.class,0);
 		}
@@ -1940,11 +2151,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_segment_params; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterSegment_params(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterSegment_params(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitSegment_params(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitSegment_params(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitSegment_params(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1952,24 +2168,24 @@ public class DBDParser extends Parser {
 		Segment_paramsContext _localctx = new Segment_paramsContext(_ctx, getState());
 		enterRule(_localctx, 66, RULE_segment_params);
 		try {
-			setState(387);
+			setState(409);
 			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,10,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(382);
+				setState(404);
 				segment_param();
-				setState(383);
-				match(T__1);
-				setState(384);
+				setState(405);
+				match(COM);
+				setState(406);
 				segment_params();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(386);
+				setState(408);
 				segment_param();
 				}
 				break;
@@ -2029,11 +2245,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_segment_param; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterSegment_param(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterSegment_param(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitSegment_param(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitSegment_param(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitSegment_param(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -2041,91 +2262,90 @@ public class DBDParser extends Parser {
 		Segment_paramContext _localctx = new Segment_paramContext(_ctx, getState());
 		enterRule(_localctx, 68, RULE_segment_param);
 		try {
-			setState(401);
+			setState(423);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
-			case T__2:
+			case NAME:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(389);
+				setState(411);
 				segment_name();
 				}
 				break;
-			case T__40:
+			case EXTERNAL_NAME:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(390);
+				setState(412);
 				segment_external_name();
 				}
 				break;
-			case T__41:
+			case PARENT:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(391);
+				setState(413);
 				segment_parent();
 				}
 				break;
-			case T__46:
+			case SOURCE:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(392);
+				setState(414);
 				segment_source();
 				}
 				break;
-			case T__48:
+			case BYTES:
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(393);
+				setState(415);
 				segment_bytes();
 				}
 				break;
-			case T__49:
+			case FREQ:
 				enterOuterAlt(_localctx, 6);
 				{
-				setState(394);
+				setState(416);
 				segment_freq();
 				}
 				break;
-			case T__50:
-			case T__51:
+			case POINTER:
 				enterOuterAlt(_localctx, 7);
 				{
-				setState(395);
+				setState(417);
 				segment_ptr();
 				}
 				break;
-			case T__69:
+			case RULES:
 				enterOuterAlt(_localctx, 8);
 				{
-				setState(396);
+				setState(418);
 				segment_rules();
 				}
 				break;
-			case T__9:
+			case EXIT:
 				enterOuterAlt(_localctx, 9);
 				{
-				setState(397);
+				setState(419);
 				segment_exit();
 				}
 				break;
-			case T__77:
+			case COMPRTN:
 				enterOuterAlt(_localctx, 10);
 				{
-				setState(398);
+				setState(420);
 				segment_comprtn();
 				}
 				break;
-			case T__12:
+			case ENCODING:
 				enterOuterAlt(_localctx, 11);
 				{
-				setState(399);
+				setState(421);
 				segment_encoding();
 				}
 				break;
-			case T__13:
+			case REMARKS:
 				enterOuterAlt(_localctx, 12);
 				{
-				setState(400);
+				setState(422);
 				segment_remarks();
 				}
 				break;
@@ -2145,6 +2365,8 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Segment_nameContext extends ParserRuleContext {
+		public TerminalNode NAME() { return getToken(DBDParser.NAME, 0); }
+		public TerminalNode EQUAL() { return getToken(DBDParser.EQUAL, 0); }
 		public TerminalNode String() { return getToken(DBDParser.String, 0); }
 		public Segment_nameContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -2152,11 +2374,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_segment_name; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterSegment_name(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterSegment_name(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitSegment_name(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitSegment_name(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitSegment_name(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -2166,9 +2393,11 @@ public class DBDParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(403);
-			match(T__2);
-			setState(404);
+			setState(425);
+			match(NAME);
+			setState(426);
+			match(EQUAL);
+			setState(427);
 			match(String);
 			}
 		}
@@ -2184,6 +2413,8 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Segment_external_nameContext extends ParserRuleContext {
+		public TerminalNode EXTERNAL_NAME() { return getToken(DBDParser.EXTERNAL_NAME, 0); }
+		public TerminalNode EQUAL() { return getToken(DBDParser.EQUAL, 0); }
 		public TerminalNode String() { return getToken(DBDParser.String, 0); }
 		public Segment_external_nameContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -2191,11 +2422,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_segment_external_name; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterSegment_external_name(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterSegment_external_name(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitSegment_external_name(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitSegment_external_name(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitSegment_external_name(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -2205,9 +2441,11 @@ public class DBDParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(406);
-			match(T__40);
-			setState(407);
+			setState(429);
+			match(EXTERNAL_NAME);
+			setState(430);
+			match(EQUAL);
+			setState(431);
 			match(String);
 			}
 		}
@@ -2223,6 +2461,8 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Segment_parentContext extends ParserRuleContext {
+		public TerminalNode PARENT() { return getToken(DBDParser.PARENT, 0); }
+		public TerminalNode EQUAL() { return getToken(DBDParser.EQUAL, 0); }
 		public Segment_parent_valueContext segment_parent_value() {
 			return getRuleContext(Segment_parent_valueContext.class,0);
 		}
@@ -2232,11 +2472,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_segment_parent; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterSegment_parent(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterSegment_parent(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitSegment_parent(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitSegment_parent(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitSegment_parent(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -2246,9 +2491,11 @@ public class DBDParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(409);
-			match(T__41);
-			setState(410);
+			setState(433);
+			match(PARENT);
+			setState(434);
+			match(EQUAL);
+			setState(435);
 			segment_parent_value();
 			}
 		}
@@ -2264,12 +2511,15 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Segment_parent_valueContext extends ParserRuleContext {
+		public TerminalNode LPAREN() { return getToken(DBDParser.LPAREN, 0); }
 		public Segment_parent_value_1Context segment_parent_value_1() {
 			return getRuleContext(Segment_parent_value_1Context.class,0);
 		}
+		public TerminalNode COM() { return getToken(DBDParser.COM, 0); }
 		public Segment_parent_value_2Context segment_parent_value_2() {
 			return getRuleContext(Segment_parent_value_2Context.class,0);
 		}
+		public TerminalNode RPAREN() { return getToken(DBDParser.RPAREN, 0); }
 		public TerminalNode String() { return getToken(DBDParser.String, 0); }
 		public Segment_parent_valueContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -2277,11 +2527,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_segment_parent_value; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterSegment_parent_value(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterSegment_parent_value(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitSegment_parent_value(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitSegment_parent_value(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitSegment_parent_value(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -2289,39 +2544,39 @@ public class DBDParser extends Parser {
 		Segment_parent_valueContext _localctx = new Segment_parent_valueContext(_ctx, getState());
 		enterRule(_localctx, 76, RULE_segment_parent_value);
 		try {
-			setState(423);
+			setState(448);
 			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,12,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(412);
-				match(T__4);
-				setState(413);
+				setState(437);
+				match(LPAREN);
+				setState(438);
 				segment_parent_value_1();
-				setState(414);
-				match(T__1);
-				setState(415);
+				setState(439);
+				match(COM);
+				setState(440);
 				segment_parent_value_2();
-				setState(416);
-				match(T__5);
+				setState(441);
+				match(RPAREN);
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(418);
-				match(T__4);
-				setState(419);
+				setState(443);
+				match(LPAREN);
+				setState(444);
 				segment_parent_value_1();
-				setState(420);
-				match(T__5);
+				setState(445);
+				match(RPAREN);
 				}
 				break;
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(422);
+				setState(447);
 				match(String);
 				}
 				break;
@@ -2340,6 +2595,7 @@ public class DBDParser extends Parser {
 
 	public static class Segment_parent_value_1Context extends ParserRuleContext {
 		public TerminalNode String() { return getToken(DBDParser.String, 0); }
+		public TerminalNode COM() { return getToken(DBDParser.COM, 0); }
 		public Segment_parent_type_1Context segment_parent_type_1() {
 			return getRuleContext(Segment_parent_type_1Context.class,0);
 		}
@@ -2349,11 +2605,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_segment_parent_value_1; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterSegment_parent_value_1(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterSegment_parent_value_1(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitSegment_parent_value_1(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitSegment_parent_value_1(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitSegment_parent_value_1(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -2361,24 +2622,24 @@ public class DBDParser extends Parser {
 		Segment_parent_value_1Context _localctx = new Segment_parent_value_1Context(_ctx, getState());
 		enterRule(_localctx, 78, RULE_segment_parent_value_1);
 		try {
-			setState(429);
+			setState(454);
 			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,13,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(425);
+				setState(450);
 				match(String);
-				setState(426);
-				match(T__1);
-				setState(427);
+				setState(451);
+				match(COM);
+				setState(452);
 				segment_parent_type_1();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(428);
+				setState(453);
 				match(String);
 				}
 				break;
@@ -2396,37 +2657,34 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Segment_parent_type_1Context extends ParserRuleContext {
+		public TerminalNode String() { return getToken(DBDParser.String, 0); }
 		public Segment_parent_type_1Context(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_segment_parent_type_1; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterSegment_parent_type_1(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterSegment_parent_type_1(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitSegment_parent_type_1(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitSegment_parent_type_1(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitSegment_parent_type_1(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
 	public final Segment_parent_type_1Context segment_parent_type_1() throws RecognitionException {
 		Segment_parent_type_1Context _localctx = new Segment_parent_type_1Context(_ctx, getState());
 		enterRule(_localctx, 80, RULE_segment_parent_type_1);
-		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(431);
-			_la = _input.LA(1);
-			if ( !(_la==T__42 || _la==T__43) ) {
-			_errHandler.recoverInline(this);
-			}
-			else {
-				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
-				_errHandler.reportMatch(this);
-				consume();
-			}
+			setState(456);
+			match(String);
 			}
 		}
 		catch (RecognitionException re) {
@@ -2441,24 +2699,35 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Segment_parent_value_2Context extends ParserRuleContext {
+		public TerminalNode LPAREN() { return getToken(DBDParser.LPAREN, 0); }
 		public List<TerminalNode> String() { return getTokens(DBDParser.String); }
 		public TerminalNode String(int i) {
 			return getToken(DBDParser.String, i);
 		}
+		public List<TerminalNode> COM() { return getTokens(DBDParser.COM); }
+		public TerminalNode COM(int i) {
+			return getToken(DBDParser.COM, i);
+		}
 		public Segment_parent_type_2Context segment_parent_type_2() {
 			return getRuleContext(Segment_parent_type_2Context.class,0);
 		}
+		public TerminalNode RPAREN() { return getToken(DBDParser.RPAREN, 0); }
 		public Segment_parent_value_2Context(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_segment_parent_value_2; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterSegment_parent_value_2(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterSegment_parent_value_2(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitSegment_parent_value_2(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitSegment_parent_value_2(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitSegment_parent_value_2(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -2466,52 +2735,52 @@ public class DBDParser extends Parser {
 		Segment_parent_value_2Context _localctx = new Segment_parent_value_2Context(_ctx, getState());
 		enterRule(_localctx, 82, RULE_segment_parent_value_2);
 		try {
-			setState(450);
+			setState(475);
 			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,14,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(433);
-				match(T__4);
-				setState(434);
+				setState(458);
+				match(LPAREN);
+				setState(459);
 				match(String);
-				setState(435);
-				match(T__1);
-				setState(436);
+				setState(460);
+				match(COM);
+				setState(461);
 				segment_parent_type_2();
-				setState(437);
-				match(T__1);
-				setState(438);
+				setState(462);
+				match(COM);
+				setState(463);
 				match(String);
-				setState(439);
-				match(T__5);
+				setState(464);
+				match(RPAREN);
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(441);
-				match(T__4);
-				setState(442);
+				setState(466);
+				match(LPAREN);
+				setState(467);
 				match(String);
-				setState(443);
-				match(T__1);
-				setState(444);
+				setState(468);
+				match(COM);
+				setState(469);
 				segment_parent_type_2();
-				setState(445);
-				match(T__5);
+				setState(470);
+				match(RPAREN);
 				}
 				break;
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(447);
-				match(T__4);
-				setState(448);
+				setState(472);
+				match(LPAREN);
+				setState(473);
 				match(String);
-				setState(449);
-				match(T__5);
+				setState(474);
+				match(RPAREN);
 				}
 				break;
 			}
@@ -2528,37 +2797,34 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Segment_parent_type_2Context extends ParserRuleContext {
+		public TerminalNode String() { return getToken(DBDParser.String, 0); }
 		public Segment_parent_type_2Context(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_segment_parent_type_2; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterSegment_parent_type_2(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterSegment_parent_type_2(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitSegment_parent_type_2(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitSegment_parent_type_2(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitSegment_parent_type_2(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
 	public final Segment_parent_type_2Context segment_parent_type_2() throws RecognitionException {
 		Segment_parent_type_2Context _localctx = new Segment_parent_type_2Context(_ctx, getState());
 		enterRule(_localctx, 84, RULE_segment_parent_type_2);
-		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(452);
-			_la = _input.LA(1);
-			if ( !(_la==T__44 || _la==T__45) ) {
-			_errHandler.recoverInline(this);
-			}
-			else {
-				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
-				_errHandler.reportMatch(this);
-				consume();
-			}
+			setState(477);
+			match(String);
 			}
 		}
 		catch (RecognitionException re) {
@@ -2573,21 +2839,35 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Segment_sourceContext extends ParserRuleContext {
+		public TerminalNode SOURCE() { return getToken(DBDParser.SOURCE, 0); }
+		public TerminalNode EQUAL() { return getToken(DBDParser.EQUAL, 0); }
+		public TerminalNode LPAREN() { return getToken(DBDParser.LPAREN, 0); }
 		public List<TerminalNode> String() { return getTokens(DBDParser.String); }
 		public TerminalNode String(int i) {
 			return getToken(DBDParser.String, i);
 		}
+		public List<TerminalNode> COM() { return getTokens(DBDParser.COM); }
+		public TerminalNode COM(int i) {
+			return getToken(DBDParser.COM, i);
+		}
+		public TerminalNode DATA() { return getToken(DBDParser.DATA, 0); }
+		public TerminalNode RPAREN() { return getToken(DBDParser.RPAREN, 0); }
 		public Segment_sourceContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_segment_source; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterSegment_source(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterSegment_source(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitSegment_source(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitSegment_source(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitSegment_source(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -2597,20 +2877,24 @@ public class DBDParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(454);
-			match(T__46);
-			setState(455);
+			setState(479);
+			match(SOURCE);
+			setState(480);
+			match(EQUAL);
+			setState(481);
+			match(LPAREN);
+			setState(482);
 			match(String);
-			setState(456);
-			match(T__1);
-			setState(457);
-			match(T__47);
-			setState(458);
-			match(T__1);
-			setState(459);
+			setState(483);
+			match(COM);
+			setState(484);
+			match(DATA);
+			setState(485);
+			match(COM);
+			setState(486);
 			match(String);
-			setState(460);
-			match(T__5);
+			setState(487);
+			match(RPAREN);
 			}
 		}
 		catch (RecognitionException re) {
@@ -2625,6 +2909,8 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Segment_bytesContext extends ParserRuleContext {
+		public TerminalNode BYTES() { return getToken(DBDParser.BYTES, 0); }
+		public TerminalNode EQUAL() { return getToken(DBDParser.EQUAL, 0); }
 		public Segment_bytes_valueContext segment_bytes_value() {
 			return getRuleContext(Segment_bytes_valueContext.class,0);
 		}
@@ -2634,11 +2920,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_segment_bytes; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterSegment_bytes(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterSegment_bytes(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitSegment_bytes(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitSegment_bytes(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitSegment_bytes(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -2648,9 +2939,11 @@ public class DBDParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(462);
-			match(T__48);
-			setState(463);
+			setState(489);
+			match(BYTES);
+			setState(490);
+			match(EQUAL);
+			setState(491);
 			segment_bytes_value();
 			}
 		}
@@ -2666,21 +2959,29 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Segment_bytes_valueContext extends ParserRuleContext {
+		public TerminalNode LPAREN() { return getToken(DBDParser.LPAREN, 0); }
 		public List<TerminalNode> String() { return getTokens(DBDParser.String); }
 		public TerminalNode String(int i) {
 			return getToken(DBDParser.String, i);
 		}
+		public TerminalNode COM() { return getToken(DBDParser.COM, 0); }
+		public TerminalNode RPAREN() { return getToken(DBDParser.RPAREN, 0); }
 		public Segment_bytes_valueContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_segment_bytes_value; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterSegment_bytes_value(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterSegment_bytes_value(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitSegment_bytes_value(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitSegment_bytes_value(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitSegment_bytes_value(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -2688,28 +2989,28 @@ public class DBDParser extends Parser {
 		Segment_bytes_valueContext _localctx = new Segment_bytes_valueContext(_ctx, getState());
 		enterRule(_localctx, 90, RULE_segment_bytes_value);
 		try {
-			setState(471);
+			setState(499);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
-			case T__4:
+			case LPAREN:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(465);
-				match(T__4);
-				setState(466);
+				setState(493);
+				match(LPAREN);
+				setState(494);
 				match(String);
-				setState(467);
-				match(T__1);
-				setState(468);
+				setState(495);
+				match(COM);
+				setState(496);
 				match(String);
-				setState(469);
-				match(T__5);
+				setState(497);
+				match(RPAREN);
 				}
 				break;
 			case String:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(470);
+				setState(498);
 				match(String);
 				}
 				break;
@@ -2729,6 +3030,8 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Segment_freqContext extends ParserRuleContext {
+		public TerminalNode FREQ() { return getToken(DBDParser.FREQ, 0); }
+		public TerminalNode EQUAL() { return getToken(DBDParser.EQUAL, 0); }
 		public TerminalNode String() { return getToken(DBDParser.String, 0); }
 		public Segment_freqContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -2736,11 +3039,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_segment_freq; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterSegment_freq(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterSegment_freq(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitSegment_freq(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitSegment_freq(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitSegment_freq(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -2750,9 +3058,11 @@ public class DBDParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(473);
-			match(T__49);
-			setState(474);
+			setState(501);
+			match(FREQ);
+			setState(502);
+			match(EQUAL);
+			setState(503);
 			match(String);
 			}
 		}
@@ -2768,20 +3078,29 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Segment_ptrContext extends ParserRuleContext {
+		public TerminalNode POINTER() { return getToken(DBDParser.POINTER, 0); }
+		public TerminalNode EQUAL() { return getToken(DBDParser.EQUAL, 0); }
+		public TerminalNode LPAREN() { return getToken(DBDParser.LPAREN, 0); }
 		public Segment_ptr_valueContext segment_ptr_value() {
 			return getRuleContext(Segment_ptr_valueContext.class,0);
 		}
+		public TerminalNode RPAREN() { return getToken(DBDParser.RPAREN, 0); }
 		public Segment_ptrContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_segment_ptr; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterSegment_ptr(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterSegment_ptr(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitSegment_ptr(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitSegment_ptr(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitSegment_ptr(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -2789,33 +3108,18 @@ public class DBDParser extends Parser {
 		Segment_ptrContext _localctx = new Segment_ptrContext(_ctx, getState());
 		enterRule(_localctx, 94, RULE_segment_ptr);
 		try {
-			setState(484);
-			_errHandler.sync(this);
-			switch (_input.LA(1)) {
-			case T__50:
-				enterOuterAlt(_localctx, 1);
-				{
-				setState(476);
-				match(T__50);
-				setState(477);
-				segment_ptr_value();
-				setState(478);
-				match(T__5);
-				}
-				break;
-			case T__51:
-				enterOuterAlt(_localctx, 2);
-				{
-				setState(480);
-				match(T__51);
-				setState(481);
-				segment_ptr_value();
-				setState(482);
-				match(T__5);
-				}
-				break;
-			default:
-				throw new NoViableAltException(this);
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(505);
+			match(POINTER);
+			setState(506);
+			match(EQUAL);
+			setState(507);
+			match(LPAREN);
+			setState(508);
+			segment_ptr_value();
+			setState(509);
+			match(RPAREN);
 			}
 		}
 		catch (RecognitionException re) {
@@ -2833,8 +3137,16 @@ public class DBDParser extends Parser {
 		public Segment_ptr_type_1Context segment_ptr_type_1() {
 			return getRuleContext(Segment_ptr_type_1Context.class,0);
 		}
+		public List<TerminalNode> COM() { return getTokens(DBDParser.COM); }
+		public TerminalNode COM(int i) {
+			return getToken(DBDParser.COM, i);
+		}
 		public Segment_ptr_type_2Context segment_ptr_type_2() {
 			return getRuleContext(Segment_ptr_type_2Context.class,0);
+		}
+		public List<TerminalNode> String() { return getTokens(DBDParser.String); }
+		public TerminalNode String(int i) {
+			return getToken(DBDParser.String, i);
 		}
 		public Segment_ptr_valueContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -2842,11 +3154,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_segment_ptr_value; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterSegment_ptr_value(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterSegment_ptr_value(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitSegment_ptr_value(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitSegment_ptr_value(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitSegment_ptr_value(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -2857,47 +3174,53 @@ public class DBDParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(486);
+			setState(511);
 			segment_ptr_type_1();
-			setState(489);
+			setState(514);
 			_errHandler.sync(this);
-			_la = _input.LA(1);
-			if (_la==T__1) {
+			switch ( getInterpreter().adaptivePredict(_input,16,_ctx) ) {
+			case 1:
 				{
-				setState(487);
-				match(T__1);
-				setState(488);
+				setState(512);
+				match(COM);
+				setState(513);
 				segment_ptr_type_2();
 				}
+				break;
 			}
-
-			setState(492);
+			setState(518);
 			_errHandler.sync(this);
-			_la = _input.LA(1);
-			if (_la==T__52) {
+			switch ( getInterpreter().adaptivePredict(_input,17,_ctx) ) {
+			case 1:
 				{
-				setState(491);
-				match(T__52);
+				setState(516);
+				match(COM);
+				setState(517);
+				match(String);
 				}
+				break;
 			}
-
-			setState(495);
+			setState(522);
 			_errHandler.sync(this);
-			_la = _input.LA(1);
-			if (_la==T__53) {
+			switch ( getInterpreter().adaptivePredict(_input,18,_ctx) ) {
+			case 1:
 				{
-				setState(494);
-				match(T__53);
+				setState(520);
+				match(COM);
+				setState(521);
+				match(String);
 				}
+				break;
 			}
-
-			setState(498);
+			setState(526);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__54) {
+			if (_la==COM) {
 				{
-				setState(497);
-				match(T__54);
+				setState(524);
+				match(COM);
+				setState(525);
+				match(String);
 				}
 			}
 
@@ -2915,37 +3238,34 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Segment_ptr_type_1Context extends ParserRuleContext {
+		public TerminalNode String() { return getToken(DBDParser.String, 0); }
 		public Segment_ptr_type_1Context(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_segment_ptr_type_1; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterSegment_ptr_type_1(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterSegment_ptr_type_1(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitSegment_ptr_type_1(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitSegment_ptr_type_1(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitSegment_ptr_type_1(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
 	public final Segment_ptr_type_1Context segment_ptr_type_1() throws RecognitionException {
 		Segment_ptr_type_1Context _localctx = new Segment_ptr_type_1Context(_ctx, getState());
 		enterRule(_localctx, 98, RULE_segment_ptr_type_1);
-		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(500);
-			_la = _input.LA(1);
-			if ( !(((((_la - 56)) & ~0x3f) == 0 && ((1L << (_la - 56)) & ((1L << (T__55 - 56)) | (1L << (T__56 - 56)) | (1L << (T__57 - 56)) | (1L << (T__58 - 56)) | (1L << (T__59 - 56)) | (1L << (T__60 - 56)) | (1L << (T__61 - 56)) | (1L << (T__62 - 56)) | (1L << (T__63 - 56)) | (1L << (T__64 - 56)))) != 0)) ) {
-			_errHandler.recoverInline(this);
-			}
-			else {
-				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
-				_errHandler.reportMatch(this);
-				consume();
-			}
+			setState(528);
+			match(String);
 			}
 		}
 		catch (RecognitionException re) {
@@ -2960,37 +3280,34 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Segment_ptr_type_2Context extends ParserRuleContext {
+		public TerminalNode String() { return getToken(DBDParser.String, 0); }
 		public Segment_ptr_type_2Context(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_segment_ptr_type_2; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterSegment_ptr_type_2(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterSegment_ptr_type_2(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitSegment_ptr_type_2(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitSegment_ptr_type_2(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitSegment_ptr_type_2(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
 	public final Segment_ptr_type_2Context segment_ptr_type_2() throws RecognitionException {
 		Segment_ptr_type_2Context _localctx = new Segment_ptr_type_2Context(_ctx, getState());
 		enterRule(_localctx, 100, RULE_segment_ptr_type_2);
-		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(502);
-			_la = _input.LA(1);
-			if ( !(((((_la - 66)) & ~0x3f) == 0 && ((1L << (_la - 66)) & ((1L << (T__65 - 66)) | (1L << (T__66 - 66)) | (1L << (T__67 - 66)) | (1L << (T__68 - 66)))) != 0)) ) {
-			_errHandler.recoverInline(this);
-			}
-			else {
-				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
-				_errHandler.reportMatch(this);
-				consume();
-			}
+			setState(530);
+			match(String);
 			}
 		}
 		catch (RecognitionException re) {
@@ -3005,20 +3322,29 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Segment_rulesContext extends ParserRuleContext {
+		public TerminalNode RULES() { return getToken(DBDParser.RULES, 0); }
+		public TerminalNode EQUAL() { return getToken(DBDParser.EQUAL, 0); }
+		public TerminalNode LPAREN() { return getToken(DBDParser.LPAREN, 0); }
 		public Segment_rules_valueContext segment_rules_value() {
 			return getRuleContext(Segment_rules_valueContext.class,0);
 		}
+		public TerminalNode RPAREN() { return getToken(DBDParser.RPAREN, 0); }
 		public Segment_rulesContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_segment_rules; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterSegment_rules(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterSegment_rules(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitSegment_rules(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitSegment_rules(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitSegment_rules(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -3028,12 +3354,16 @@ public class DBDParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(504);
-			match(T__69);
-			setState(505);
+			setState(532);
+			match(RULES);
+			setState(533);
+			match(EQUAL);
+			setState(534);
+			match(LPAREN);
+			setState(535);
 			segment_rules_value();
-			setState(506);
-			match(T__5);
+			setState(536);
+			match(RPAREN);
 			}
 		}
 		catch (RecognitionException re) {
@@ -3057,6 +3387,7 @@ public class DBDParser extends Parser {
 		public Segment_rules_type_3Context segment_rules_type_3() {
 			return getRuleContext(Segment_rules_type_3Context.class,0);
 		}
+		public TerminalNode COM() { return getToken(DBDParser.COM, 0); }
 		public Segment_rules_type_4Context segment_rules_type_4() {
 			return getRuleContext(Segment_rules_type_4Context.class,0);
 		}
@@ -3066,11 +3397,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_segment_rules_value; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterSegment_rules_value(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterSegment_rules_value(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitSegment_rules_value(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitSegment_rules_value(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitSegment_rules_value(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -3080,15 +3416,15 @@ public class DBDParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(508);
+			setState(538);
 			segment_rules_type_1();
-			setState(509);
+			setState(539);
 			segment_rules_type_2();
-			setState(510);
+			setState(540);
 			segment_rules_type_3();
-			setState(511);
-			match(T__1);
-			setState(512);
+			setState(541);
+			match(COM);
+			setState(542);
 			segment_rules_type_4();
 			}
 		}
@@ -3104,37 +3440,34 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Segment_rules_type_1Context extends ParserRuleContext {
+		public TerminalNode String() { return getToken(DBDParser.String, 0); }
 		public Segment_rules_type_1Context(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_segment_rules_type_1; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterSegment_rules_type_1(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterSegment_rules_type_1(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitSegment_rules_type_1(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitSegment_rules_type_1(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitSegment_rules_type_1(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
 	public final Segment_rules_type_1Context segment_rules_type_1() throws RecognitionException {
 		Segment_rules_type_1Context _localctx = new Segment_rules_type_1Context(_ctx, getState());
 		enterRule(_localctx, 106, RULE_segment_rules_type_1);
-		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(514);
-			_la = _input.LA(1);
-			if ( !(((((_la - 71)) & ~0x3f) == 0 && ((1L << (_la - 71)) & ((1L << (T__70 - 71)) | (1L << (T__71 - 71)) | (1L << (T__72 - 71)))) != 0)) ) {
-			_errHandler.recoverInline(this);
-			}
-			else {
-				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
-				_errHandler.reportMatch(this);
-				consume();
-			}
+			setState(544);
+			match(String);
 			}
 		}
 		catch (RecognitionException re) {
@@ -3149,37 +3482,34 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Segment_rules_type_2Context extends ParserRuleContext {
+		public TerminalNode String() { return getToken(DBDParser.String, 0); }
 		public Segment_rules_type_2Context(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_segment_rules_type_2; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterSegment_rules_type_2(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterSegment_rules_type_2(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitSegment_rules_type_2(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitSegment_rules_type_2(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitSegment_rules_type_2(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
 	public final Segment_rules_type_2Context segment_rules_type_2() throws RecognitionException {
 		Segment_rules_type_2Context _localctx = new Segment_rules_type_2Context(_ctx, getState());
 		enterRule(_localctx, 108, RULE_segment_rules_type_2);
-		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(516);
-			_la = _input.LA(1);
-			if ( !(((((_la - 71)) & ~0x3f) == 0 && ((1L << (_la - 71)) & ((1L << (T__70 - 71)) | (1L << (T__71 - 71)) | (1L << (T__72 - 71)) | (1L << (T__73 - 71)))) != 0)) ) {
-			_errHandler.recoverInline(this);
-			}
-			else {
-				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
-				_errHandler.reportMatch(this);
-				consume();
-			}
+			setState(546);
+			match(String);
 			}
 		}
 		catch (RecognitionException re) {
@@ -3194,37 +3524,34 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Segment_rules_type_3Context extends ParserRuleContext {
+		public TerminalNode String() { return getToken(DBDParser.String, 0); }
 		public Segment_rules_type_3Context(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_segment_rules_type_3; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterSegment_rules_type_3(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterSegment_rules_type_3(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitSegment_rules_type_3(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitSegment_rules_type_3(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitSegment_rules_type_3(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
 	public final Segment_rules_type_3Context segment_rules_type_3() throws RecognitionException {
 		Segment_rules_type_3Context _localctx = new Segment_rules_type_3Context(_ctx, getState());
 		enterRule(_localctx, 110, RULE_segment_rules_type_3);
-		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(518);
-			_la = _input.LA(1);
-			if ( !(((((_la - 71)) & ~0x3f) == 0 && ((1L << (_la - 71)) & ((1L << (T__70 - 71)) | (1L << (T__71 - 71)) | (1L << (T__72 - 71)))) != 0)) ) {
-			_errHandler.recoverInline(this);
-			}
-			else {
-				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
-				_errHandler.reportMatch(this);
-				consume();
-			}
+			setState(548);
+			match(String);
 			}
 		}
 		catch (RecognitionException re) {
@@ -3239,37 +3566,34 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Segment_rules_type_4Context extends ParserRuleContext {
+		public TerminalNode String() { return getToken(DBDParser.String, 0); }
 		public Segment_rules_type_4Context(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_segment_rules_type_4; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterSegment_rules_type_4(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterSegment_rules_type_4(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitSegment_rules_type_4(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitSegment_rules_type_4(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitSegment_rules_type_4(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
 	public final Segment_rules_type_4Context segment_rules_type_4() throws RecognitionException {
 		Segment_rules_type_4Context _localctx = new Segment_rules_type_4Context(_ctx, getState());
 		enterRule(_localctx, 112, RULE_segment_rules_type_4);
-		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(520);
-			_la = _input.LA(1);
-			if ( !(((((_la - 75)) & ~0x3f) == 0 && ((1L << (_la - 75)) & ((1L << (T__74 - 75)) | (1L << (T__75 - 75)) | (1L << (T__76 - 75)))) != 0)) ) {
-			_errHandler.recoverInline(this);
-			}
-			else {
-				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
-				_errHandler.reportMatch(this);
-				consume();
-			}
+			setState(550);
+			match(String);
 			}
 		}
 		catch (RecognitionException re) {
@@ -3284,17 +3608,27 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Segment_exitContext extends ParserRuleContext {
+		public TerminalNode EXIT() { return getToken(DBDParser.EXIT, 0); }
+		public TerminalNode EQUAL() { return getToken(DBDParser.EQUAL, 0); }
+		public TerminalNode LPAREN() { return getToken(DBDParser.LPAREN, 0); }
+		public TerminalNode NONE() { return getToken(DBDParser.NONE, 0); }
+		public TerminalNode RPAREN() { return getToken(DBDParser.RPAREN, 0); }
 		public Segment_exitContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_segment_exit; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterSegment_exit(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterSegment_exit(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitSegment_exit(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitSegment_exit(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitSegment_exit(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -3304,8 +3638,16 @@ public class DBDParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(522);
-			match(T__9);
+			setState(552);
+			match(EXIT);
+			setState(553);
+			match(EQUAL);
+			setState(554);
+			match(LPAREN);
+			setState(555);
+			match(NONE);
+			setState(556);
+			match(RPAREN);
 			}
 		}
 		catch (RecognitionException re) {
@@ -3320,18 +3662,27 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Segment_comprtnContext extends ParserRuleContext {
+		public TerminalNode COMPRTN() { return getToken(DBDParser.COMPRTN, 0); }
+		public TerminalNode EQUAL() { return getToken(DBDParser.EQUAL, 0); }
+		public TerminalNode LPAREN() { return getToken(DBDParser.LPAREN, 0); }
 		public TerminalNode String() { return getToken(DBDParser.String, 0); }
+		public TerminalNode RPAREN() { return getToken(DBDParser.RPAREN, 0); }
 		public Segment_comprtnContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_segment_comprtn; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterSegment_comprtn(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterSegment_comprtn(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitSegment_comprtn(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitSegment_comprtn(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitSegment_comprtn(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -3341,12 +3692,16 @@ public class DBDParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(524);
-			match(T__77);
-			setState(525);
+			setState(558);
+			match(COMPRTN);
+			setState(559);
+			match(EQUAL);
+			setState(560);
+			match(LPAREN);
+			setState(561);
 			match(String);
-			setState(526);
-			match(T__5);
+			setState(562);
+			match(RPAREN);
 			}
 		}
 		catch (RecognitionException re) {
@@ -3361,6 +3716,8 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Segment_encodingContext extends ParserRuleContext {
+		public TerminalNode ENCODING() { return getToken(DBDParser.ENCODING, 0); }
+		public TerminalNode EQUAL() { return getToken(DBDParser.EQUAL, 0); }
 		public TerminalNode String() { return getToken(DBDParser.String, 0); }
 		public Segment_encodingContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -3368,11 +3725,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_segment_encoding; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterSegment_encoding(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterSegment_encoding(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitSegment_encoding(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitSegment_encoding(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitSegment_encoding(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -3382,9 +3744,11 @@ public class DBDParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(528);
-			match(T__12);
-			setState(529);
+			setState(564);
+			match(ENCODING);
+			setState(565);
+			match(EQUAL);
+			setState(566);
 			match(String);
 			}
 		}
@@ -3400,6 +3764,8 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Segment_remarksContext extends ParserRuleContext {
+		public TerminalNode REMARKS() { return getToken(DBDParser.REMARKS, 0); }
+		public TerminalNode EQUAL() { return getToken(DBDParser.EQUAL, 0); }
 		public TerminalNode String() { return getToken(DBDParser.String, 0); }
 		public Segment_remarksContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -3407,11 +3773,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_segment_remarks; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterSegment_remarks(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterSegment_remarks(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitSegment_remarks(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitSegment_remarks(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitSegment_remarks(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -3421,9 +3792,11 @@ public class DBDParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(531);
-			match(T__13);
-			setState(532);
+			setState(568);
+			match(REMARKS);
+			setState(569);
+			match(EQUAL);
+			setState(570);
 			match(String);
 			}
 		}
@@ -3439,6 +3812,7 @@ public class DBDParser extends Parser {
 	}
 
 	public static class FieldContext extends ParserRuleContext {
+		public TerminalNode FIELD() { return getToken(DBDParser.FIELD, 0); }
 		public Field_paramsContext field_params() {
 			return getRuleContext(Field_paramsContext.class,0);
 		}
@@ -3448,11 +3822,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_field; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterField(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterField(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitField(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitField(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitField(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -3462,9 +3841,9 @@ public class DBDParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(534);
-			match(T__78);
-			setState(535);
+			setState(572);
+			match(FIELD);
+			setState(573);
 			field_params();
 			}
 		}
@@ -3483,6 +3862,7 @@ public class DBDParser extends Parser {
 		public Field_paramContext field_param() {
 			return getRuleContext(Field_paramContext.class,0);
 		}
+		public TerminalNode COM() { return getToken(DBDParser.COM, 0); }
 		public Field_paramsContext field_params() {
 			return getRuleContext(Field_paramsContext.class,0);
 		}
@@ -3492,11 +3872,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_field_params; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterField_params(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterField_params(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitField_params(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitField_params(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitField_params(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -3504,24 +3889,24 @@ public class DBDParser extends Parser {
 		Field_paramsContext _localctx = new Field_paramsContext(_ctx, getState());
 		enterRule(_localctx, 124, RULE_field_params);
 		try {
-			setState(542);
+			setState(580);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,21,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,20,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(537);
+				setState(575);
 				field_param();
-				setState(538);
-				match(T__1);
-				setState(539);
+				setState(576);
+				match(COM);
+				setState(577);
 				field_params();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(541);
+				setState(579);
 				field_param();
 				}
 				break;
@@ -3593,11 +3978,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_field_param; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterField_param(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterField_param(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitField_param(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitField_param(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitField_param(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -3605,118 +3995,118 @@ public class DBDParser extends Parser {
 		Field_paramContext _localctx = new Field_paramContext(_ctx, getState());
 		enterRule(_localctx, 126, RULE_field_param);
 		try {
-			setState(560);
+			setState(598);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
-			case T__2:
+			case NAME:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(544);
+				setState(582);
 				field_name();
 				}
 				break;
-			case T__82:
+			case EXTERNAL_NAME:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(545);
+				setState(583);
 				field_external_name();
 				}
 				break;
-			case T__48:
+			case BYTES:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(546);
+				setState(584);
 				field_bytes();
 				}
 				break;
-			case T__84:
+			case START:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(547);
+				setState(585);
 				field_start();
 				}
 				break;
-			case T__83:
+			case MAXBYTES:
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(548);
+				setState(586);
 				field_max_bytes();
 				}
 				break;
-			case T__85:
+			case STARTAFTER:
 				enterOuterAlt(_localctx, 6);
 				{
-				setState(549);
+				setState(587);
 				field_start_after();
 				}
 				break;
-			case T__86:
+			case RELSTART:
 				enterOuterAlt(_localctx, 7);
 				{
-				setState(550);
+				setState(588);
 				field_rel_start();
 				}
 				break;
-			case T__87:
+			case DATATYPE:
 				enterOuterAlt(_localctx, 8);
 				{
-				setState(551);
+				setState(589);
 				field_datatype();
 				}
 				break;
-			case T__109:
+			case TYPE:
 				enterOuterAlt(_localctx, 9);
 				{
-				setState(552);
+				setState(590);
 				field_type();
 				}
 				break;
-			case T__112:
+			case CASENAME:
 				enterOuterAlt(_localctx, 10);
 				{
-				setState(553);
+				setState(591);
 				field_case_name();
 				}
 				break;
-			case T__113:
+			case DEPENDSON:
 				enterOuterAlt(_localctx, 11);
 				{
-				setState(554);
+				setState(592);
 				field_dependson();
 				}
 				break;
-			case T__114:
+			case MINOCCURS:
 				enterOuterAlt(_localctx, 12);
 				{
-				setState(555);
+				setState(593);
 				field_min_occurs();
 				}
 				break;
-			case T__115:
+			case MAXOCCURS:
 				enterOuterAlt(_localctx, 13);
 				{
-				setState(556);
+				setState(594);
 				field_max_occurs();
 				}
 				break;
-			case T__41:
+			case PARENT:
 				enterOuterAlt(_localctx, 14);
 				{
-				setState(557);
+				setState(595);
 				field_parent();
 				}
 				break;
-			case T__116:
+			case REDEFINES:
 				enterOuterAlt(_localctx, 15);
 				{
-				setState(558);
+				setState(596);
 				field_redefines();
 				}
 				break;
-			case T__13:
+			case REMARKS:
 				enterOuterAlt(_localctx, 16);
 				{
-				setState(559);
+				setState(597);
 				field_remarks();
 				}
 				break;
@@ -3736,6 +4126,8 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Field_nameContext extends ParserRuleContext {
+		public TerminalNode NAME() { return getToken(DBDParser.NAME, 0); }
+		public TerminalNode EQUAL() { return getToken(DBDParser.EQUAL, 0); }
 		public Field_name_valueContext field_name_value() {
 			return getRuleContext(Field_name_valueContext.class,0);
 		}
@@ -3745,11 +4137,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_field_name; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterField_name(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterField_name(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitField_name(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitField_name(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitField_name(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -3759,9 +4156,11 @@ public class DBDParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(562);
-			match(T__2);
-			setState(563);
+			setState(600);
+			match(NAME);
+			setState(601);
+			match(EQUAL);
+			setState(602);
 			field_name_value();
 			}
 		}
@@ -3777,21 +4176,35 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Field_name_valueContext extends ParserRuleContext {
-		public TerminalNode String() { return getToken(DBDParser.String, 0); }
+		public TerminalNode LPAREN() { return getToken(DBDParser.LPAREN, 0); }
+		public List<TerminalNode> String() { return getTokens(DBDParser.String); }
+		public TerminalNode String(int i) {
+			return getToken(DBDParser.String, i);
+		}
+		public List<TerminalNode> COM() { return getTokens(DBDParser.COM); }
+		public TerminalNode COM(int i) {
+			return getToken(DBDParser.COM, i);
+		}
 		public Field_name_value_typeContext field_name_value_type() {
 			return getRuleContext(Field_name_value_typeContext.class,0);
 		}
+		public TerminalNode RPAREN() { return getToken(DBDParser.RPAREN, 0); }
 		public Field_name_valueContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_field_name_value; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterField_name_value(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterField_name_value(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitField_name_value(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitField_name_value(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitField_name_value(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -3799,32 +4212,32 @@ public class DBDParser extends Parser {
 		Field_name_valueContext _localctx = new Field_name_valueContext(_ctx, getState());
 		enterRule(_localctx, 130, RULE_field_name_value);
 		try {
-			setState(574);
+			setState(613);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
-			case T__4:
+			case LPAREN:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(565);
-				match(T__4);
-				setState(566);
+				setState(604);
+				match(LPAREN);
+				setState(605);
 				match(String);
-				setState(567);
-				match(T__1);
-				setState(568);
-				match(T__79);
-				setState(569);
-				match(T__1);
-				setState(570);
+				setState(606);
+				match(COM);
+				setState(607);
+				match(String);
+				setState(608);
+				match(COM);
+				setState(609);
 				field_name_value_type();
-				setState(571);
-				match(T__5);
+				setState(610);
+				match(RPAREN);
 				}
 				break;
 			case String:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(573);
+				setState(612);
 				match(String);
 				}
 				break;
@@ -3844,37 +4257,34 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Field_name_value_typeContext extends ParserRuleContext {
+		public TerminalNode String() { return getToken(DBDParser.String, 0); }
 		public Field_name_value_typeContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_field_name_value_type; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterField_name_value_type(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterField_name_value_type(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitField_name_value_type(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitField_name_value_type(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitField_name_value_type(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
 	public final Field_name_value_typeContext field_name_value_type() throws RecognitionException {
 		Field_name_value_typeContext _localctx = new Field_name_value_typeContext(_ctx, getState());
 		enterRule(_localctx, 132, RULE_field_name_value_type);
-		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(576);
-			_la = _input.LA(1);
-			if ( !(_la==T__80 || _la==T__81) ) {
-			_errHandler.recoverInline(this);
-			}
-			else {
-				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
-				_errHandler.reportMatch(this);
-				consume();
-			}
+			setState(615);
+			match(String);
 			}
 		}
 		catch (RecognitionException re) {
@@ -3889,6 +4299,8 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Field_external_nameContext extends ParserRuleContext {
+		public TerminalNode EXTERNAL_NAME() { return getToken(DBDParser.EXTERNAL_NAME, 0); }
+		public TerminalNode EQUAL() { return getToken(DBDParser.EQUAL, 0); }
 		public TerminalNode String() { return getToken(DBDParser.String, 0); }
 		public Field_external_nameContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -3896,11 +4308,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_field_external_name; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterField_external_name(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterField_external_name(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitField_external_name(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitField_external_name(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitField_external_name(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -3910,9 +4327,11 @@ public class DBDParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(578);
-			match(T__82);
-			setState(579);
+			setState(617);
+			match(EXTERNAL_NAME);
+			setState(618);
+			match(EQUAL);
+			setState(619);
 			match(String);
 			}
 		}
@@ -3928,6 +4347,8 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Field_bytesContext extends ParserRuleContext {
+		public TerminalNode BYTES() { return getToken(DBDParser.BYTES, 0); }
+		public TerminalNode EQUAL() { return getToken(DBDParser.EQUAL, 0); }
 		public TerminalNode String() { return getToken(DBDParser.String, 0); }
 		public Field_bytesContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -3935,11 +4356,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_field_bytes; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterField_bytes(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterField_bytes(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitField_bytes(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitField_bytes(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitField_bytes(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -3949,9 +4375,11 @@ public class DBDParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(581);
-			match(T__48);
-			setState(582);
+			setState(621);
+			match(BYTES);
+			setState(622);
+			match(EQUAL);
+			setState(623);
 			match(String);
 			}
 		}
@@ -3967,6 +4395,8 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Field_max_bytesContext extends ParserRuleContext {
+		public TerminalNode MAXBYTES() { return getToken(DBDParser.MAXBYTES, 0); }
+		public TerminalNode EQUAL() { return getToken(DBDParser.EQUAL, 0); }
 		public TerminalNode String() { return getToken(DBDParser.String, 0); }
 		public Field_max_bytesContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -3974,11 +4404,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_field_max_bytes; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterField_max_bytes(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterField_max_bytes(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitField_max_bytes(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitField_max_bytes(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitField_max_bytes(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -3988,9 +4423,11 @@ public class DBDParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(584);
-			match(T__83);
-			setState(585);
+			setState(625);
+			match(MAXBYTES);
+			setState(626);
+			match(EQUAL);
+			setState(627);
 			match(String);
 			}
 		}
@@ -4006,6 +4443,8 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Field_startContext extends ParserRuleContext {
+		public TerminalNode START() { return getToken(DBDParser.START, 0); }
+		public TerminalNode EQUAL() { return getToken(DBDParser.EQUAL, 0); }
 		public TerminalNode String() { return getToken(DBDParser.String, 0); }
 		public Field_startContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -4013,11 +4452,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_field_start; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterField_start(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterField_start(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitField_start(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitField_start(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitField_start(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -4027,9 +4471,11 @@ public class DBDParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(587);
-			match(T__84);
-			setState(588);
+			setState(629);
+			match(START);
+			setState(630);
+			match(EQUAL);
+			setState(631);
 			match(String);
 			}
 		}
@@ -4045,6 +4491,8 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Field_start_afterContext extends ParserRuleContext {
+		public TerminalNode STARTAFTER() { return getToken(DBDParser.STARTAFTER, 0); }
+		public TerminalNode EQUAL() { return getToken(DBDParser.EQUAL, 0); }
 		public TerminalNode String() { return getToken(DBDParser.String, 0); }
 		public Field_start_afterContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -4052,11 +4500,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_field_start_after; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterField_start_after(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterField_start_after(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitField_start_after(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitField_start_after(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitField_start_after(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -4066,9 +4519,11 @@ public class DBDParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(590);
-			match(T__85);
-			setState(591);
+			setState(633);
+			match(STARTAFTER);
+			setState(634);
+			match(EQUAL);
+			setState(635);
 			match(String);
 			}
 		}
@@ -4084,6 +4539,8 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Field_rel_startContext extends ParserRuleContext {
+		public TerminalNode RELSTART() { return getToken(DBDParser.RELSTART, 0); }
+		public TerminalNode EQUAL() { return getToken(DBDParser.EQUAL, 0); }
 		public TerminalNode String() { return getToken(DBDParser.String, 0); }
 		public Field_rel_startContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -4091,11 +4548,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_field_rel_start; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterField_rel_start(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterField_rel_start(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitField_rel_start(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitField_rel_start(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitField_rel_start(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -4105,9 +4567,11 @@ public class DBDParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(593);
-			match(T__86);
-			setState(594);
+			setState(637);
+			match(RELSTART);
+			setState(638);
+			match(EQUAL);
+			setState(639);
 			match(String);
 			}
 		}
@@ -4123,6 +4587,8 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Field_datatypeContext extends ParserRuleContext {
+		public TerminalNode DATATYPE() { return getToken(DBDParser.DATATYPE, 0); }
+		public TerminalNode EQUAL() { return getToken(DBDParser.EQUAL, 0); }
 		public Field_datatype_valueContext field_datatype_value() {
 			return getRuleContext(Field_datatype_valueContext.class,0);
 		}
@@ -4132,11 +4598,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_field_datatype; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterField_datatype(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterField_datatype(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitField_datatype(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitField_datatype(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitField_datatype(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -4146,9 +4617,11 @@ public class DBDParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(596);
-			match(T__87);
-			setState(597);
+			setState(641);
+			match(DATATYPE);
+			setState(642);
+			match(EQUAL);
+			setState(643);
 			field_datatype_value();
 			}
 		}
@@ -4168,17 +4641,25 @@ public class DBDParser extends Parser {
 		public TerminalNode String(int i) {
 			return getToken(DBDParser.String, i);
 		}
+		public TerminalNode LPAREN() { return getToken(DBDParser.LPAREN, 0); }
+		public TerminalNode COM() { return getToken(DBDParser.COM, 0); }
+		public TerminalNode RPAREN() { return getToken(DBDParser.RPAREN, 0); }
 		public Field_datatype_valueContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_field_datatype_value; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterField_datatype_value(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterField_datatype_value(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitField_datatype_value(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitField_datatype_value(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitField_datatype_value(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -4186,166 +4667,33 @@ public class DBDParser extends Parser {
 		Field_datatype_valueContext _localctx = new Field_datatype_valueContext(_ctx, getState());
 		enterRule(_localctx, 148, RULE_field_datatype_value);
 		try {
-			setState(624);
+			setState(652);
 			_errHandler.sync(this);
-			switch (_input.LA(1)) {
-			case T__88:
+			switch ( getInterpreter().adaptivePredict(_input,23,_ctx) ) {
+			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(599);
-				match(T__88);
+				setState(645);
+				match(String);
 				}
 				break;
-			case T__89:
+			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(600);
-				match(T__89);
-				}
-				break;
-			case T__90:
-				enterOuterAlt(_localctx, 3);
-				{
-				setState(601);
-				match(T__90);
-				}
-				break;
-			case T__91:
-				enterOuterAlt(_localctx, 4);
-				{
-				setState(602);
-				match(T__91);
-				}
-				break;
-			case T__92:
-				enterOuterAlt(_localctx, 5);
-				{
-				setState(603);
-				match(T__92);
-				}
-				break;
-			case T__93:
-				enterOuterAlt(_localctx, 6);
-				{
-				setState(604);
-				match(T__93);
-				}
-				break;
-			case T__94:
-				enterOuterAlt(_localctx, 7);
-				{
-				setState(605);
-				match(T__94);
-				}
-				break;
-			case T__95:
-				enterOuterAlt(_localctx, 8);
-				{
-				setState(606);
-				match(T__95);
-				setState(607);
+				setState(646);
 				match(String);
-				setState(608);
-				match(T__1);
-				setState(609);
+				setState(647);
+				match(LPAREN);
+				setState(648);
 				match(String);
-				setState(610);
-				match(T__5);
+				setState(649);
+				match(COM);
+				setState(650);
+				match(String);
+				setState(651);
+				match(RPAREN);
 				}
 				break;
-			case T__96:
-				enterOuterAlt(_localctx, 9);
-				{
-				setState(611);
-				match(T__96);
-				}
-				break;
-			case T__97:
-				enterOuterAlt(_localctx, 10);
-				{
-				setState(612);
-				match(T__97);
-				}
-				break;
-			case T__98:
-				enterOuterAlt(_localctx, 11);
-				{
-				setState(613);
-				match(T__98);
-				}
-				break;
-			case T__99:
-				enterOuterAlt(_localctx, 12);
-				{
-				setState(614);
-				match(T__99);
-				}
-				break;
-			case T__100:
-				enterOuterAlt(_localctx, 13);
-				{
-				setState(615);
-				match(T__100);
-				}
-				break;
-			case T__101:
-				enterOuterAlt(_localctx, 14);
-				{
-				setState(616);
-				match(T__101);
-				}
-				break;
-			case T__102:
-				enterOuterAlt(_localctx, 15);
-				{
-				setState(617);
-				match(T__102);
-				}
-				break;
-			case T__103:
-				enterOuterAlt(_localctx, 16);
-				{
-				setState(618);
-				match(T__103);
-				}
-				break;
-			case T__104:
-				enterOuterAlt(_localctx, 17);
-				{
-				setState(619);
-				match(T__104);
-				}
-				break;
-			case T__105:
-				enterOuterAlt(_localctx, 18);
-				{
-				setState(620);
-				match(T__105);
-				}
-				break;
-			case T__106:
-				enterOuterAlt(_localctx, 19);
-				{
-				setState(621);
-				match(T__106);
-				}
-				break;
-			case T__107:
-				enterOuterAlt(_localctx, 20);
-				{
-				setState(622);
-				match(T__107);
-				}
-				break;
-			case T__108:
-				enterOuterAlt(_localctx, 21);
-				{
-				setState(623);
-				match(T__108);
-				}
-				break;
-			default:
-				throw new NoViableAltException(this);
 			}
 		}
 		catch (RecognitionException re) {
@@ -4360,6 +4708,8 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Field_typeContext extends ParserRuleContext {
+		public TerminalNode TYPE() { return getToken(DBDParser.TYPE, 0); }
+		public TerminalNode EQUAL() { return getToken(DBDParser.EQUAL, 0); }
 		public Field_type_valueContext field_type_value() {
 			return getRuleContext(Field_type_valueContext.class,0);
 		}
@@ -4369,11 +4719,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_field_type; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterField_type(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterField_type(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitField_type(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitField_type(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitField_type(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -4383,9 +4738,11 @@ public class DBDParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(626);
-			match(T__109);
-			setState(627);
+			setState(654);
+			match(TYPE);
+			setState(655);
+			match(EQUAL);
+			setState(656);
 			field_type_value();
 			}
 		}
@@ -4401,37 +4758,34 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Field_type_valueContext extends ParserRuleContext {
+		public TerminalNode String() { return getToken(DBDParser.String, 0); }
 		public Field_type_valueContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_field_type_value; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterField_type_value(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterField_type_value(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitField_type_value(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitField_type_value(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitField_type_value(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
 	public final Field_type_valueContext field_type_value() throws RecognitionException {
 		Field_type_valueContext _localctx = new Field_type_valueContext(_ctx, getState());
 		enterRule(_localctx, 152, RULE_field_type_value);
-		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(629);
-			_la = _input.LA(1);
-			if ( !(((((_la - 72)) & ~0x3f) == 0 && ((1L << (_la - 72)) & ((1L << (T__71 - 72)) | (1L << (T__110 - 72)) | (1L << (T__111 - 72)))) != 0)) ) {
-			_errHandler.recoverInline(this);
-			}
-			else {
-				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
-				_errHandler.reportMatch(this);
-				consume();
-			}
+			setState(658);
+			match(String);
 			}
 		}
 		catch (RecognitionException re) {
@@ -4446,6 +4800,8 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Field_case_nameContext extends ParserRuleContext {
+		public TerminalNode CASENAME() { return getToken(DBDParser.CASENAME, 0); }
+		public TerminalNode EQUAL() { return getToken(DBDParser.EQUAL, 0); }
 		public TerminalNode String() { return getToken(DBDParser.String, 0); }
 		public Field_case_nameContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -4453,11 +4809,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_field_case_name; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterField_case_name(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterField_case_name(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitField_case_name(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitField_case_name(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitField_case_name(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -4467,9 +4828,11 @@ public class DBDParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(631);
-			match(T__112);
-			setState(632);
+			setState(660);
+			match(CASENAME);
+			setState(661);
+			match(EQUAL);
+			setState(662);
 			match(String);
 			}
 		}
@@ -4485,6 +4848,8 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Field_dependsonContext extends ParserRuleContext {
+		public TerminalNode DEPENDSON() { return getToken(DBDParser.DEPENDSON, 0); }
+		public TerminalNode EQUAL() { return getToken(DBDParser.EQUAL, 0); }
 		public TerminalNode String() { return getToken(DBDParser.String, 0); }
 		public Field_dependsonContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -4492,11 +4857,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_field_dependson; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterField_dependson(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterField_dependson(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitField_dependson(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitField_dependson(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitField_dependson(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -4506,9 +4876,11 @@ public class DBDParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(634);
-			match(T__113);
-			setState(635);
+			setState(664);
+			match(DEPENDSON);
+			setState(665);
+			match(EQUAL);
+			setState(666);
 			match(String);
 			}
 		}
@@ -4524,6 +4896,8 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Field_min_occursContext extends ParserRuleContext {
+		public TerminalNode MINOCCURS() { return getToken(DBDParser.MINOCCURS, 0); }
+		public TerminalNode EQUAL() { return getToken(DBDParser.EQUAL, 0); }
 		public TerminalNode String() { return getToken(DBDParser.String, 0); }
 		public Field_min_occursContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -4531,11 +4905,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_field_min_occurs; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterField_min_occurs(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterField_min_occurs(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitField_min_occurs(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitField_min_occurs(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitField_min_occurs(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -4545,9 +4924,11 @@ public class DBDParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(637);
-			match(T__114);
-			setState(638);
+			setState(668);
+			match(MINOCCURS);
+			setState(669);
+			match(EQUAL);
+			setState(670);
 			match(String);
 			}
 		}
@@ -4563,6 +4944,8 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Field_max_occursContext extends ParserRuleContext {
+		public TerminalNode MAXOCCURS() { return getToken(DBDParser.MAXOCCURS, 0); }
+		public TerminalNode EQUAL() { return getToken(DBDParser.EQUAL, 0); }
 		public TerminalNode String() { return getToken(DBDParser.String, 0); }
 		public Field_max_occursContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -4570,11 +4953,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_field_max_occurs; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterField_max_occurs(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterField_max_occurs(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitField_max_occurs(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitField_max_occurs(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitField_max_occurs(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -4584,9 +4972,11 @@ public class DBDParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(640);
-			match(T__115);
-			setState(641);
+			setState(672);
+			match(MAXOCCURS);
+			setState(673);
+			match(EQUAL);
+			setState(674);
 			match(String);
 			}
 		}
@@ -4602,6 +4992,8 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Field_parentContext extends ParserRuleContext {
+		public TerminalNode PARENT() { return getToken(DBDParser.PARENT, 0); }
+		public TerminalNode EQUAL() { return getToken(DBDParser.EQUAL, 0); }
 		public TerminalNode String() { return getToken(DBDParser.String, 0); }
 		public Field_parentContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -4609,11 +5001,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_field_parent; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterField_parent(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterField_parent(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitField_parent(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitField_parent(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitField_parent(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -4623,9 +5020,11 @@ public class DBDParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(643);
-			match(T__41);
-			setState(644);
+			setState(676);
+			match(PARENT);
+			setState(677);
+			match(EQUAL);
+			setState(678);
 			match(String);
 			}
 		}
@@ -4641,6 +5040,8 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Field_redefinesContext extends ParserRuleContext {
+		public TerminalNode REDEFINES() { return getToken(DBDParser.REDEFINES, 0); }
+		public TerminalNode EQUAL() { return getToken(DBDParser.EQUAL, 0); }
 		public TerminalNode String() { return getToken(DBDParser.String, 0); }
 		public Field_redefinesContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -4648,11 +5049,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_field_redefines; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterField_redefines(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterField_redefines(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitField_redefines(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitField_redefines(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitField_redefines(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -4662,9 +5068,11 @@ public class DBDParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(646);
-			match(T__116);
-			setState(647);
+			setState(680);
+			match(REDEFINES);
+			setState(681);
+			match(EQUAL);
+			setState(682);
 			match(String);
 			}
 		}
@@ -4680,6 +5088,8 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Field_remarksContext extends ParserRuleContext {
+		public TerminalNode REMARKS() { return getToken(DBDParser.REMARKS, 0); }
+		public TerminalNode EQUAL() { return getToken(DBDParser.EQUAL, 0); }
 		public TerminalNode String() { return getToken(DBDParser.String, 0); }
 		public Field_remarksContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -4687,11 +5097,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_field_remarks; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterField_remarks(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterField_remarks(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitField_remarks(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitField_remarks(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitField_remarks(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -4701,9 +5116,11 @@ public class DBDParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(649);
-			match(T__13);
-			setState(650);
+			setState(684);
+			match(REMARKS);
+			setState(685);
+			match(EQUAL);
+			setState(686);
 			match(String);
 			}
 		}
@@ -4719,6 +5136,7 @@ public class DBDParser extends Parser {
 	}
 
 	public static class LchildContext extends ParserRuleContext {
+		public TerminalNode LCHILD() { return getToken(DBDParser.LCHILD, 0); }
 		public Lchild_paramsContext lchild_params() {
 			return getRuleContext(Lchild_paramsContext.class,0);
 		}
@@ -4734,11 +5152,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_lchild; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterLchild(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterLchild(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitLchild(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitLchild(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitLchild(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -4749,24 +5172,24 @@ public class DBDParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(652);
-			match(T__117);
-			setState(653);
+			setState(688);
+			match(LCHILD);
+			setState(689);
 			lchild_params();
-			setState(655); 
+			setState(691); 
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			do {
 				{
 				{
-				setState(654);
+				setState(690);
 				xdfld();
 				}
 				}
-				setState(657); 
+				setState(693); 
 				_errHandler.sync(this);
 				_la = _input.LA(1);
-			} while ( _la==T__125 );
+			} while ( _la==XDFLD );
 			}
 		}
 		catch (RecognitionException re) {
@@ -4784,6 +5207,7 @@ public class DBDParser extends Parser {
 		public Lchild_paramContext lchild_param() {
 			return getRuleContext(Lchild_paramContext.class,0);
 		}
+		public TerminalNode COM() { return getToken(DBDParser.COM, 0); }
 		public Lchild_paramsContext lchild_params() {
 			return getRuleContext(Lchild_paramsContext.class,0);
 		}
@@ -4793,11 +5217,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_lchild_params; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterLchild_params(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterLchild_params(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitLchild_params(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitLchild_params(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitLchild_params(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -4805,24 +5234,24 @@ public class DBDParser extends Parser {
 		Lchild_paramsContext _localctx = new Lchild_paramsContext(_ctx, getState());
 		enterRule(_localctx, 170, RULE_lchild_params);
 		try {
-			setState(664);
+			setState(700);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,26,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,25,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(659);
+				setState(695);
 				lchild_param();
-				setState(660);
-				match(T__1);
-				setState(661);
+				setState(696);
+				match(COM);
+				setState(697);
 				lchild_params();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(663);
+				setState(699);
 				lchild_param();
 				}
 				break;
@@ -4861,11 +5290,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_lchild_param; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterLchild_param(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterLchild_param(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitLchild_param(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitLchild_param(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitLchild_param(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -4873,42 +5307,41 @@ public class DBDParser extends Parser {
 		Lchild_paramContext _localctx = new Lchild_paramContext(_ctx, getState());
 		enterRule(_localctx, 172, RULE_lchild_param);
 		try {
-			setState(671);
+			setState(707);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
-			case T__2:
+			case NAME:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(666);
+				setState(702);
 				lchild_name();
 				}
 				break;
-			case T__118:
-			case T__119:
+			case POINTER:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(667);
+				setState(703);
 				lchild_ptr();
 				}
 				break;
-			case T__123:
+			case PAIR:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(668);
+				setState(704);
 				lchild_pair();
 				}
 				break;
-			case T__124:
+			case RULES:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(669);
+				setState(705);
 				lchild_rules();
 				}
 				break;
-			case T__13:
+			case REMARKS:
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(670);
+				setState(706);
 				lchild_remarks();
 				}
 				break;
@@ -4928,6 +5361,8 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Lchild_nameContext extends ParserRuleContext {
+		public TerminalNode NAME() { return getToken(DBDParser.NAME, 0); }
+		public TerminalNode EQUAL() { return getToken(DBDParser.EQUAL, 0); }
 		public Lchild_name_paramsContext lchild_name_params() {
 			return getRuleContext(Lchild_name_paramsContext.class,0);
 		}
@@ -4937,11 +5372,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_lchild_name; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterLchild_name(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterLchild_name(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitLchild_name(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitLchild_name(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitLchild_name(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -4951,9 +5391,11 @@ public class DBDParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(673);
-			match(T__2);
-			setState(674);
+			setState(709);
+			match(NAME);
+			setState(710);
+			match(EQUAL);
+			setState(711);
 			lchild_name_params();
 			}
 		}
@@ -4969,21 +5411,29 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Lchild_name_paramsContext extends ParserRuleContext {
+		public TerminalNode LPAREN() { return getToken(DBDParser.LPAREN, 0); }
 		public List<TerminalNode> String() { return getTokens(DBDParser.String); }
 		public TerminalNode String(int i) {
 			return getToken(DBDParser.String, i);
 		}
+		public TerminalNode COM() { return getToken(DBDParser.COM, 0); }
+		public TerminalNode RPAREN() { return getToken(DBDParser.RPAREN, 0); }
 		public Lchild_name_paramsContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_lchild_name_params; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterLchild_name_params(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterLchild_name_params(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitLchild_name_params(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitLchild_name_params(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitLchild_name_params(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -4993,16 +5443,16 @@ public class DBDParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(676);
-			match(T__4);
-			setState(677);
+			setState(713);
+			match(LPAREN);
+			setState(714);
 			match(String);
-			setState(678);
-			match(T__1);
-			setState(679);
+			setState(715);
+			match(COM);
+			setState(716);
 			match(String);
-			setState(680);
-			match(T__5);
+			setState(717);
+			match(RPAREN);
 			}
 		}
 		catch (RecognitionException re) {
@@ -5017,6 +5467,8 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Lchild_ptrContext extends ParserRuleContext {
+		public TerminalNode POINTER() { return getToken(DBDParser.POINTER, 0); }
+		public TerminalNode EQUAL() { return getToken(DBDParser.EQUAL, 0); }
 		public Lchild_ptr_typeContext lchild_ptr_type() {
 			return getRuleContext(Lchild_ptr_typeContext.class,0);
 		}
@@ -5026,11 +5478,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_lchild_ptr; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterLchild_ptr(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterLchild_ptr(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitLchild_ptr(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitLchild_ptr(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitLchild_ptr(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -5038,29 +5495,14 @@ public class DBDParser extends Parser {
 		Lchild_ptrContext _localctx = new Lchild_ptrContext(_ctx, getState());
 		enterRule(_localctx, 178, RULE_lchild_ptr);
 		try {
-			setState(686);
-			_errHandler.sync(this);
-			switch (_input.LA(1)) {
-			case T__118:
-				enterOuterAlt(_localctx, 1);
-				{
-				setState(682);
-				match(T__118);
-				setState(683);
-				lchild_ptr_type();
-				}
-				break;
-			case T__119:
-				enterOuterAlt(_localctx, 2);
-				{
-				setState(684);
-				match(T__119);
-				setState(685);
-				lchild_ptr_type();
-				}
-				break;
-			default:
-				throw new NoViableAltException(this);
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(719);
+			match(POINTER);
+			setState(720);
+			match(EQUAL);
+			setState(721);
+			lchild_ptr_type();
 			}
 		}
 		catch (RecognitionException re) {
@@ -5075,37 +5517,34 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Lchild_ptr_typeContext extends ParserRuleContext {
+		public TerminalNode String() { return getToken(DBDParser.String, 0); }
 		public Lchild_ptr_typeContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_lchild_ptr_type; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterLchild_ptr_type(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterLchild_ptr_type(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitLchild_ptr_type(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitLchild_ptr_type(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitLchild_ptr_type(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
 	public final Lchild_ptr_typeContext lchild_ptr_type() throws RecognitionException {
 		Lchild_ptr_typeContext _localctx = new Lchild_ptr_typeContext(_ctx, getState());
 		enterRule(_localctx, 180, RULE_lchild_ptr_type);
-		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(688);
-			_la = _input.LA(1);
-			if ( !(_la==T__42 || _la==T__43 || ((((_la - 121)) & ~0x3f) == 0 && ((1L << (_la - 121)) & ((1L << (T__120 - 121)) | (1L << (T__121 - 121)) | (1L << (T__122 - 121)))) != 0)) ) {
-			_errHandler.recoverInline(this);
-			}
-			else {
-				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
-				_errHandler.reportMatch(this);
-				consume();
-			}
+			setState(723);
+			match(String);
 			}
 		}
 		catch (RecognitionException re) {
@@ -5120,6 +5559,8 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Lchild_pairContext extends ParserRuleContext {
+		public TerminalNode PAIR() { return getToken(DBDParser.PAIR, 0); }
+		public TerminalNode EQUAL() { return getToken(DBDParser.EQUAL, 0); }
 		public TerminalNode String() { return getToken(DBDParser.String, 0); }
 		public Lchild_pairContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -5127,11 +5568,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_lchild_pair; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterLchild_pair(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterLchild_pair(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitLchild_pair(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitLchild_pair(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitLchild_pair(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -5141,9 +5587,11 @@ public class DBDParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(690);
-			match(T__123);
-			setState(691);
+			setState(725);
+			match(PAIR);
+			setState(726);
+			match(EQUAL);
+			setState(727);
 			match(String);
 			}
 		}
@@ -5159,6 +5607,8 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Lchild_rulesContext extends ParserRuleContext {
+		public TerminalNode RULES() { return getToken(DBDParser.RULES, 0); }
+		public TerminalNode EQUAL() { return getToken(DBDParser.EQUAL, 0); }
 		public Lchild_rules_typeContext lchild_rules_type() {
 			return getRuleContext(Lchild_rules_typeContext.class,0);
 		}
@@ -5168,11 +5618,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_lchild_rules; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterLchild_rules(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterLchild_rules(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitLchild_rules(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitLchild_rules(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitLchild_rules(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -5182,9 +5637,11 @@ public class DBDParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(693);
-			match(T__124);
-			setState(694);
+			setState(729);
+			match(RULES);
+			setState(730);
+			match(EQUAL);
+			setState(731);
 			lchild_rules_type();
 			}
 		}
@@ -5200,37 +5657,34 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Lchild_rules_typeContext extends ParserRuleContext {
+		public TerminalNode String() { return getToken(DBDParser.String, 0); }
 		public Lchild_rules_typeContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_lchild_rules_type; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterLchild_rules_type(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterLchild_rules_type(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitLchild_rules_type(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitLchild_rules_type(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitLchild_rules_type(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
 	public final Lchild_rules_typeContext lchild_rules_type() throws RecognitionException {
 		Lchild_rules_typeContext _localctx = new Lchild_rules_typeContext(_ctx, getState());
 		enterRule(_localctx, 186, RULE_lchild_rules_type);
-		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(696);
-			_la = _input.LA(1);
-			if ( !(((((_la - 75)) & ~0x3f) == 0 && ((1L << (_la - 75)) & ((1L << (T__74 - 75)) | (1L << (T__75 - 75)) | (1L << (T__76 - 75)))) != 0)) ) {
-			_errHandler.recoverInline(this);
-			}
-			else {
-				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
-				_errHandler.reportMatch(this);
-				consume();
-			}
+			setState(733);
+			match(String);
 			}
 		}
 		catch (RecognitionException re) {
@@ -5245,6 +5699,8 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Lchild_remarksContext extends ParserRuleContext {
+		public TerminalNode REMARKS() { return getToken(DBDParser.REMARKS, 0); }
+		public TerminalNode EQUAL() { return getToken(DBDParser.EQUAL, 0); }
 		public TerminalNode String() { return getToken(DBDParser.String, 0); }
 		public Lchild_remarksContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -5252,11 +5708,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_lchild_remarks; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterLchild_remarks(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterLchild_remarks(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitLchild_remarks(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitLchild_remarks(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitLchild_remarks(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -5266,9 +5727,11 @@ public class DBDParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(698);
-			match(T__13);
-			setState(699);
+			setState(735);
+			match(REMARKS);
+			setState(736);
+			match(EQUAL);
+			setState(737);
 			match(String);
 			}
 		}
@@ -5284,6 +5747,7 @@ public class DBDParser extends Parser {
 	}
 
 	public static class XdfldContext extends ParserRuleContext {
+		public TerminalNode XDFLD() { return getToken(DBDParser.XDFLD, 0); }
 		public Xdfld_paramsContext xdfld_params() {
 			return getRuleContext(Xdfld_paramsContext.class,0);
 		}
@@ -5293,11 +5757,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_xdfld; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterXdfld(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterXdfld(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitXdfld(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitXdfld(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitXdfld(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -5307,9 +5776,9 @@ public class DBDParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(701);
-			match(T__125);
-			setState(702);
+			setState(739);
+			match(XDFLD);
+			setState(740);
 			xdfld_params();
 			}
 		}
@@ -5328,6 +5797,7 @@ public class DBDParser extends Parser {
 		public Xdfld_paramContext xdfld_param() {
 			return getRuleContext(Xdfld_paramContext.class,0);
 		}
+		public TerminalNode COM() { return getToken(DBDParser.COM, 0); }
 		public Xdfld_paramsContext xdfld_params() {
 			return getRuleContext(Xdfld_paramsContext.class,0);
 		}
@@ -5337,11 +5807,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_xdfld_params; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterXdfld_params(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterXdfld_params(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitXdfld_params(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitXdfld_params(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitXdfld_params(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -5349,24 +5824,24 @@ public class DBDParser extends Parser {
 		Xdfld_paramsContext _localctx = new Xdfld_paramsContext(_ctx, getState());
 		enterRule(_localctx, 192, RULE_xdfld_params);
 		try {
-			setState(709);
+			setState(747);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,29,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,27,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(704);
+				setState(742);
 				xdfld_param();
-				setState(705);
-				match(T__1);
-				setState(706);
+				setState(743);
+				match(COM);
+				setState(744);
 				xdfld_params();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(708);
+				setState(746);
 				xdfld_param();
 				}
 				break;
@@ -5420,11 +5895,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_xdfld_param; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterXdfld_param(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterXdfld_param(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitXdfld_param(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitXdfld_param(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitXdfld_param(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -5432,76 +5912,76 @@ public class DBDParser extends Parser {
 		Xdfld_paramContext _localctx = new Xdfld_paramContext(_ctx, getState());
 		enterRule(_localctx, 194, RULE_xdfld_param);
 		try {
-			setState(721);
+			setState(759);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
-			case T__2:
+			case NAME:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(711);
+				setState(749);
 				xdfld_name();
 				}
 				break;
-			case T__126:
+			case SEGMENT:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(712);
+				setState(750);
 				xdfld_segment();
 				}
 				break;
-			case T__127:
+			case CONST:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(713);
+				setState(751);
 				xdfld_const();
 				}
 				break;
-			case T__128:
+			case SRCH:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(714);
+				setState(752);
 				xdfld_srch();
 				}
 				break;
-			case T__129:
+			case SUBSEQ:
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(715);
+				setState(753);
 				xdfld_subseq();
 				}
 				break;
-			case T__130:
+			case DDATA:
 				enterOuterAlt(_localctx, 6);
 				{
-				setState(716);
+				setState(754);
 				xdfld_ddata();
 				}
 				break;
-			case T__131:
+			case NULLVAL:
 				enterOuterAlt(_localctx, 7);
 				{
-				setState(717);
+				setState(755);
 				xdfld_nullval();
 				}
 				break;
-			case T__132:
+			case EXTRTN:
 				enterOuterAlt(_localctx, 8);
 				{
-				setState(718);
+				setState(756);
 				xdfld_extrtn();
 				}
 				break;
-			case T__13:
+			case REMARKS:
 				enterOuterAlt(_localctx, 9);
 				{
-				setState(719);
+				setState(757);
 				xdfld_remarks();
 				}
 				break;
-			case T__40:
+			case EXTERNAL_NAME:
 				enterOuterAlt(_localctx, 10);
 				{
-				setState(720);
+				setState(758);
 				xdfld_externalname();
 				}
 				break;
@@ -5521,6 +6001,8 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Xdfld_nameContext extends ParserRuleContext {
+		public TerminalNode NAME() { return getToken(DBDParser.NAME, 0); }
+		public TerminalNode EQUAL() { return getToken(DBDParser.EQUAL, 0); }
 		public TerminalNode String() { return getToken(DBDParser.String, 0); }
 		public Xdfld_nameContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -5528,11 +6010,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_xdfld_name; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterXdfld_name(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterXdfld_name(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitXdfld_name(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitXdfld_name(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitXdfld_name(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -5542,9 +6029,11 @@ public class DBDParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(723);
-			match(T__2);
-			setState(724);
+			setState(761);
+			match(NAME);
+			setState(762);
+			match(EQUAL);
+			setState(763);
 			match(String);
 			}
 		}
@@ -5560,6 +6049,8 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Xdfld_segmentContext extends ParserRuleContext {
+		public TerminalNode SEGMENT() { return getToken(DBDParser.SEGMENT, 0); }
+		public TerminalNode EQUAL() { return getToken(DBDParser.EQUAL, 0); }
 		public TerminalNode String() { return getToken(DBDParser.String, 0); }
 		public Xdfld_segmentContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -5567,11 +6058,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_xdfld_segment; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterXdfld_segment(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterXdfld_segment(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitXdfld_segment(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitXdfld_segment(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitXdfld_segment(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -5581,9 +6077,11 @@ public class DBDParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(726);
-			match(T__126);
-			setState(727);
+			setState(765);
+			match(SEGMENT);
+			setState(766);
+			match(EQUAL);
+			setState(767);
 			match(String);
 			}
 		}
@@ -5599,6 +6097,8 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Xdfld_constContext extends ParserRuleContext {
+		public TerminalNode CONST() { return getToken(DBDParser.CONST, 0); }
+		public TerminalNode EQUAL() { return getToken(DBDParser.EQUAL, 0); }
 		public TerminalNode String() { return getToken(DBDParser.String, 0); }
 		public Xdfld_constContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -5606,11 +6106,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_xdfld_const; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterXdfld_const(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterXdfld_const(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitXdfld_const(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitXdfld_const(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitXdfld_const(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -5620,9 +6125,11 @@ public class DBDParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(729);
-			match(T__127);
-			setState(730);
+			setState(769);
+			match(CONST);
+			setState(770);
+			match(EQUAL);
+			setState(771);
 			match(String);
 			}
 		}
@@ -5638,6 +6145,8 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Xdfld_srchContext extends ParserRuleContext {
+		public TerminalNode SRCH() { return getToken(DBDParser.SRCH, 0); }
+		public TerminalNode EQUAL() { return getToken(DBDParser.EQUAL, 0); }
 		public TerminalNode String() { return getToken(DBDParser.String, 0); }
 		public Xdfld_srchContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -5645,11 +6154,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_xdfld_srch; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterXdfld_srch(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterXdfld_srch(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitXdfld_srch(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitXdfld_srch(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitXdfld_srch(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -5659,9 +6173,11 @@ public class DBDParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(732);
-			match(T__128);
-			setState(733);
+			setState(773);
+			match(SRCH);
+			setState(774);
+			match(EQUAL);
+			setState(775);
 			match(String);
 			}
 		}
@@ -5677,6 +6193,8 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Xdfld_subseqContext extends ParserRuleContext {
+		public TerminalNode SUBSEQ() { return getToken(DBDParser.SUBSEQ, 0); }
+		public TerminalNode EQUAL() { return getToken(DBDParser.EQUAL, 0); }
 		public TerminalNode String() { return getToken(DBDParser.String, 0); }
 		public Xdfld_subseqContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -5684,11 +6202,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_xdfld_subseq; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterXdfld_subseq(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterXdfld_subseq(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitXdfld_subseq(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitXdfld_subseq(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitXdfld_subseq(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -5698,9 +6221,11 @@ public class DBDParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(735);
-			match(T__129);
-			setState(736);
+			setState(777);
+			match(SUBSEQ);
+			setState(778);
+			match(EQUAL);
+			setState(779);
 			match(String);
 			}
 		}
@@ -5716,6 +6241,8 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Xdfld_ddataContext extends ParserRuleContext {
+		public TerminalNode DDATA() { return getToken(DBDParser.DDATA, 0); }
+		public TerminalNode EQUAL() { return getToken(DBDParser.EQUAL, 0); }
 		public TerminalNode String() { return getToken(DBDParser.String, 0); }
 		public Xdfld_ddataContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -5723,11 +6250,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_xdfld_ddata; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterXdfld_ddata(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterXdfld_ddata(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitXdfld_ddata(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitXdfld_ddata(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitXdfld_ddata(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -5737,9 +6269,11 @@ public class DBDParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(738);
-			match(T__130);
-			setState(739);
+			setState(781);
+			match(DDATA);
+			setState(782);
+			match(EQUAL);
+			setState(783);
 			match(String);
 			}
 		}
@@ -5755,6 +6289,8 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Xdfld_nullvalContext extends ParserRuleContext {
+		public TerminalNode NULLVAL() { return getToken(DBDParser.NULLVAL, 0); }
+		public TerminalNode EQUAL() { return getToken(DBDParser.EQUAL, 0); }
 		public TerminalNode String() { return getToken(DBDParser.String, 0); }
 		public Xdfld_nullvalContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -5762,11 +6298,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_xdfld_nullval; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterXdfld_nullval(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterXdfld_nullval(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitXdfld_nullval(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitXdfld_nullval(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitXdfld_nullval(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -5776,9 +6317,11 @@ public class DBDParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(741);
-			match(T__131);
-			setState(742);
+			setState(785);
+			match(NULLVAL);
+			setState(786);
+			match(EQUAL);
+			setState(787);
 			match(String);
 			}
 		}
@@ -5794,6 +6337,8 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Xdfld_extrtnContext extends ParserRuleContext {
+		public TerminalNode EXTRTN() { return getToken(DBDParser.EXTRTN, 0); }
+		public TerminalNode EQUAL() { return getToken(DBDParser.EQUAL, 0); }
 		public TerminalNode String() { return getToken(DBDParser.String, 0); }
 		public Xdfld_extrtnContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -5801,11 +6346,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_xdfld_extrtn; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterXdfld_extrtn(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterXdfld_extrtn(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitXdfld_extrtn(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitXdfld_extrtn(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitXdfld_extrtn(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -5815,9 +6365,11 @@ public class DBDParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(744);
-			match(T__132);
-			setState(745);
+			setState(789);
+			match(EXTRTN);
+			setState(790);
+			match(EQUAL);
+			setState(791);
 			match(String);
 			}
 		}
@@ -5833,6 +6385,8 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Xdfld_remarksContext extends ParserRuleContext {
+		public TerminalNode REMARKS() { return getToken(DBDParser.REMARKS, 0); }
+		public TerminalNode EQUAL() { return getToken(DBDParser.EQUAL, 0); }
 		public TerminalNode String() { return getToken(DBDParser.String, 0); }
 		public Xdfld_remarksContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -5840,11 +6394,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_xdfld_remarks; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterXdfld_remarks(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterXdfld_remarks(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitXdfld_remarks(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitXdfld_remarks(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitXdfld_remarks(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -5854,9 +6413,11 @@ public class DBDParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(747);
-			match(T__13);
-			setState(748);
+			setState(793);
+			match(REMARKS);
+			setState(794);
+			match(EQUAL);
+			setState(795);
 			match(String);
 			}
 		}
@@ -5872,6 +6433,8 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Xdfld_externalnameContext extends ParserRuleContext {
+		public TerminalNode EXTERNAL_NAME() { return getToken(DBDParser.EXTERNAL_NAME, 0); }
+		public TerminalNode EQUAL() { return getToken(DBDParser.EQUAL, 0); }
 		public TerminalNode String() { return getToken(DBDParser.String, 0); }
 		public Xdfld_externalnameContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -5879,11 +6442,16 @@ public class DBDParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_xdfld_externalname; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterXdfld_externalname(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterXdfld_externalname(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitXdfld_externalname(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitXdfld_externalname(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitXdfld_externalname(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -5893,9 +6461,11 @@ public class DBDParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(750);
-			match(T__40);
-			setState(751);
+			setState(797);
+			match(EXTERNAL_NAME);
+			setState(798);
+			match(EQUAL);
+			setState(799);
 			match(String);
 			}
 		}
@@ -5911,17 +6481,25 @@ public class DBDParser extends Parser {
 	}
 
 	public static class EndContext extends ParserRuleContext {
+		public TerminalNode DBD_GEN() { return getToken(DBDParser.DBD_GEN, 0); }
+		public TerminalNode END() { return getToken(DBDParser.END, 0); }
+		public TerminalNode FINISH() { return getToken(DBDParser.FINISH, 0); }
 		public EndContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_end; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterEnd(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterEnd(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitEnd(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitEnd(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitEnd(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -5932,20 +6510,20 @@ public class DBDParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(753);
-			match(T__133);
-			setState(755);
+			setState(801);
+			match(DBD_GEN);
+			setState(803);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__134) {
+			if (_la==FINISH) {
 				{
-				setState(754);
-				match(T__134);
+				setState(802);
+				match(FINISH);
 				}
 			}
 
-			setState(757);
-			match(T__135);
+			setState(805);
+			match(END);
 			}
 		}
 		catch (RecognitionException re) {
@@ -5960,37 +6538,34 @@ public class DBDParser extends Parser {
 	}
 
 	public static class Bool_stringContext extends ParserRuleContext {
+		public TerminalNode String() { return getToken(DBDParser.String, 0); }
 		public Bool_stringContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_bool_string; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).enterBool_string(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).enterBool_string(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof DBDListener ) ((DBDListener)listener).exitBool_string(this);
+			if ( listener instanceof DBDParserListener ) ((DBDParserListener)listener).exitBool_string(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof DBDParserVisitor ) return ((DBDParserVisitor<? extends T>)visitor).visitBool_string(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
 	public final Bool_stringContext bool_string() throws RecognitionException {
 		Bool_stringContext _localctx = new Bool_stringContext(_ctx, getState());
 		enterRule(_localctx, 218, RULE_bool_string);
-		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(759);
-			_la = _input.LA(1);
-			if ( !(_la==T__136 || _la==T__137) ) {
-			_errHandler.recoverInline(this);
-			}
-			else {
-				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
-				_errHandler.reportMatch(this);
-				consume();
-			}
+			setState(807);
+			match(String);
 			}
 		}
 		catch (RecognitionException re) {
@@ -6005,9 +6580,9 @@ public class DBDParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\u0091\u02fc\4\2\t"+
-		"\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13"+
-		"\t\13\4\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22"+
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3F\u032c\4\2\t\2\4"+
+		"\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t"+
+		"\13\4\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22"+
 		"\4\23\t\23\4\24\t\24\4\25\t\25\4\26\t\26\4\27\t\27\4\30\t\30\4\31\t\31"+
 		"\4\32\t\32\4\33\t\33\4\34\t\34\4\35\t\35\4\36\t\36\4\37\t\37\4 \t \4!"+
 		"\t!\4\"\t\"\4#\t#\4$\t$\4%\t%\4&\t&\4\'\t\'\4(\t(\4)\t)\4*\t*\4+\t+\4"+
@@ -6019,74 +6594,75 @@ public class DBDParser extends Parser {
 		"`\t`\4a\ta\4b\tb\4c\tc\4d\td\4e\te\4f\tf\4g\tg\4h\th\4i\ti\4j\tj\4k\t"+
 		"k\4l\tl\4m\tm\4n\tn\4o\to\3\2\3\2\3\2\7\2\u00e2\n\2\f\2\16\2\u00e5\13"+
 		"\2\3\2\3\2\3\3\3\3\3\3\3\4\3\4\3\4\3\4\3\4\5\4\u00f1\n\4\3\5\3\5\3\5\3"+
-		"\5\3\5\3\5\3\5\3\5\3\5\3\5\5\5\u00fd\n\5\3\6\3\6\3\6\3\7\3\7\3\7\3\b\3"+
-		"\b\3\b\3\b\3\b\3\b\3\b\5\b\u010c\n\b\3\t\3\t\3\t\3\n\3\n\3\n\3\n\3\n\3"+
-		"\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\5\n"+
-		"\u0127\n\n\3\13\3\13\3\13\3\f\3\f\3\f\3\r\3\r\3\16\3\16\3\16\3\17\3\17"+
-		"\3\17\3\20\3\20\3\20\3\21\3\21\3\21\3\22\3\22\3\23\3\23\3\24\3\24\5\24"+
-		"\u0143\n\24\3\25\3\25\3\25\3\25\3\26\3\26\3\26\3\27\3\27\3\27\3\27\3\27"+
-		"\5\27\u0151\n\27\3\30\3\30\3\30\3\30\3\30\3\30\3\30\3\30\5\30\u015b\n"+
-		"\30\3\31\3\31\3\31\3\32\3\32\3\32\3\33\3\33\3\33\3\34\3\34\3\34\3\35\3"+
-		"\35\3\35\3\36\3\36\3\36\3\36\3\37\3\37\3\37\3 \3 \3 \3!\3!\3!\7!\u0179"+
-		"\n!\f!\16!\u017c\13!\3\"\3\"\3\"\3#\3#\3#\3#\3#\5#\u0186\n#\3$\3$\3$\3"+
-		"$\3$\3$\3$\3$\3$\3$\3$\3$\5$\u0194\n$\3%\3%\3%\3&\3&\3&\3\'\3\'\3\'\3"+
-		"(\3(\3(\3(\3(\3(\3(\3(\3(\3(\3(\5(\u01aa\n(\3)\3)\3)\3)\5)\u01b0\n)\3"+
-		"*\3*\3+\3+\3+\3+\3+\3+\3+\3+\3+\3+\3+\3+\3+\3+\3+\3+\3+\5+\u01c5\n+\3"+
-		",\3,\3-\3-\3-\3-\3-\3-\3-\3-\3.\3.\3.\3/\3/\3/\3/\3/\3/\5/\u01da\n/\3"+
-		"\60\3\60\3\60\3\61\3\61\3\61\3\61\3\61\3\61\3\61\3\61\5\61\u01e7\n\61"+
-		"\3\62\3\62\3\62\5\62\u01ec\n\62\3\62\5\62\u01ef\n\62\3\62\5\62\u01f2\n"+
-		"\62\3\62\5\62\u01f5\n\62\3\63\3\63\3\64\3\64\3\65\3\65\3\65\3\65\3\66"+
-		"\3\66\3\66\3\66\3\66\3\66\3\67\3\67\38\38\39\39\3:\3:\3;\3;\3<\3<\3<\3"+
-		"<\3=\3=\3=\3>\3>\3>\3?\3?\3?\3@\3@\3@\3@\3@\5@\u0221\n@\3A\3A\3A\3A\3"+
-		"A\3A\3A\3A\3A\3A\3A\3A\3A\3A\3A\3A\5A\u0233\nA\3B\3B\3B\3C\3C\3C\3C\3"+
-		"C\3C\3C\3C\3C\5C\u0241\nC\3D\3D\3E\3E\3E\3F\3F\3F\3G\3G\3G\3H\3H\3H\3"+
-		"I\3I\3I\3J\3J\3J\3K\3K\3K\3L\3L\3L\3L\3L\3L\3L\3L\3L\3L\3L\3L\3L\3L\3"+
-		"L\3L\3L\3L\3L\3L\3L\3L\3L\3L\3L\5L\u0273\nL\3M\3M\3M\3N\3N\3O\3O\3O\3"+
-		"P\3P\3P\3Q\3Q\3Q\3R\3R\3R\3S\3S\3S\3T\3T\3T\3U\3U\3U\3V\3V\3V\6V\u0292"+
-		"\nV\rV\16V\u0293\3W\3W\3W\3W\3W\5W\u029b\nW\3X\3X\3X\3X\3X\5X\u02a2\n"+
-		"X\3Y\3Y\3Y\3Z\3Z\3Z\3Z\3Z\3Z\3[\3[\3[\3[\5[\u02b1\n[\3\\\3\\\3]\3]\3]"+
-		"\3^\3^\3^\3_\3_\3`\3`\3`\3a\3a\3a\3b\3b\3b\3b\3b\5b\u02c8\nb\3c\3c\3c"+
-		"\3c\3c\3c\3c\3c\3c\3c\5c\u02d4\nc\3d\3d\3d\3e\3e\3e\3f\3f\3f\3g\3g\3g"+
-		"\3h\3h\3h\3i\3i\3i\3j\3j\3j\3k\3k\3k\3l\3l\3l\3m\3m\3m\3n\3n\5n\u02f6"+
-		"\nn\3n\3n\3o\3o\3o\2\2p\2\4\6\b\n\f\16\20\22\24\26\30\32\34\36 \"$&(*"+
-		",.\60\62\64\668:<>@BDFHJLNPRTVXZ\\^`bdfhjlnprtvxz|~\u0080\u0082\u0084"+
-		"\u0086\u0088\u008a\u008c\u008e\u0090\u0092\u0094\u0096\u0098\u009a\u009c"+
-		"\u009e\u00a0\u00a2\u00a4\u00a6\u00a8\u00aa\u00ac\u00ae\u00b0\u00b2\u00b4"+
-		"\u00b6\u00b8\u00ba\u00bc\u00be\u00c0\u00c2\u00c4\u00c6\u00c8\u00ca\u00cc"+
-		"\u00ce\u00d0\u00d2\u00d4\u00d6\u00d8\u00da\u00dc\2\17\3\2\21\36\3\2\37"+
-		"!\3\2-.\3\2/\60\3\2:C\3\2DG\3\2IK\3\2IL\3\2MO\3\2ST\4\2JJqr\4\2-.{}\3"+
-		"\2\u008b\u008c\2\u02f5\2\u00de\3\2\2\2\4\u00e8\3\2\2\2\6\u00f0\3\2\2\2"+
-		"\b\u00fc\3\2\2\2\n\u00fe\3\2\2\2\f\u0101\3\2\2\2\16\u010b\3\2\2\2\20\u010d"+
-		"\3\2\2\2\22\u0126\3\2\2\2\24\u0128\3\2\2\2\26\u012b\3\2\2\2\30\u012e\3"+
-		"\2\2\2\32\u0130\3\2\2\2\34\u0133\3\2\2\2\36\u0136\3\2\2\2 \u0139\3\2\2"+
-		"\2\"\u013c\3\2\2\2$\u013e\3\2\2\2&\u0142\3\2\2\2(\u0144\3\2\2\2*\u0148"+
-		"\3\2\2\2,\u0150\3\2\2\2.\u015a\3\2\2\2\60\u015c\3\2\2\2\62\u015f\3\2\2"+
-		"\2\64\u0162\3\2\2\2\66\u0165\3\2\2\28\u0168\3\2\2\2:\u016b\3\2\2\2<\u016f"+
-		"\3\2\2\2>\u0172\3\2\2\2@\u0175\3\2\2\2B\u017d\3\2\2\2D\u0185\3\2\2\2F"+
-		"\u0193\3\2\2\2H\u0195\3\2\2\2J\u0198\3\2\2\2L\u019b\3\2\2\2N\u01a9\3\2"+
-		"\2\2P\u01af\3\2\2\2R\u01b1\3\2\2\2T\u01c4\3\2\2\2V\u01c6\3\2\2\2X\u01c8"+
-		"\3\2\2\2Z\u01d0\3\2\2\2\\\u01d9\3\2\2\2^\u01db\3\2\2\2`\u01e6\3\2\2\2"+
-		"b\u01e8\3\2\2\2d\u01f6\3\2\2\2f\u01f8\3\2\2\2h\u01fa\3\2\2\2j\u01fe\3"+
-		"\2\2\2l\u0204\3\2\2\2n\u0206\3\2\2\2p\u0208\3\2\2\2r\u020a\3\2\2\2t\u020c"+
-		"\3\2\2\2v\u020e\3\2\2\2x\u0212\3\2\2\2z\u0215\3\2\2\2|\u0218\3\2\2\2~"+
-		"\u0220\3\2\2\2\u0080\u0232\3\2\2\2\u0082\u0234\3\2\2\2\u0084\u0240\3\2"+
-		"\2\2\u0086\u0242\3\2\2\2\u0088\u0244\3\2\2\2\u008a\u0247\3\2\2\2\u008c"+
-		"\u024a\3\2\2\2\u008e\u024d\3\2\2\2\u0090\u0250\3\2\2\2\u0092\u0253\3\2"+
-		"\2\2\u0094\u0256\3\2\2\2\u0096\u0272\3\2\2\2\u0098\u0274\3\2\2\2\u009a"+
-		"\u0277\3\2\2\2\u009c\u0279\3\2\2\2\u009e\u027c\3\2\2\2\u00a0\u027f\3\2"+
-		"\2\2\u00a2\u0282\3\2\2\2\u00a4\u0285\3\2\2\2\u00a6\u0288\3\2\2\2\u00a8"+
-		"\u028b\3\2\2\2\u00aa\u028e\3\2\2\2\u00ac\u029a\3\2\2\2\u00ae\u02a1\3\2"+
-		"\2\2\u00b0\u02a3\3\2\2\2\u00b2\u02a6\3\2\2\2\u00b4\u02b0\3\2\2\2\u00b6"+
-		"\u02b2\3\2\2\2\u00b8\u02b4\3\2\2\2\u00ba\u02b7\3\2\2\2\u00bc\u02ba\3\2"+
-		"\2\2\u00be\u02bc\3\2\2\2\u00c0\u02bf\3\2\2\2\u00c2\u02c7\3\2\2\2\u00c4"+
-		"\u02d3\3\2\2\2\u00c6\u02d5\3\2\2\2\u00c8\u02d8\3\2\2\2\u00ca\u02db\3\2"+
-		"\2\2\u00cc\u02de\3\2\2\2\u00ce\u02e1\3\2\2\2\u00d0\u02e4\3\2\2\2\u00d2"+
-		"\u02e7\3\2\2\2\u00d4\u02ea\3\2\2\2\u00d6\u02ed\3\2\2\2\u00d8\u02f0\3\2"+
-		"\2\2\u00da\u02f3\3\2\2\2\u00dc\u02f9\3\2\2\2\u00de\u00df\5\4\3\2\u00df"+
-		"\u00e3\5&\24\2\u00e0\u00e2\5@!\2\u00e1\u00e0\3\2\2\2\u00e2\u00e5\3\2\2"+
-		"\2\u00e3\u00e1\3\2\2\2\u00e3\u00e4\3\2\2\2\u00e4\u00e6\3\2\2\2\u00e5\u00e3"+
-		"\3\2\2\2\u00e6\u00e7\5\u00dan\2\u00e7\3\3\2\2\2\u00e8\u00e9\7\3\2\2\u00e9"+
-		"\u00ea\5\6\4\2\u00ea\5\3\2\2\2\u00eb\u00ec\5\b\5\2\u00ec\u00ed\7\4\2\2"+
+		"\5\3\5\3\5\3\5\3\5\3\5\3\5\5\5\u00fd\n\5\3\6\3\6\3\6\3\6\3\7\3\7\3\7\3"+
+		"\7\3\b\3\b\3\b\3\b\3\b\3\b\3\b\5\b\u010e\n\b\3\t\3\t\3\t\3\t\3\n\3\n\3"+
+		"\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n\3\n"+
+		"\3\n\3\n\5\n\u012a\n\n\3\13\3\13\3\13\3\13\3\f\3\f\3\f\3\f\3\r\3\r\3\r"+
+		"\3\r\3\r\3\r\3\16\3\16\3\16\3\16\3\17\3\17\3\17\3\17\3\20\3\20\3\20\3"+
+		"\20\3\21\3\21\3\21\3\21\3\22\3\22\3\23\3\23\3\24\3\24\5\24\u0150\n\24"+
+		"\3\25\3\25\3\25\3\25\3\26\3\26\3\26\3\27\3\27\3\27\3\27\3\27\5\27\u015e"+
+		"\n\27\3\30\3\30\3\30\3\30\3\30\3\30\3\30\3\30\5\30\u0168\n\30\3\31\3\31"+
+		"\3\31\3\31\3\32\3\32\3\32\3\32\3\33\3\33\3\33\3\33\3\34\3\34\3\34\3\34"+
+		"\3\35\3\35\3\35\3\35\3\36\3\36\3\36\3\36\3\36\3\36\3\37\3\37\3\37\3\37"+
+		"\3 \3 \3 \3 \3!\3!\3!\7!\u018f\n!\f!\16!\u0192\13!\3\"\3\"\3\"\3#\3#\3"+
+		"#\3#\3#\5#\u019c\n#\3$\3$\3$\3$\3$\3$\3$\3$\3$\3$\3$\3$\5$\u01aa\n$\3"+
+		"%\3%\3%\3%\3&\3&\3&\3&\3\'\3\'\3\'\3\'\3(\3(\3(\3(\3(\3(\3(\3(\3(\3(\3"+
+		"(\5(\u01c3\n(\3)\3)\3)\3)\5)\u01c9\n)\3*\3*\3+\3+\3+\3+\3+\3+\3+\3+\3"+
+		"+\3+\3+\3+\3+\3+\3+\3+\3+\5+\u01de\n+\3,\3,\3-\3-\3-\3-\3-\3-\3-\3-\3"+
+		"-\3-\3.\3.\3.\3.\3/\3/\3/\3/\3/\3/\5/\u01f6\n/\3\60\3\60\3\60\3\60\3\61"+
+		"\3\61\3\61\3\61\3\61\3\61\3\62\3\62\3\62\5\62\u0205\n\62\3\62\3\62\5\62"+
+		"\u0209\n\62\3\62\3\62\5\62\u020d\n\62\3\62\3\62\5\62\u0211\n\62\3\63\3"+
+		"\63\3\64\3\64\3\65\3\65\3\65\3\65\3\65\3\65\3\66\3\66\3\66\3\66\3\66\3"+
+		"\66\3\67\3\67\38\38\39\39\3:\3:\3;\3;\3;\3;\3;\3;\3<\3<\3<\3<\3<\3<\3"+
+		"=\3=\3=\3=\3>\3>\3>\3>\3?\3?\3?\3@\3@\3@\3@\3@\5@\u0247\n@\3A\3A\3A\3"+
+		"A\3A\3A\3A\3A\3A\3A\3A\3A\3A\3A\3A\3A\5A\u0259\nA\3B\3B\3B\3B\3C\3C\3"+
+		"C\3C\3C\3C\3C\3C\3C\5C\u0268\nC\3D\3D\3E\3E\3E\3E\3F\3F\3F\3F\3G\3G\3"+
+		"G\3G\3H\3H\3H\3H\3I\3I\3I\3I\3J\3J\3J\3J\3K\3K\3K\3K\3L\3L\3L\3L\3L\3"+
+		"L\3L\5L\u028f\nL\3M\3M\3M\3M\3N\3N\3O\3O\3O\3O\3P\3P\3P\3P\3Q\3Q\3Q\3"+
+		"Q\3R\3R\3R\3R\3S\3S\3S\3S\3T\3T\3T\3T\3U\3U\3U\3U\3V\3V\3V\6V\u02b6\n"+
+		"V\rV\16V\u02b7\3W\3W\3W\3W\3W\5W\u02bf\nW\3X\3X\3X\3X\3X\5X\u02c6\nX\3"+
+		"Y\3Y\3Y\3Y\3Z\3Z\3Z\3Z\3Z\3Z\3[\3[\3[\3[\3\\\3\\\3]\3]\3]\3]\3^\3^\3^"+
+		"\3^\3_\3_\3`\3`\3`\3`\3a\3a\3a\3b\3b\3b\3b\3b\5b\u02ee\nb\3c\3c\3c\3c"+
+		"\3c\3c\3c\3c\3c\3c\5c\u02fa\nc\3d\3d\3d\3d\3e\3e\3e\3e\3f\3f\3f\3f\3g"+
+		"\3g\3g\3g\3h\3h\3h\3h\3i\3i\3i\3i\3j\3j\3j\3j\3k\3k\3k\3k\3l\3l\3l\3l"+
+		"\3m\3m\3m\3m\3n\3n\5n\u0326\nn\3n\3n\3o\3o\3o\2\2p\2\4\6\b\n\f\16\20\22"+
+		"\24\26\30\32\34\36 \"$&(*,.\60\62\64\668:<>@BDFHJLNPRTVXZ\\^`bdfhjlnp"+
+		"rtvxz|~\u0080\u0082\u0084\u0086\u0088\u008a\u008c\u008e\u0090\u0092\u0094"+
+		"\u0096\u0098\u009a\u009c\u009e\u00a0\u00a2\u00a4\u00a6\u00a8\u00aa\u00ac"+
+		"\u00ae\u00b0\u00b2\u00b4\u00b6\u00b8\u00ba\u00bc\u00be\u00c0\u00c2\u00c4"+
+		"\u00c6\u00c8\u00ca\u00cc\u00ce\u00d0\u00d2\u00d4\u00d6\u00d8\u00da\u00dc"+
+		"\2\2\2\u0310\2\u00de\3\2\2\2\4\u00e8\3\2\2\2\6\u00f0\3\2\2\2\b\u00fc\3"+
+		"\2\2\2\n\u00fe\3\2\2\2\f\u0102\3\2\2\2\16\u010d\3\2\2\2\20\u010f\3\2\2"+
+		"\2\22\u0129\3\2\2\2\24\u012b\3\2\2\2\26\u012f\3\2\2\2\30\u0133\3\2\2\2"+
+		"\32\u0139\3\2\2\2\34\u013d\3\2\2\2\36\u0141\3\2\2\2 \u0145\3\2\2\2\"\u0149"+
+		"\3\2\2\2$\u014b\3\2\2\2&\u014f\3\2\2\2(\u0151\3\2\2\2*\u0155\3\2\2\2,"+
+		"\u015d\3\2\2\2.\u0167\3\2\2\2\60\u0169\3\2\2\2\62\u016d\3\2\2\2\64\u0171"+
+		"\3\2\2\2\66\u0175\3\2\2\28\u0179\3\2\2\2:\u017d\3\2\2\2<\u0183\3\2\2\2"+
+		">\u0187\3\2\2\2@\u018b\3\2\2\2B\u0193\3\2\2\2D\u019b\3\2\2\2F\u01a9\3"+
+		"\2\2\2H\u01ab\3\2\2\2J\u01af\3\2\2\2L\u01b3\3\2\2\2N\u01c2\3\2\2\2P\u01c8"+
+		"\3\2\2\2R\u01ca\3\2\2\2T\u01dd\3\2\2\2V\u01df\3\2\2\2X\u01e1\3\2\2\2Z"+
+		"\u01eb\3\2\2\2\\\u01f5\3\2\2\2^\u01f7\3\2\2\2`\u01fb\3\2\2\2b\u0201\3"+
+		"\2\2\2d\u0212\3\2\2\2f\u0214\3\2\2\2h\u0216\3\2\2\2j\u021c\3\2\2\2l\u0222"+
+		"\3\2\2\2n\u0224\3\2\2\2p\u0226\3\2\2\2r\u0228\3\2\2\2t\u022a\3\2\2\2v"+
+		"\u0230\3\2\2\2x\u0236\3\2\2\2z\u023a\3\2\2\2|\u023e\3\2\2\2~\u0246\3\2"+
+		"\2\2\u0080\u0258\3\2\2\2\u0082\u025a\3\2\2\2\u0084\u0267\3\2\2\2\u0086"+
+		"\u0269\3\2\2\2\u0088\u026b\3\2\2\2\u008a\u026f\3\2\2\2\u008c\u0273\3\2"+
+		"\2\2\u008e\u0277\3\2\2\2\u0090\u027b\3\2\2\2\u0092\u027f\3\2\2\2\u0094"+
+		"\u0283\3\2\2\2\u0096\u028e\3\2\2\2\u0098\u0290\3\2\2\2\u009a\u0294\3\2"+
+		"\2\2\u009c\u0296\3\2\2\2\u009e\u029a\3\2\2\2\u00a0\u029e\3\2\2\2\u00a2"+
+		"\u02a2\3\2\2\2\u00a4\u02a6\3\2\2\2\u00a6\u02aa\3\2\2\2\u00a8\u02ae\3\2"+
+		"\2\2\u00aa\u02b2\3\2\2\2\u00ac\u02be\3\2\2\2\u00ae\u02c5\3\2\2\2\u00b0"+
+		"\u02c7\3\2\2\2\u00b2\u02cb\3\2\2\2\u00b4\u02d1\3\2\2\2\u00b6\u02d5\3\2"+
+		"\2\2\u00b8\u02d7\3\2\2\2\u00ba\u02db\3\2\2\2\u00bc\u02df\3\2\2\2\u00be"+
+		"\u02e1\3\2\2\2\u00c0\u02e5\3\2\2\2\u00c2\u02ed\3\2\2\2\u00c4\u02f9\3\2"+
+		"\2\2\u00c6\u02fb\3\2\2\2\u00c8\u02ff\3\2\2\2\u00ca\u0303\3\2\2\2\u00cc"+
+		"\u0307\3\2\2\2\u00ce\u030b\3\2\2\2\u00d0\u030f\3\2\2\2\u00d2\u0313\3\2"+
+		"\2\2\u00d4\u0317\3\2\2\2\u00d6\u031b\3\2\2\2\u00d8\u031f\3\2\2\2\u00da"+
+		"\u0323\3\2\2\2\u00dc\u0329\3\2\2\2\u00de\u00df\5\4\3\2\u00df\u00e3\5&"+
+		"\24\2\u00e0\u00e2\5@!\2\u00e1\u00e0\3\2\2\2\u00e2\u00e5\3\2\2\2\u00e3"+
+		"\u00e1\3\2\2\2\u00e3\u00e4\3\2\2\2\u00e4\u00e6\3\2\2\2\u00e5\u00e3\3\2"+
+		"\2\2\u00e6\u00e7\5\u00dan\2\u00e7\3\3\2\2\2\u00e8\u00e9\7\7\2\2\u00e9"+
+		"\u00ea\5\6\4\2\u00ea\5\3\2\2\2\u00eb\u00ec\5\b\5\2\u00ec\u00ed\7\3\2\2"+
 		"\u00ed\u00ee\5\6\4\2\u00ee\u00f1\3\2\2\2\u00ef\u00f1\5\b\5\2\u00f0\u00eb"+
 		"\3\2\2\2\u00f0\u00ef\3\2\2\2\u00f1\7\3\2\2\2\u00f2\u00fd\5\n\6\2\u00f3"+
 		"\u00fd\5\f\7\2\u00f4\u00fd\5\20\t\2\u00f5\u00fd\5\24\13\2\u00f6\u00fd"+
@@ -6094,182 +6670,184 @@ public class DBDParser extends Parser {
 		"\17\2\u00fa\u00fd\5\36\20\2\u00fb\u00fd\5 \21\2\u00fc\u00f2\3\2\2\2\u00fc"+
 		"\u00f3\3\2\2\2\u00fc\u00f4\3\2\2\2\u00fc\u00f5\3\2\2\2\u00fc\u00f6\3\2"+
 		"\2\2\u00fc\u00f7\3\2\2\2\u00fc\u00f8\3\2\2\2\u00fc\u00f9\3\2\2\2\u00fc"+
-		"\u00fa\3\2\2\2\u00fc\u00fb\3\2\2\2\u00fd\t\3\2\2\2\u00fe\u00ff\7\5\2\2"+
-		"\u00ff\u0100\7\u008d\2\2\u0100\13\3\2\2\2\u0101\u0102\7\6\2\2\u0102\u0103"+
-		"\5\16\b\2\u0103\r\3\2\2\2\u0104\u0105\7\7\2\2\u0105\u0106\5\"\22\2\u0106"+
-		"\u0107\7\4\2\2\u0107\u0108\5$\23\2\u0108\u0109\7\b\2\2\u0109\u010c\3\2"+
-		"\2\2\u010a\u010c\5\"\22\2\u010b\u0104\3\2\2\2\u010b\u010a\3\2\2\2\u010c"+
-		"\17\3\2\2\2\u010d\u010e\7\t\2\2\u010e\u010f\5\22\n\2\u010f\21\3\2\2\2"+
-		"\u0110\u0111\7\7\2\2\u0111\u0112\7\u008d\2\2\u0112\u0113\7\4\2\2\u0113"+
-		"\u0114\7\u008d\2\2\u0114\u0115\7\4\2\2\u0115\u0116\7\u008d\2\2\u0116\u0117"+
-		"\7\4\2\2\u0117\u0118\7\u008d\2\2\u0118\u0127\7\b\2\2\u0119\u011a\7\7\2"+
-		"\2\u011a\u011b\7\u008d\2\2\u011b\u011c\7\4\2\2\u011c\u011d\7\u008d\2\2"+
-		"\u011d\u011e\7\4\2\2\u011e\u011f\7\u008d\2\2\u011f\u0127\7\b\2\2\u0120"+
-		"\u0121\7\7\2\2\u0121\u0122\7\u008d\2\2\u0122\u0123\7\4\2\2\u0123\u0124"+
-		"\7\u008d\2\2\u0124\u0127\7\b\2\2\u0125\u0127\7\u008d\2\2\u0126\u0110\3"+
-		"\2\2\2\u0126\u0119\3\2\2\2\u0126\u0120\3\2\2\2\u0126\u0125\3\2\2\2\u0127"+
-		"\23\3\2\2\2\u0128\u0129\7\n\2\2\u0129\u012a\7\u008e\2\2\u012a\25\3\2\2"+
-		"\2\u012b\u012c\7\13\2\2\u012c\u012d\5\u00dco\2\u012d\27\3\2\2\2\u012e"+
-		"\u012f\7\f\2\2\u012f\31\3\2\2\2\u0130\u0131\7\r\2\2\u0131\u0132\7\u008d"+
-		"\2\2\u0132\33\3\2\2\2\u0133\u0134\7\16\2\2\u0134\u0135\5\u00dco\2\u0135"+
-		"\35\3\2\2\2\u0136\u0137\7\17\2\2\u0137\u0138\7\u008d\2\2\u0138\37\3\2"+
-		"\2\2\u0139\u013a\7\20\2\2\u013a\u013b\7\u008d\2\2\u013b!\3\2\2\2\u013c"+
-		"\u013d\t\2\2\2\u013d#\3\2\2\2\u013e\u013f\t\3\2\2\u013f%\3\2\2\2\u0140"+
-		"\u0143\5*\26\2\u0141\u0143\5(\25\2\u0142\u0140\3\2\2\2\u0142\u0141\3\2"+
-		"\2\2\u0143\'\3\2\2\2\u0144\u0145\7\u008d\2\2\u0145\u0146\7\"\2\2\u0146"+
-		"\u0147\5,\27\2\u0147)\3\2\2\2\u0148\u0149\7\"\2\2\u0149\u014a\5,\27\2"+
-		"\u014a+\3\2\2\2\u014b\u014c\5.\30\2\u014c\u014d\7\4\2\2\u014d\u014e\5"+
-		",\27\2\u014e\u0151\3\2\2\2\u014f\u0151\5.\30\2\u0150\u014b\3\2\2\2\u0150"+
-		"\u014f\3\2\2\2\u0151-\3\2\2\2\u0152\u015b\5\60\31\2\u0153\u015b\5\62\32"+
-		"\2\u0154\u015b\5\64\33\2\u0155\u015b\5\66\34\2\u0156\u015b\58\35\2\u0157"+
-		"\u015b\5:\36\2\u0158\u015b\5<\37\2\u0159\u015b\5> \2\u015a\u0152\3\2\2"+
-		"\2\u015a\u0153\3\2\2\2\u015a\u0154\3\2\2\2\u015a\u0155\3\2\2\2\u015a\u0156"+
-		"\3\2\2\2\u015a\u0157\3\2\2\2\u015a\u0158\3\2\2\2\u015a\u0159\3\2\2\2\u015b"+
-		"/\3\2\2\2\u015c\u015d\7#\2\2\u015d\u015e\7\u008d\2\2\u015e\61\3\2\2\2"+
-		"\u015f\u0160\7$\2\2\u0160\u0161\7\u008d\2\2\u0161\63\3\2\2\2\u0162\u0163"+
-		"\7%\2\2\u0163\u0164\7\u008d\2\2\u0164\65\3\2\2\2\u0165\u0166\7&\2\2\u0166"+
-		"\u0167\7\u008d\2\2\u0167\67\3\2\2\2\u0168\u0169\7\'\2\2\u0169\u016a\7"+
-		"\u008d\2\2\u016a9\3\2\2\2\u016b\u016c\7(\2\2\u016c\u016d\7\u008d\2\2\u016d"+
-		"\u016e\7\b\2\2\u016e;\3\2\2\2\u016f\u0170\7)\2\2\u0170\u0171\7\u008e\2"+
-		"\2\u0171=\3\2\2\2\u0172\u0173\7\20\2\2\u0173\u0174\7\u008d\2\2\u0174?"+
-		"\3\2\2\2\u0175\u017a\5B\"\2\u0176\u0179\5|?\2\u0177\u0179\5\u00aaV\2\u0178"+
-		"\u0176\3\2\2\2\u0178\u0177\3\2\2\2\u0179\u017c\3\2\2\2\u017a\u0178\3\2"+
-		"\2\2\u017a\u017b\3\2\2\2\u017bA\3\2\2\2\u017c\u017a\3\2\2\2\u017d\u017e"+
-		"\7*\2\2\u017e\u017f\5D#\2\u017fC\3\2\2\2\u0180\u0181\5F$\2\u0181\u0182"+
-		"\7\4\2\2\u0182\u0183\5D#\2\u0183\u0186\3\2\2\2\u0184\u0186\5F$\2\u0185"+
-		"\u0180\3\2\2\2\u0185\u0184\3\2\2\2\u0186E\3\2\2\2\u0187\u0194\5H%\2\u0188"+
-		"\u0194\5J&\2\u0189\u0194\5L\'\2\u018a\u0194\5X-\2\u018b\u0194\5Z.\2\u018c"+
-		"\u0194\5^\60\2\u018d\u0194\5`\61\2\u018e\u0194\5h\65\2\u018f\u0194\5t"+
-		";\2\u0190\u0194\5v<\2\u0191\u0194\5x=\2\u0192\u0194\5z>\2\u0193\u0187"+
-		"\3\2\2\2\u0193\u0188\3\2\2\2\u0193\u0189\3\2\2\2\u0193\u018a\3\2\2\2\u0193"+
-		"\u018b\3\2\2\2\u0193\u018c\3\2\2\2\u0193\u018d\3\2\2\2\u0193\u018e\3\2"+
-		"\2\2\u0193\u018f\3\2\2\2\u0193\u0190\3\2\2\2\u0193\u0191\3\2\2\2\u0193"+
-		"\u0192\3\2\2\2\u0194G\3\2\2\2\u0195\u0196\7\5\2\2\u0196\u0197\7\u008d"+
-		"\2\2\u0197I\3\2\2\2\u0198\u0199\7+\2\2\u0199\u019a\7\u008d\2\2\u019aK"+
-		"\3\2\2\2\u019b\u019c\7,\2\2\u019c\u019d\5N(\2\u019dM\3\2\2\2\u019e\u019f"+
-		"\7\7\2\2\u019f\u01a0\5P)\2\u01a0\u01a1\7\4\2\2\u01a1\u01a2\5T+\2\u01a2"+
-		"\u01a3\7\b\2\2\u01a3\u01aa\3\2\2\2\u01a4\u01a5\7\7\2\2\u01a5\u01a6\5P"+
-		")\2\u01a6\u01a7\7\b\2\2\u01a7\u01aa\3\2\2\2\u01a8\u01aa\7\u008d\2\2\u01a9"+
-		"\u019e\3\2\2\2\u01a9\u01a4\3\2\2\2\u01a9\u01a8\3\2\2\2\u01aaO\3\2\2\2"+
-		"\u01ab\u01ac\7\u008d\2\2\u01ac\u01ad\7\4\2\2\u01ad\u01b0\5R*\2\u01ae\u01b0"+
-		"\7\u008d\2\2\u01af\u01ab\3\2\2\2\u01af\u01ae\3\2\2\2\u01b0Q\3\2\2\2\u01b1"+
-		"\u01b2\t\4\2\2\u01b2S\3\2\2\2\u01b3\u01b4\7\7\2\2\u01b4\u01b5\7\u008d"+
-		"\2\2\u01b5\u01b6\7\4\2\2\u01b6\u01b7\5V,\2\u01b7\u01b8\7\4\2\2\u01b8\u01b9"+
-		"\7\u008d\2\2\u01b9\u01ba\7\b\2\2\u01ba\u01c5\3\2\2\2\u01bb\u01bc\7\7\2"+
-		"\2\u01bc\u01bd\7\u008d\2\2\u01bd\u01be\7\4\2\2\u01be\u01bf\5V,\2\u01bf"+
-		"\u01c0\7\b\2\2\u01c0\u01c5\3\2\2\2\u01c1\u01c2\7\7\2\2\u01c2\u01c3\7\u008d"+
-		"\2\2\u01c3\u01c5\7\b\2\2\u01c4\u01b3\3\2\2\2\u01c4\u01bb\3\2\2\2\u01c4"+
-		"\u01c1\3\2\2\2\u01c5U\3\2\2\2\u01c6\u01c7\t\5\2\2\u01c7W\3\2\2\2\u01c8"+
-		"\u01c9\7\61\2\2\u01c9\u01ca\7\u008d\2\2\u01ca\u01cb\7\4\2\2\u01cb\u01cc"+
-		"\7\62\2\2\u01cc\u01cd\7\4\2\2\u01cd\u01ce\7\u008d\2\2\u01ce\u01cf\7\b"+
-		"\2\2\u01cfY\3\2\2\2\u01d0\u01d1\7\63\2\2\u01d1\u01d2\5\\/\2\u01d2[\3\2"+
-		"\2\2\u01d3\u01d4\7\7\2\2\u01d4\u01d5\7\u008d\2\2\u01d5\u01d6\7\4\2\2\u01d6"+
-		"\u01d7\7\u008d\2\2\u01d7\u01da\7\b\2\2\u01d8\u01da\7\u008d\2\2\u01d9\u01d3"+
-		"\3\2\2\2\u01d9\u01d8\3\2\2\2\u01da]\3\2\2\2\u01db\u01dc\7\64\2\2\u01dc"+
-		"\u01dd\7\u008d\2\2\u01dd_\3\2\2\2\u01de\u01df\7\65\2\2\u01df\u01e0\5b"+
-		"\62\2\u01e0\u01e1\7\b\2\2\u01e1\u01e7\3\2\2\2\u01e2\u01e3\7\66\2\2\u01e3"+
-		"\u01e4\5b\62\2\u01e4\u01e5\7\b\2\2\u01e5\u01e7\3\2\2\2\u01e6\u01de\3\2"+
-		"\2\2\u01e6\u01e2\3\2\2\2\u01e7a\3\2\2\2\u01e8\u01eb\5d\63\2\u01e9\u01ea"+
-		"\7\4\2\2\u01ea\u01ec\5f\64\2\u01eb\u01e9\3\2\2\2\u01eb\u01ec\3\2\2\2\u01ec"+
-		"\u01ee\3\2\2\2\u01ed\u01ef\7\67\2\2\u01ee\u01ed\3\2\2\2\u01ee\u01ef\3"+
-		"\2\2\2\u01ef\u01f1\3\2\2\2\u01f0\u01f2\78\2\2\u01f1\u01f0\3\2\2\2\u01f1"+
-		"\u01f2\3\2\2\2\u01f2\u01f4\3\2\2\2\u01f3\u01f5\79\2\2\u01f4\u01f3\3\2"+
-		"\2\2\u01f4\u01f5\3\2\2\2\u01f5c\3\2\2\2\u01f6\u01f7\t\6\2\2\u01f7e\3\2"+
-		"\2\2\u01f8\u01f9\t\7\2\2\u01f9g\3\2\2\2\u01fa\u01fb\7H\2\2\u01fb\u01fc"+
-		"\5j\66\2\u01fc\u01fd\7\b\2\2\u01fdi\3\2\2\2\u01fe\u01ff\5l\67\2\u01ff"+
-		"\u0200\5n8\2\u0200\u0201\5p9\2\u0201\u0202\7\4\2\2\u0202\u0203\5r:\2\u0203"+
-		"k\3\2\2\2\u0204\u0205\t\b\2\2\u0205m\3\2\2\2\u0206\u0207\t\t\2\2\u0207"+
-		"o\3\2\2\2\u0208\u0209\t\b\2\2\u0209q\3\2\2\2\u020a\u020b\t\n\2\2\u020b"+
-		"s\3\2\2\2\u020c\u020d\7\f\2\2\u020du\3\2\2\2\u020e\u020f\7P\2\2\u020f"+
-		"\u0210\7\u008d\2\2\u0210\u0211\7\b\2\2\u0211w\3\2\2\2\u0212\u0213\7\17"+
-		"\2\2\u0213\u0214\7\u008d\2\2\u0214y\3\2\2\2\u0215\u0216\7\20\2\2\u0216"+
-		"\u0217\7\u008d\2\2\u0217{\3\2\2\2\u0218\u0219\7Q\2\2\u0219\u021a\5~@\2"+
-		"\u021a}\3\2\2\2\u021b\u021c\5\u0080A\2\u021c\u021d\7\4\2\2\u021d\u021e"+
-		"\5~@\2\u021e\u0221\3\2\2\2\u021f\u0221\5\u0080A\2\u0220\u021b\3\2\2\2"+
-		"\u0220\u021f\3\2\2\2\u0221\177\3\2\2\2\u0222\u0233\5\u0082B\2\u0223\u0233"+
-		"\5\u0088E\2\u0224\u0233\5\u008aF\2\u0225\u0233\5\u008eH\2\u0226\u0233"+
-		"\5\u008cG\2\u0227\u0233\5\u0090I\2\u0228\u0233\5\u0092J\2\u0229\u0233"+
-		"\5\u0094K\2\u022a\u0233\5\u0098M\2\u022b\u0233\5\u009cO\2\u022c\u0233"+
-		"\5\u009eP\2\u022d\u0233\5\u00a0Q\2\u022e\u0233\5\u00a2R\2\u022f\u0233"+
-		"\5\u00a4S\2\u0230\u0233\5\u00a6T\2\u0231\u0233\5\u00a8U\2\u0232\u0222"+
-		"\3\2\2\2\u0232\u0223\3\2\2\2\u0232\u0224\3\2\2\2\u0232\u0225\3\2\2\2\u0232"+
-		"\u0226\3\2\2\2\u0232\u0227\3\2\2\2\u0232\u0228\3\2\2\2\u0232\u0229\3\2"+
-		"\2\2\u0232\u022a\3\2\2\2\u0232\u022b\3\2\2\2\u0232\u022c\3\2\2\2\u0232"+
-		"\u022d\3\2\2\2\u0232\u022e\3\2\2\2\u0232\u022f\3\2\2\2\u0232\u0230\3\2"+
-		"\2\2\u0232\u0231\3\2\2\2\u0233\u0081\3\2\2\2\u0234\u0235\7\5\2\2\u0235"+
-		"\u0236\5\u0084C\2\u0236\u0083\3\2\2\2\u0237\u0238\7\7\2\2\u0238\u0239"+
-		"\7\u008d\2\2\u0239\u023a\7\4\2\2\u023a\u023b\7R\2\2\u023b\u023c\7\4\2"+
-		"\2\u023c\u023d\5\u0086D\2\u023d\u023e\7\b\2\2\u023e\u0241\3\2\2\2\u023f"+
-		"\u0241\7\u008d\2\2\u0240\u0237\3\2\2\2\u0240\u023f\3\2\2\2\u0241\u0085"+
-		"\3\2\2\2\u0242\u0243\t\13\2\2\u0243\u0087\3\2\2\2\u0244\u0245\7U\2\2\u0245"+
-		"\u0246\7\u008d\2\2\u0246\u0089\3\2\2\2\u0247\u0248\7\63\2\2\u0248\u0249"+
-		"\7\u008d\2\2\u0249\u008b\3\2\2\2\u024a\u024b\7V\2\2\u024b\u024c\7\u008d"+
-		"\2\2\u024c\u008d\3\2\2\2\u024d\u024e\7W\2\2\u024e\u024f\7\u008d\2\2\u024f"+
-		"\u008f\3\2\2\2\u0250\u0251\7X\2\2\u0251\u0252\7\u008d\2\2\u0252\u0091"+
-		"\3\2\2\2\u0253\u0254\7Y\2\2\u0254\u0255\7\u008d\2\2\u0255\u0093\3\2\2"+
-		"\2\u0256\u0257\7Z\2\2\u0257\u0258\5\u0096L\2\u0258\u0095\3\2\2\2\u0259"+
-		"\u0273\7[\2\2\u025a\u0273\7\\\2\2\u025b\u0273\7]\2\2\u025c\u0273\7^\2"+
-		"\2\u025d\u0273\7_\2\2\u025e\u0273\7`\2\2\u025f\u0273\7a\2\2\u0260\u0261"+
-		"\7b\2\2\u0261\u0262\7\u008d\2\2\u0262\u0263\7\4\2\2\u0263\u0264\7\u008d"+
-		"\2\2\u0264\u0273\7\b\2\2\u0265\u0273\7c\2\2\u0266\u0273\7d\2\2\u0267\u0273"+
-		"\7e\2\2\u0268\u0273\7f\2\2\u0269\u0273\7g\2\2\u026a\u0273\7h\2\2\u026b"+
-		"\u0273\7i\2\2\u026c\u0273\7j\2\2\u026d\u0273\7k\2\2\u026e\u0273\7l\2\2"+
-		"\u026f\u0273\7m\2\2\u0270\u0273\7n\2\2\u0271\u0273\7o\2\2\u0272\u0259"+
-		"\3\2\2\2\u0272\u025a\3\2\2\2\u0272\u025b\3\2\2\2\u0272\u025c\3\2\2\2\u0272"+
-		"\u025d\3\2\2\2\u0272\u025e\3\2\2\2\u0272\u025f\3\2\2\2\u0272\u0260\3\2"+
-		"\2\2\u0272\u0265\3\2\2\2\u0272\u0266\3\2\2\2\u0272\u0267\3\2\2\2\u0272"+
-		"\u0268\3\2\2\2\u0272\u0269\3\2\2\2\u0272\u026a\3\2\2\2\u0272\u026b\3\2"+
-		"\2\2\u0272\u026c\3\2\2\2\u0272\u026d\3\2\2\2\u0272\u026e\3\2\2\2\u0272"+
-		"\u026f\3\2\2\2\u0272\u0270\3\2\2\2\u0272\u0271\3\2\2\2\u0273\u0097\3\2"+
-		"\2\2\u0274\u0275\7p\2\2\u0275\u0276\5\u009aN\2\u0276\u0099\3\2\2\2\u0277"+
-		"\u0278\t\f\2\2\u0278\u009b\3\2\2\2\u0279\u027a\7s\2\2\u027a\u027b\7\u008d"+
-		"\2\2\u027b\u009d\3\2\2\2\u027c\u027d\7t\2\2\u027d\u027e\7\u008d\2\2\u027e"+
-		"\u009f\3\2\2\2\u027f\u0280\7u\2\2\u0280\u0281\7\u008d\2\2\u0281\u00a1"+
-		"\3\2\2\2\u0282\u0283\7v\2\2\u0283\u0284\7\u008d\2\2\u0284\u00a3\3\2\2"+
-		"\2\u0285\u0286\7,\2\2\u0286\u0287\7\u008d\2\2\u0287\u00a5\3\2\2\2\u0288"+
-		"\u0289\7w\2\2\u0289\u028a\7\u008d\2\2\u028a\u00a7\3\2\2\2\u028b\u028c"+
-		"\7\20\2\2\u028c\u028d\7\u008d\2\2\u028d\u00a9\3\2\2\2\u028e\u028f\7x\2"+
-		"\2\u028f\u0291\5\u00acW\2\u0290\u0292\5\u00c0a\2\u0291\u0290\3\2\2\2\u0292"+
-		"\u0293\3\2\2\2\u0293\u0291\3\2\2\2\u0293\u0294\3\2\2\2\u0294\u00ab\3\2"+
-		"\2\2\u0295\u0296\5\u00aeX\2\u0296\u0297\7\4\2\2\u0297\u0298\5\u00acW\2"+
-		"\u0298\u029b\3\2\2\2\u0299\u029b\5\u00aeX\2\u029a\u0295\3\2\2\2\u029a"+
-		"\u0299\3\2\2\2\u029b\u00ad\3\2\2\2\u029c\u02a2\5\u00b0Y\2\u029d\u02a2"+
-		"\5\u00b4[\2\u029e\u02a2\5\u00b8]\2\u029f\u02a2\5\u00ba^\2\u02a0\u02a2"+
-		"\5\u00be`\2\u02a1\u029c\3\2\2\2\u02a1\u029d\3\2\2\2\u02a1\u029e\3\2\2"+
-		"\2\u02a1\u029f\3\2\2\2\u02a1\u02a0\3\2\2\2\u02a2\u00af\3\2\2\2\u02a3\u02a4"+
-		"\7\5\2\2\u02a4\u02a5\5\u00b2Z\2\u02a5\u00b1\3\2\2\2\u02a6\u02a7\7\7\2"+
-		"\2\u02a7\u02a8\7\u008d\2\2\u02a8\u02a9\7\4\2\2\u02a9\u02aa\7\u008d\2\2"+
-		"\u02aa\u02ab\7\b\2\2\u02ab\u00b3\3\2\2\2\u02ac\u02ad\7y\2\2\u02ad\u02b1"+
-		"\5\u00b6\\\2\u02ae\u02af\7z\2\2\u02af\u02b1\5\u00b6\\\2\u02b0\u02ac\3"+
-		"\2\2\2\u02b0\u02ae\3\2\2\2\u02b1\u00b5\3\2\2\2\u02b2\u02b3\t\r\2\2\u02b3"+
-		"\u00b7\3\2\2\2\u02b4\u02b5\7~\2\2\u02b5\u02b6\7\u008d\2\2\u02b6\u00b9"+
-		"\3\2\2\2\u02b7\u02b8\7\177\2\2\u02b8\u02b9\5\u00bc_\2\u02b9\u00bb\3\2"+
-		"\2\2\u02ba\u02bb\t\n\2\2\u02bb\u00bd\3\2\2\2\u02bc\u02bd\7\20\2\2\u02bd"+
-		"\u02be\7\u008d\2\2\u02be\u00bf\3\2\2\2\u02bf\u02c0\7\u0080\2\2\u02c0\u02c1"+
-		"\5\u00c2b\2\u02c1\u00c1\3\2\2\2\u02c2\u02c3\5\u00c4c\2\u02c3\u02c4\7\4"+
-		"\2\2\u02c4\u02c5\5\u00c2b\2\u02c5\u02c8\3\2\2\2\u02c6\u02c8\5\u00c4c\2"+
-		"\u02c7\u02c2\3\2\2\2\u02c7\u02c6\3\2\2\2\u02c8\u00c3\3\2\2\2\u02c9\u02d4"+
-		"\5\u00c6d\2\u02ca\u02d4\5\u00c8e\2\u02cb\u02d4\5\u00caf\2\u02cc\u02d4"+
-		"\5\u00ccg\2\u02cd\u02d4\5\u00ceh\2\u02ce\u02d4\5\u00d0i\2\u02cf\u02d4"+
-		"\5\u00d2j\2\u02d0\u02d4\5\u00d4k\2\u02d1\u02d4\5\u00d6l\2\u02d2\u02d4"+
-		"\5\u00d8m\2\u02d3\u02c9\3\2\2\2\u02d3\u02ca\3\2\2\2\u02d3\u02cb\3\2\2"+
-		"\2\u02d3\u02cc\3\2\2\2\u02d3\u02cd\3\2\2\2\u02d3\u02ce\3\2\2\2\u02d3\u02cf"+
-		"\3\2\2\2\u02d3\u02d0\3\2\2\2\u02d3\u02d1\3\2\2\2\u02d3\u02d2\3\2\2\2\u02d4"+
-		"\u00c5\3\2\2\2\u02d5\u02d6\7\5\2\2\u02d6\u02d7\7\u008d\2\2\u02d7\u00c7"+
-		"\3\2\2\2\u02d8\u02d9\7\u0081\2\2\u02d9\u02da\7\u008d\2\2\u02da\u00c9\3"+
-		"\2\2\2\u02db\u02dc\7\u0082\2\2\u02dc\u02dd\7\u008d\2\2\u02dd\u00cb\3\2"+
-		"\2\2\u02de\u02df\7\u0083\2\2\u02df\u02e0\7\u008d\2\2\u02e0\u00cd\3\2\2"+
-		"\2\u02e1\u02e2\7\u0084\2\2\u02e2\u02e3\7\u008d\2\2\u02e3\u00cf\3\2\2\2"+
-		"\u02e4\u02e5\7\u0085\2\2\u02e5\u02e6\7\u008d\2\2\u02e6\u00d1\3\2\2\2\u02e7"+
-		"\u02e8\7\u0086\2\2\u02e8\u02e9\7\u008d\2\2\u02e9\u00d3\3\2\2\2\u02ea\u02eb"+
-		"\7\u0087\2\2\u02eb\u02ec\7\u008d\2\2\u02ec\u00d5\3\2\2\2\u02ed\u02ee\7"+
-		"\20\2\2\u02ee\u02ef\7\u008d\2\2\u02ef\u00d7\3\2\2\2\u02f0\u02f1\7+\2\2"+
-		"\u02f1\u02f2\7\u008d\2\2\u02f2\u00d9\3\2\2\2\u02f3\u02f5\7\u0088\2\2\u02f4"+
-		"\u02f6\7\u0089\2\2\u02f5\u02f4\3\2\2\2\u02f5\u02f6\3\2\2\2\u02f6\u02f7"+
-		"\3\2\2\2\u02f7\u02f8\7\u008a\2\2\u02f8\u00db\3\2\2\2\u02f9\u02fa\t\16"+
-		"\2\2\u02fa\u00dd\3\2\2\2\"\u00e3\u00f0\u00fc\u010b\u0126\u0142\u0150\u015a"+
-		"\u0178\u017a\u0185\u0193\u01a9\u01af\u01c4\u01d9\u01e6\u01eb\u01ee\u01f1"+
-		"\u01f4\u0220\u0232\u0240\u0272\u0293\u029a\u02a1\u02b0\u02c7\u02d3\u02f5";
+		"\u00fa\3\2\2\2\u00fc\u00fb\3\2\2\2\u00fd\t\3\2\2\2\u00fe\u00ff\7\13\2"+
+		"\2\u00ff\u0100\7\6\2\2\u0100\u0101\7?\2\2\u0101\13\3\2\2\2\u0102\u0103"+
+		"\7\f\2\2\u0103\u0104\7\6\2\2\u0104\u0105\5\16\b\2\u0105\r\3\2\2\2\u0106"+
+		"\u0107\7\4\2\2\u0107\u0108\5\"\22\2\u0108\u0109\7\3\2\2\u0109\u010a\5"+
+		"$\23\2\u010a\u010b\7\5\2\2\u010b\u010e\3\2\2\2\u010c\u010e\5\"\22\2\u010d"+
+		"\u0106\3\2\2\2\u010d\u010c\3\2\2\2\u010e\17\3\2\2\2\u010f\u0110\7\r\2"+
+		"\2\u0110\u0111\7\6\2\2\u0111\u0112\5\22\n\2\u0112\21\3\2\2\2\u0113\u0114"+
+		"\7\4\2\2\u0114\u0115\7?\2\2\u0115\u0116\7\3\2\2\u0116\u0117\7?\2\2\u0117"+
+		"\u0118\7\3\2\2\u0118\u0119\7?\2\2\u0119\u011a\7\3\2\2\u011a\u011b\7?\2"+
+		"\2\u011b\u012a\7\5\2\2\u011c\u011d\7\4\2\2\u011d\u011e\7?\2\2\u011e\u011f"+
+		"\7\3\2\2\u011f\u0120\7?\2\2\u0120\u0121\7\3\2\2\u0121\u0122\7?\2\2\u0122"+
+		"\u012a\7\5\2\2\u0123\u0124\7\4\2\2\u0124\u0125\7?\2\2\u0125\u0126\7\3"+
+		"\2\2\u0126\u0127\7?\2\2\u0127\u012a\7\5\2\2\u0128\u012a\7?\2\2\u0129\u0113"+
+		"\3\2\2\2\u0129\u011c\3\2\2\2\u0129\u0123\3\2\2\2\u0129\u0128\3\2\2\2\u012a"+
+		"\23\3\2\2\2\u012b\u012c\7\16\2\2\u012c\u012d\7\6\2\2\u012d\u012e\7A\2"+
+		"\2\u012e\25\3\2\2\2\u012f\u0130\7\17\2\2\u0130\u0131\7\6\2\2\u0131\u0132"+
+		"\5\u00dco\2\u0132\27\3\2\2\2\u0133\u0134\7\20\2\2\u0134\u0135\7\6\2\2"+
+		"\u0135\u0136\7\4\2\2\u0136\u0137\7\21\2\2\u0137\u0138\7\5\2\2\u0138\31"+
+		"\3\2\2\2\u0139\u013a\7\22\2\2\u013a\u013b\7\6\2\2\u013b\u013c\7?\2\2\u013c"+
+		"\33\3\2\2\2\u013d\u013e\7\23\2\2\u013e\u013f\7\6\2\2\u013f\u0140\5\u00dc"+
+		"o\2\u0140\35\3\2\2\2\u0141\u0142\7\24\2\2\u0142\u0143\7\6\2\2\u0143\u0144"+
+		"\7?\2\2\u0144\37\3\2\2\2\u0145\u0146\7\25\2\2\u0146\u0147\7\6\2\2\u0147"+
+		"\u0148\7?\2\2\u0148!\3\2\2\2\u0149\u014a\7?\2\2\u014a#\3\2\2\2\u014b\u014c"+
+		"\7?\2\2\u014c%\3\2\2\2\u014d\u0150\5*\26\2\u014e\u0150\5(\25\2\u014f\u014d"+
+		"\3\2\2\2\u014f\u014e\3\2\2\2\u0150\'\3\2\2\2\u0151\u0152\7?\2\2\u0152"+
+		"\u0153\7\26\2\2\u0153\u0154\5,\27\2\u0154)\3\2\2\2\u0155\u0156\7\26\2"+
+		"\2\u0156\u0157\5,\27\2\u0157+\3\2\2\2\u0158\u0159\5.\30\2\u0159\u015a"+
+		"\7\3\2\2\u015a\u015b\5,\27\2\u015b\u015e\3\2\2\2\u015c\u015e\5.\30\2\u015d"+
+		"\u0158\3\2\2\2\u015d\u015c\3\2\2\2\u015e-\3\2\2\2\u015f\u0168\5\60\31"+
+		"\2\u0160\u0168\5\62\32\2\u0161\u0168\5\64\33\2\u0162\u0168\5\66\34\2\u0163"+
+		"\u0168\58\35\2\u0164\u0168\5:\36\2\u0165\u0168\5<\37\2\u0166\u0168\5>"+
+		" \2\u0167\u015f\3\2\2\2\u0167\u0160\3\2\2\2\u0167\u0161\3\2\2\2\u0167"+
+		"\u0162\3\2\2\2\u0167\u0163\3\2\2\2\u0167\u0164\3\2\2\2\u0167\u0165\3\2"+
+		"\2\2\u0167\u0166\3\2\2\2\u0168/\3\2\2\2\u0169\u016a\7\27\2\2\u016a\u016b"+
+		"\7\6\2\2\u016b\u016c\7?\2\2\u016c\61\3\2\2\2\u016d\u016e\7\30\2\2\u016e"+
+		"\u016f\7\6\2\2\u016f\u0170\7?\2\2\u0170\63\3\2\2\2\u0171\u0172\7\31\2"+
+		"\2\u0172\u0173\7\6\2\2\u0173\u0174\7?\2\2\u0174\65\3\2\2\2\u0175\u0176"+
+		"\7\32\2\2\u0176\u0177\7\6\2\2\u0177\u0178\7?\2\2\u0178\67\3\2\2\2\u0179"+
+		"\u017a\7\33\2\2\u017a\u017b\7\6\2\2\u017b\u017c\7?\2\2\u017c9\3\2\2\2"+
+		"\u017d\u017e\7\34\2\2\u017e\u017f\7\6\2\2\u017f\u0180\7\4\2\2\u0180\u0181"+
+		"\7?\2\2\u0181\u0182\7\5\2\2\u0182;\3\2\2\2\u0183\u0184\7\35\2\2\u0184"+
+		"\u0185\7\6\2\2\u0185\u0186\7A\2\2\u0186=\3\2\2\2\u0187\u0188\7\25\2\2"+
+		"\u0188\u0189\7\6\2\2\u0189\u018a\7?\2\2\u018a?\3\2\2\2\u018b\u0190\5B"+
+		"\"\2\u018c\u018f\5|?\2\u018d\u018f\5\u00aaV\2\u018e\u018c\3\2\2\2\u018e"+
+		"\u018d\3\2\2\2\u018f\u0192\3\2\2\2\u0190\u018e\3\2\2\2\u0190\u0191\3\2"+
+		"\2\2\u0191A\3\2\2\2\u0192\u0190\3\2\2\2\u0193\u0194\7\36\2\2\u0194\u0195"+
+		"\5D#\2\u0195C\3\2\2\2\u0196\u0197\5F$\2\u0197\u0198\7\3\2\2\u0198\u0199"+
+		"\5D#\2\u0199\u019c\3\2\2\2\u019a\u019c\5F$\2\u019b\u0196\3\2\2\2\u019b"+
+		"\u019a\3\2\2\2\u019cE\3\2\2\2\u019d\u01aa\5H%\2\u019e\u01aa\5J&\2\u019f"+
+		"\u01aa\5L\'\2\u01a0\u01aa\5X-\2\u01a1\u01aa\5Z.\2\u01a2\u01aa\5^\60\2"+
+		"\u01a3\u01aa\5`\61\2\u01a4\u01aa\5h\65\2\u01a5\u01aa\5t;\2\u01a6\u01aa"+
+		"\5v<\2\u01a7\u01aa\5x=\2\u01a8\u01aa\5z>\2\u01a9\u019d\3\2\2\2\u01a9\u019e"+
+		"\3\2\2\2\u01a9\u019f\3\2\2\2\u01a9\u01a0\3\2\2\2\u01a9\u01a1\3\2\2\2\u01a9"+
+		"\u01a2\3\2\2\2\u01a9\u01a3\3\2\2\2\u01a9\u01a4\3\2\2\2\u01a9\u01a5\3\2"+
+		"\2\2\u01a9\u01a6\3\2\2\2\u01a9\u01a7\3\2\2\2\u01a9\u01a8\3\2\2\2\u01aa"+
+		"G\3\2\2\2\u01ab\u01ac\7\13\2\2\u01ac\u01ad\7\6\2\2\u01ad\u01ae\7?\2\2"+
+		"\u01aeI\3\2\2\2\u01af\u01b0\7\37\2\2\u01b0\u01b1\7\6\2\2\u01b1\u01b2\7"+
+		"?\2\2\u01b2K\3\2\2\2\u01b3\u01b4\7 \2\2\u01b4\u01b5\7\6\2\2\u01b5\u01b6"+
+		"\5N(\2\u01b6M\3\2\2\2\u01b7\u01b8\7\4\2\2\u01b8\u01b9\5P)\2\u01b9\u01ba"+
+		"\7\3\2\2\u01ba\u01bb\5T+\2\u01bb\u01bc\7\5\2\2\u01bc\u01c3\3\2\2\2\u01bd"+
+		"\u01be\7\4\2\2\u01be\u01bf\5P)\2\u01bf\u01c0\7\5\2\2\u01c0\u01c3\3\2\2"+
+		"\2\u01c1\u01c3\7?\2\2\u01c2\u01b7\3\2\2\2\u01c2\u01bd\3\2\2\2\u01c2\u01c1"+
+		"\3\2\2\2\u01c3O\3\2\2\2\u01c4\u01c5\7?\2\2\u01c5\u01c6\7\3\2\2\u01c6\u01c9"+
+		"\5R*\2\u01c7\u01c9\7?\2\2\u01c8\u01c4\3\2\2\2\u01c8\u01c7\3\2\2\2\u01c9"+
+		"Q\3\2\2\2\u01ca\u01cb\7?\2\2\u01cbS\3\2\2\2\u01cc\u01cd\7\4\2\2\u01cd"+
+		"\u01ce\7?\2\2\u01ce\u01cf\7\3\2\2\u01cf\u01d0\5V,\2\u01d0\u01d1\7\3\2"+
+		"\2\u01d1\u01d2\7?\2\2\u01d2\u01d3\7\5\2\2\u01d3\u01de\3\2\2\2\u01d4\u01d5"+
+		"\7\4\2\2\u01d5\u01d6\7?\2\2\u01d6\u01d7\7\3\2\2\u01d7\u01d8\5V,\2\u01d8"+
+		"\u01d9\7\5\2\2\u01d9\u01de\3\2\2\2\u01da\u01db\7\4\2\2\u01db\u01dc\7?"+
+		"\2\2\u01dc\u01de\7\5\2\2\u01dd\u01cc\3\2\2\2\u01dd\u01d4\3\2\2\2\u01dd"+
+		"\u01da\3\2\2\2\u01deU\3\2\2\2\u01df\u01e0\7?\2\2\u01e0W\3\2\2\2\u01e1"+
+		"\u01e2\7!\2\2\u01e2\u01e3\7\6\2\2\u01e3\u01e4\7\4\2\2\u01e4\u01e5\7?\2"+
+		"\2\u01e5\u01e6\7\3\2\2\u01e6\u01e7\7#\2\2\u01e7\u01e8\7\3\2\2\u01e8\u01e9"+
+		"\7?\2\2\u01e9\u01ea\7\5\2\2\u01eaY\3\2\2\2\u01eb\u01ec\7\"\2\2\u01ec\u01ed"+
+		"\7\6\2\2\u01ed\u01ee\5\\/\2\u01ee[\3\2\2\2\u01ef\u01f0\7\4\2\2\u01f0\u01f1"+
+		"\7?\2\2\u01f1\u01f2\7\3\2\2\u01f2\u01f3\7?\2\2\u01f3\u01f6\7\5\2\2\u01f4"+
+		"\u01f6\7?\2\2\u01f5\u01ef\3\2\2\2\u01f5\u01f4\3\2\2\2\u01f6]\3\2\2\2\u01f7"+
+		"\u01f8\7$\2\2\u01f8\u01f9\7\6\2\2\u01f9\u01fa\7?\2\2\u01fa_\3\2\2\2\u01fb"+
+		"\u01fc\7%\2\2\u01fc\u01fd\7\6\2\2\u01fd\u01fe\7\4\2\2\u01fe\u01ff\5b\62"+
+		"\2\u01ff\u0200\7\5\2\2\u0200a\3\2\2\2\u0201\u0204\5d\63\2\u0202\u0203"+
+		"\7\3\2\2\u0203\u0205\5f\64\2\u0204\u0202\3\2\2\2\u0204\u0205\3\2\2\2\u0205"+
+		"\u0208\3\2\2\2\u0206\u0207\7\3\2\2\u0207\u0209\7?\2\2\u0208\u0206\3\2"+
+		"\2\2\u0208\u0209\3\2\2\2\u0209\u020c\3\2\2\2\u020a\u020b\7\3\2\2\u020b"+
+		"\u020d\7?\2\2\u020c\u020a\3\2\2\2\u020c\u020d\3\2\2\2\u020d\u0210\3\2"+
+		"\2\2\u020e\u020f\7\3\2\2\u020f\u0211\7?\2\2\u0210\u020e\3\2\2\2\u0210"+
+		"\u0211\3\2\2\2\u0211c\3\2\2\2\u0212\u0213\7?\2\2\u0213e\3\2\2\2\u0214"+
+		"\u0215\7?\2\2\u0215g\3\2\2\2\u0216\u0217\7&\2\2\u0217\u0218\7\6\2\2\u0218"+
+		"\u0219\7\4\2\2\u0219\u021a\5j\66\2\u021a\u021b\7\5\2\2\u021bi\3\2\2\2"+
+		"\u021c\u021d\5l\67\2\u021d\u021e\5n8\2\u021e\u021f\5p9\2\u021f\u0220\7"+
+		"\3\2\2\u0220\u0221\5r:\2\u0221k\3\2\2\2\u0222\u0223\7?\2\2\u0223m\3\2"+
+		"\2\2\u0224\u0225\7?\2\2\u0225o\3\2\2\2\u0226\u0227\7?\2\2\u0227q\3\2\2"+
+		"\2\u0228\u0229\7?\2\2\u0229s\3\2\2\2\u022a\u022b\7\20\2\2\u022b\u022c"+
+		"\7\6\2\2\u022c\u022d\7\4\2\2\u022d\u022e\7\21\2\2\u022e\u022f\7\5\2\2"+
+		"\u022fu\3\2\2\2\u0230\u0231\7\'\2\2\u0231\u0232\7\6\2\2\u0232\u0233\7"+
+		"\4\2\2\u0233\u0234\7?\2\2\u0234\u0235\7\5\2\2\u0235w\3\2\2\2\u0236\u0237"+
+		"\7\24\2\2\u0237\u0238\7\6\2\2\u0238\u0239\7?\2\2\u0239y\3\2\2\2\u023a"+
+		"\u023b\7\25\2\2\u023b\u023c\7\6\2\2\u023c\u023d\7?\2\2\u023d{\3\2\2\2"+
+		"\u023e\u023f\7(\2\2\u023f\u0240\5~@\2\u0240}\3\2\2\2\u0241\u0242\5\u0080"+
+		"A\2\u0242\u0243\7\3\2\2\u0243\u0244\5~@\2\u0244\u0247\3\2\2\2\u0245\u0247"+
+		"\5\u0080A\2\u0246\u0241\3\2\2\2\u0246\u0245\3\2\2\2\u0247\177\3\2\2\2"+
+		"\u0248\u0259\5\u0082B\2\u0249\u0259\5\u0088E\2\u024a\u0259\5\u008aF\2"+
+		"\u024b\u0259\5\u008eH\2\u024c\u0259\5\u008cG\2\u024d\u0259\5\u0090I\2"+
+		"\u024e\u0259\5\u0092J\2\u024f\u0259\5\u0094K\2\u0250\u0259\5\u0098M\2"+
+		"\u0251\u0259\5\u009cO\2\u0252\u0259\5\u009eP\2\u0253\u0259\5\u00a0Q\2"+
+		"\u0254\u0259\5\u00a2R\2\u0255\u0259\5\u00a4S\2\u0256\u0259\5\u00a6T\2"+
+		"\u0257\u0259\5\u00a8U\2\u0258\u0248\3\2\2\2\u0258\u0249\3\2\2\2\u0258"+
+		"\u024a\3\2\2\2\u0258\u024b\3\2\2\2\u0258\u024c\3\2\2\2\u0258\u024d\3\2"+
+		"\2\2\u0258\u024e\3\2\2\2\u0258\u024f\3\2\2\2\u0258\u0250\3\2\2\2\u0258"+
+		"\u0251\3\2\2\2\u0258\u0252\3\2\2\2\u0258\u0253\3\2\2\2\u0258\u0254\3\2"+
+		"\2\2\u0258\u0255\3\2\2\2\u0258\u0256\3\2\2\2\u0258\u0257\3\2\2\2\u0259"+
+		"\u0081\3\2\2\2\u025a\u025b\7\13\2\2\u025b\u025c\7\6\2\2\u025c\u025d\5"+
+		"\u0084C\2\u025d\u0083\3\2\2\2\u025e\u025f\7\4\2\2\u025f\u0260\7?\2\2\u0260"+
+		"\u0261\7\3\2\2\u0261\u0262\7?\2\2\u0262\u0263\7\3\2\2\u0263\u0264\5\u0086"+
+		"D\2\u0264\u0265\7\5\2\2\u0265\u0268\3\2\2\2\u0266\u0268\7?\2\2\u0267\u025e"+
+		"\3\2\2\2\u0267\u0266\3\2\2\2\u0268\u0085\3\2\2\2\u0269\u026a\7?\2\2\u026a"+
+		"\u0087\3\2\2\2\u026b\u026c\7\37\2\2\u026c\u026d\7\6\2\2\u026d\u026e\7"+
+		"?\2\2\u026e\u0089\3\2\2\2\u026f\u0270\7\"\2\2\u0270\u0271\7\6\2\2\u0271"+
+		"\u0272\7?\2\2\u0272\u008b\3\2\2\2\u0273\u0274\7)\2\2\u0274\u0275\7\6\2"+
+		"\2\u0275\u0276\7?\2\2\u0276\u008d\3\2\2\2\u0277\u0278\7*\2\2\u0278\u0279"+
+		"\7\6\2\2\u0279\u027a\7?\2\2\u027a\u008f\3\2\2\2\u027b\u027c\7+\2\2\u027c"+
+		"\u027d\7\6\2\2\u027d\u027e\7?\2\2\u027e\u0091\3\2\2\2\u027f\u0280\7,\2"+
+		"\2\u0280\u0281\7\6\2\2\u0281\u0282\7?\2\2\u0282\u0093\3\2\2\2\u0283\u0284"+
+		"\7-\2\2\u0284\u0285\7\6\2\2\u0285\u0286\5\u0096L\2\u0286\u0095\3\2\2\2"+
+		"\u0287\u028f\7?\2\2\u0288\u0289\7?\2\2\u0289\u028a\7\4\2\2\u028a\u028b"+
+		"\7?\2\2\u028b\u028c\7\3\2\2\u028c\u028d\7?\2\2\u028d\u028f\7\5\2\2\u028e"+
+		"\u0287\3\2\2\2\u028e\u0288\3\2\2\2\u028f\u0097\3\2\2\2\u0290\u0291\7."+
+		"\2\2\u0291\u0292\7\6\2\2\u0292\u0293\5\u009aN\2\u0293\u0099\3\2\2\2\u0294"+
+		"\u0295\7?\2\2\u0295\u009b\3\2\2\2\u0296\u0297\7/\2\2\u0297\u0298\7\6\2"+
+		"\2\u0298\u0299\7?\2\2\u0299\u009d\3\2\2\2\u029a\u029b\7\60\2\2\u029b\u029c"+
+		"\7\6\2\2\u029c\u029d\7?\2\2\u029d\u009f\3\2\2\2\u029e\u029f\7\61\2\2\u029f"+
+		"\u02a0\7\6\2\2\u02a0\u02a1\7?\2\2\u02a1\u00a1\3\2\2\2\u02a2\u02a3\7\62"+
+		"\2\2\u02a3\u02a4\7\6\2\2\u02a4\u02a5\7?\2\2\u02a5\u00a3\3\2\2\2\u02a6"+
+		"\u02a7\7 \2\2\u02a7\u02a8\7\6\2\2\u02a8\u02a9\7?\2\2\u02a9\u00a5\3\2\2"+
+		"\2\u02aa\u02ab\7\63\2\2\u02ab\u02ac\7\6\2\2\u02ac\u02ad\7?\2\2\u02ad\u00a7"+
+		"\3\2\2\2\u02ae\u02af\7\25\2\2\u02af\u02b0\7\6\2\2\u02b0\u02b1\7?\2\2\u02b1"+
+		"\u00a9\3\2\2\2\u02b2\u02b3\7\64\2\2\u02b3\u02b5\5\u00acW\2\u02b4\u02b6"+
+		"\5\u00c0a\2\u02b5\u02b4\3\2\2\2\u02b6\u02b7\3\2\2\2\u02b7\u02b5\3\2\2"+
+		"\2\u02b7\u02b8\3\2\2\2\u02b8\u00ab\3\2\2\2\u02b9\u02ba\5\u00aeX\2\u02ba"+
+		"\u02bb\7\3\2\2\u02bb\u02bc\5\u00acW\2\u02bc\u02bf\3\2\2\2\u02bd\u02bf"+
+		"\5\u00aeX\2\u02be\u02b9\3\2\2\2\u02be\u02bd\3\2\2\2\u02bf\u00ad\3\2\2"+
+		"\2\u02c0\u02c6\5\u00b0Y\2\u02c1\u02c6\5\u00b4[\2\u02c2\u02c6\5\u00b8]"+
+		"\2\u02c3\u02c6\5\u00ba^\2\u02c4\u02c6\5\u00be`\2\u02c5\u02c0\3\2\2\2\u02c5"+
+		"\u02c1\3\2\2\2\u02c5\u02c2\3\2\2\2\u02c5\u02c3\3\2\2\2\u02c5\u02c4\3\2"+
+		"\2\2\u02c6\u00af\3\2\2\2\u02c7\u02c8\7\13\2\2\u02c8\u02c9\7\6\2\2\u02c9"+
+		"\u02ca\5\u00b2Z\2\u02ca\u00b1\3\2\2\2\u02cb\u02cc\7\4\2\2\u02cc\u02cd"+
+		"\7?\2\2\u02cd\u02ce\7\3\2\2\u02ce\u02cf\7?\2\2\u02cf\u02d0\7\5\2\2\u02d0"+
+		"\u00b3\3\2\2\2\u02d1\u02d2\7%\2\2\u02d2\u02d3\7\6\2\2\u02d3\u02d4\5\u00b6"+
+		"\\\2\u02d4\u00b5\3\2\2\2\u02d5\u02d6\7?\2\2\u02d6\u00b7\3\2\2\2\u02d7"+
+		"\u02d8\7\65\2\2\u02d8\u02d9\7\6\2\2\u02d9\u02da\7?\2\2\u02da\u00b9\3\2"+
+		"\2\2\u02db\u02dc\7&\2\2\u02dc\u02dd\7\6\2\2\u02dd\u02de\5\u00bc_\2\u02de"+
+		"\u00bb\3\2\2\2\u02df\u02e0\7?\2\2\u02e0\u00bd\3\2\2\2\u02e1\u02e2\7\25"+
+		"\2\2\u02e2\u02e3\7\6\2\2\u02e3\u02e4\7?\2\2\u02e4\u00bf\3\2\2\2\u02e5"+
+		"\u02e6\7\66\2\2\u02e6\u02e7\5\u00c2b\2\u02e7\u00c1\3\2\2\2\u02e8\u02e9"+
+		"\5\u00c4c\2\u02e9\u02ea\7\3\2\2\u02ea\u02eb\5\u00c2b\2\u02eb\u02ee\3\2"+
+		"\2\2\u02ec\u02ee\5\u00c4c\2\u02ed\u02e8\3\2\2\2\u02ed\u02ec\3\2\2\2\u02ee"+
+		"\u00c3\3\2\2\2\u02ef\u02fa\5\u00c6d\2\u02f0\u02fa\5\u00c8e\2\u02f1\u02fa"+
+		"\5\u00caf\2\u02f2\u02fa\5\u00ccg\2\u02f3\u02fa\5\u00ceh\2\u02f4\u02fa"+
+		"\5\u00d0i\2\u02f5\u02fa\5\u00d2j\2\u02f6\u02fa\5\u00d4k\2\u02f7\u02fa"+
+		"\5\u00d6l\2\u02f8\u02fa\5\u00d8m\2\u02f9\u02ef\3\2\2\2\u02f9\u02f0\3\2"+
+		"\2\2\u02f9\u02f1\3\2\2\2\u02f9\u02f2\3\2\2\2\u02f9\u02f3\3\2\2\2\u02f9"+
+		"\u02f4\3\2\2\2\u02f9\u02f5\3\2\2\2\u02f9\u02f6\3\2\2\2\u02f9\u02f7\3\2"+
+		"\2\2\u02f9\u02f8\3\2\2\2\u02fa\u00c5\3\2\2\2\u02fb\u02fc\7\13\2\2\u02fc"+
+		"\u02fd\7\6\2\2\u02fd\u02fe\7?\2\2\u02fe\u00c7\3\2\2\2\u02ff\u0300\7\67"+
+		"\2\2\u0300\u0301\7\6\2\2\u0301\u0302\7?\2\2\u0302\u00c9\3\2\2\2\u0303"+
+		"\u0304\78\2\2\u0304\u0305\7\6\2\2\u0305\u0306\7?\2\2\u0306\u00cb\3\2\2"+
+		"\2\u0307\u0308\79\2\2\u0308\u0309\7\6\2\2\u0309\u030a\7?\2\2\u030a\u00cd"+
+		"\3\2\2\2\u030b\u030c\7:\2\2\u030c\u030d\7\6\2\2\u030d\u030e\7?\2\2\u030e"+
+		"\u00cf\3\2\2\2\u030f\u0310\7;\2\2\u0310\u0311\7\6\2\2\u0311\u0312\7?\2"+
+		"\2\u0312\u00d1\3\2\2\2\u0313\u0314\7<\2\2\u0314\u0315\7\6\2\2\u0315\u0316"+
+		"\7?\2\2\u0316\u00d3\3\2\2\2\u0317\u0318\7=\2\2\u0318\u0319\7\6\2\2\u0319"+
+		"\u031a\7?\2\2\u031a\u00d5\3\2\2\2\u031b\u031c\7\25\2\2\u031c\u031d\7\6"+
+		"\2\2\u031d\u031e\7?\2\2\u031e\u00d7\3\2\2\2\u031f\u0320\7\37\2\2\u0320"+
+		"\u0321\7\6\2\2\u0321\u0322\7?\2\2\u0322\u00d9\3\2\2\2\u0323\u0325\7\b"+
+		"\2\2\u0324\u0326\7\t\2\2\u0325\u0324\3\2\2\2\u0325\u0326\3\2\2\2\u0326"+
+		"\u0327\3\2\2\2\u0327\u0328\7\n\2\2\u0328\u00db\3\2\2\2\u0329\u032a\7?"+
+		"\2\2\u032a\u00dd\3\2\2\2 \u00e3\u00f0\u00fc\u010d\u0129\u014f\u015d\u0167"+
+		"\u018e\u0190\u019b\u01a9\u01c2\u01c8\u01dd\u01f5\u0204\u0208\u020c\u0210"+
+		"\u0246\u0258\u0267\u028e\u02b7\u02be\u02c5\u02ed\u02f9\u0325";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

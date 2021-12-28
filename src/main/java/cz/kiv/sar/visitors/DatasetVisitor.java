@@ -1,7 +1,7 @@
 package cz.kiv.sar.visitors;
 
-import cz.kiv.sar.antlr.DBDBaseVisitor;
 import cz.kiv.sar.antlr.DBDParser;
+import cz.kiv.sar.antlr.DBDParserBaseVisitor;
 import cz.kiv.sar.structure.ControlCharacters;
 import cz.kiv.sar.structure.DataSet;
 import cz.kiv.sar.structure.DatasetParam;
@@ -10,7 +10,7 @@ import org.antlr.v4.runtime.tree.ParseTree;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DatasetVisitor extends DBDBaseVisitor<DataSet> {
+public class DatasetVisitor extends DBDParserBaseVisitor<DataSet> {
 
     @Override
     public DataSet visitDataset(DBDParser.DatasetContext ctx) {

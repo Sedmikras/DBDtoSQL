@@ -1,7 +1,7 @@
 package cz.kiv.sar.visitors;
 
-import cz.kiv.sar.antlr.DBDBaseVisitor;
 import cz.kiv.sar.antlr.DBDParser;
+import cz.kiv.sar.antlr.DBDParserBaseVisitor;
 import cz.kiv.sar.structure.DataSet;
 import cz.kiv.sar.structure.Database;
 import cz.kiv.sar.structure.Segment;
@@ -9,7 +9,7 @@ import cz.kiv.sar.structure.Segment;
 import java.util.List;
 import java.util.ArrayList;
 
-public class SourceVisitor extends DBDBaseVisitor<Database> {
+public class SourceVisitor extends DBDParserBaseVisitor<Database> {
     Database database;
 
     @Override

@@ -1,13 +1,13 @@
 package cz.kiv.sar.visitors;
 
-import cz.kiv.sar.antlr.DBDBaseVisitor;
 import cz.kiv.sar.antlr.DBDParser;
+import cz.kiv.sar.antlr.DBDParserBaseVisitor;
 import cz.kiv.sar.structure.*;
 import org.antlr.v4.runtime.tree.ParseTree;
 
 import java.util.List;
 
-public class FieldVisitor extends DBDBaseVisitor<Field> {
+public class FieldVisitor extends DBDParserBaseVisitor<Field> {
     @Override
     public Field visitField(DBDParser.FieldContext ctx) {
         Field f = new Field();

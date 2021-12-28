@@ -1,8 +1,8 @@
-grammar DBDParser;
+parser grammar DBDParser;
 
 //import DBDLexer;
 
-// options { tokenVocab=DBDLexer; } // use tokens from DBDLexer.g4
+options { tokenVocab=DBDLexer; } // use tokens from DBDLexer.g4
 
 source: dbd dataset segment* end;
 
@@ -405,87 +405,3 @@ bool_string: String;/*
     : 'YES'
     | 'NO'
     ;*/
-
-EQUAL: '=';// -> pushMode(PARAM);
-COM : ',';
-    LPAREN: '(';
-    RPAREN: ')';
-
-DBD: 'DBD';
-DBD_GEN: 'DBDGEN';
-FINISH: 'FINISH';
-END: 'END';
-
-NAME: 'NAME';
-ACCESS: 'ACCESS';
-RMNAME: 'RMNAME';
-DBVER: 'DBVER';
-PASSWD: 'PASSWD';
-EXIT: 'EXIT';
-NONE: 'NONE';
-VERSION: 'VERSION';
-DATXEXIT: 'DATXEXIT';
-ENCODING: 'ENCODING';
-REMARKS: 'REMARKS';
-
-DATASET: 'DATASET';
-DD1: 'DD1';
-SIZE: 'SIZE';
-BLOCK: 'BLOCK';
-DEVICE: 'DEVICE';
-SCAN: 'SCAN';
-FRSPC: 'FRSPC';
-SEARCHA: 'SEARCHA';
-
-SEGM: 'SEGM';
-EXTERNAL_NAME: 'EXTERNALNAME';
-PARENT: 'PARENT';
-SOURCE: 'SOURCE';
-BYTES: 'BYTES';
-DATA: 'DATA';
-FREQ: 'FREQ';
-POINTER: 'POINTER' | 'PTR';
-RULES: 'RULES';
-COMPRTN: 'COMPRTN';
-
-FIELD: 'FIELD';
-MAXBYTES: 'MAXBYTES';
-START: 'START';
-STARTAFTER: 'STARTAFTER';
-RELSTART: 'RELSTART';
-DATATYPE: 'DATATYPE';
-TYPE: 'TYPE';
-CASENAME: 'CASENAME';
-DEPENDSON: 'DEPENDSON';
-MINOCCURS: 'MINOCCURS';
-MAXOCCURS: 'MAXOCCURS';
-REDEFINES: 'REDEFINES';
-
-LCHILD: 'LCHILD';
-PAIR: 'PAIR';
-XDFLD: 'XDFLD';
-SEGMENT: 'SEGMENT';
-CONST: 'CONST';
-SRCH: 'SRCH';
-SUBSEQ: 'SUBSEQ';
-DDATA: 'DDATA';
-NULLVAL: 'NULLVAL';
-EXTRTN: 'EXTRTN';
-
-WS: [ \t\r\n]+ -> skip ;
-//Any: .*;
-
-String: [a-zA-Z0-9]+;
-
-Int
- : [1-9] Digit*
- | '0'
- ;
-
-Number
- : Int ( '.' Digit* )?
- ;
-
-Digit
- : [0-9]
- ;
