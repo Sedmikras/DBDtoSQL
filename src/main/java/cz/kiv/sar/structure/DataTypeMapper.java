@@ -65,8 +65,8 @@ public class DataTypeMapper {
                 throw new IllegalArgumentException("DBD dataType " + dbdDataType + " not supported.");
         }
 
-        sqlDataType.length(dbdDataType.getLength());
-        sqlDataType.precision(dbdDataType.getPrecision(), dbdDataType.getScale());
+        sqlDataType = sqlDataType.length(dbdDataType.getLength());
+        sqlDataType = sqlDataType.precision(dbdDataType.getPrecision(), dbdDataType.getScale());
 
         return sqlDataType;
     }

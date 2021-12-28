@@ -52,7 +52,6 @@ public class DBDVisitor extends DBDParserBaseVisitor<Database> {
                 d.setName(parameter.getValue());
             }
         }
-        d.setScheme(GenUtils.DEFAULT_SCHEME);
         d.setCollation(GenUtils.DEFAULT_COLLATION);
         d.setCharacterSet(GenUtils.DEFAULT_CHARACTER_SET);
     }

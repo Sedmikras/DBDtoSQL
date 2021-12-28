@@ -3,6 +3,8 @@ package cz.kiv.sar.structure.sql;
 import java.util.ArrayList;
 import java.util.List;
 
+import static cz.kiv.sar.utils.GenUtils.DEFAULT_SCHEMA;
+
 /**
  * Sql table
  */
@@ -11,10 +13,13 @@ public class Table {
      * Table name
      */
     private String name;
+    private String schema = DEFAULT_SCHEMA;
     /**
      * List of table columns
      */
     private List<Column> columns;
+    private String Collation;
+    private String CharacterSet;
 
     public Table() {
     }
@@ -46,6 +51,33 @@ public class Table {
             this.columns = new ArrayList<>();
         }
         this.columns.add(column);
+        return this;
+    }
+
+    public String getSchema() {
+        return schema;
+    }
+
+    public Table setSchema(String schema) {
+        this.schema = schema;
+        return this;
+    }
+
+    public String getCollation() {
+        return Collation;
+    }
+
+    public Table setCollation(String collation) {
+        Collation = collation;
+        return this;
+    }
+
+    public String getCharacterSet() {
+        return CharacterSet;
+    }
+
+    public Table setCharacterSet(String characterSet) {
+        CharacterSet = characterSet;
         return this;
     }
 }

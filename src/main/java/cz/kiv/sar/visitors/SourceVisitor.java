@@ -6,6 +6,7 @@ import cz.kiv.sar.structure.dbd.DBDDataType;
 import cz.kiv.sar.structure.dbd.DataSet;
 import cz.kiv.sar.structure.dbd.Segment;
 import cz.kiv.sar.structure.sql.*;
+import org.jooq.impl.SQLDataType;
 
 import java.util.List;
 import java.util.ArrayList;
