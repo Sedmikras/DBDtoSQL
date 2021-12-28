@@ -13,6 +13,7 @@ import static org.jooq.impl.DSL.constraint;
  *
  * @author Martin Forejt
  */
+@SuppressWarnings("ResultOfMethodCallIgnored")
 public class CodeGen {
 
     public static void codeGen(Database db) {
