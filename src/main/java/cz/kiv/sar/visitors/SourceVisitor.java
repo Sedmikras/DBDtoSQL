@@ -6,7 +6,6 @@ import cz.kiv.sar.structure.dbd.DBDDataType;
 import cz.kiv.sar.structure.dbd.DataSet;
 import cz.kiv.sar.structure.dbd.Segment;
 import cz.kiv.sar.structure.sql.*;
-import org.jooq.impl.SQLDataType;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -21,13 +20,16 @@ public class SourceVisitor extends DBDParserBaseVisitor<Database> {
     public Database visitSource(DBDParser.SourceContext ctx) {
         DBDVisitor v = new DBDVisitor();
         Database d = v.visitDbd(ctx.dbd());
+
         DatasetVisitor dv = new DatasetVisitor();
         DataSet ds = dv.visitDataset(ctx.dataset());
+
         SegmentVisitor sv = new SegmentVisitor();
         List<Segment> segments = new ArrayList<>();
         for (DBDParser.SegmentContext segmentContext : ctx.segment()) {
             segments.add(sv.visitSegment(segmentContext));
         }
+
         mockTables(d);
         return d;
     }

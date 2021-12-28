@@ -1,20 +1,17 @@
 package cz.kiv.sar.structure.dbd;
 
-import java.util.List;
-import java.util.ArrayList;
-
 public class Field {
-    List<FieldParameter> params;
+    Params params;
 
     public Field() {
-        this.params = new ArrayList<>();
+        this.params = new Params();
     }
 
-    public List<FieldParameter> getParams() {
+    public Params getParams() {
         return params;
     }
 
-    public void setParams(List<FieldParameter> params) {
+    public void setParams(Params params) {
         this.params = params;
     }
 }

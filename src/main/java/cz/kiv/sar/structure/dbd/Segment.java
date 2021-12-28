@@ -8,11 +8,11 @@ public class Segment {
     String collation;
     String whatever;
     List<Field> fields;
-    List<SegmentParameter> parameters;
+    Params parameters;
 
     public Segment() {
         this.fields = new ArrayList<>();
-        this.parameters = new ArrayList<>();
+        this.parameters = new Params();
     }
 
     public String getName() {
@@ -47,7 +47,11 @@ public class Segment {
         this.fields = fields;
     }
 
-    public List<SegmentParameter> getParameters() {
+    public Params getParameters() {
         return parameters;
+    }
+
+    public void setParameters(Params parameters) {
+        this.parameters = parameters;
     }
 }
