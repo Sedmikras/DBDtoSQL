@@ -30,6 +30,7 @@ public class SourceVisitor extends DBDParserBaseVisitor<Database> {
             segments.add(sv.visitSegment(segmentContext));
         }
 
+        prepareSQLStructure(d, ds, segments);
         mockTables(d);
         return d;
     }
@@ -84,5 +85,11 @@ public class SourceVisitor extends DBDParserBaseVisitor<Database> {
                 .addColumn(tableSalesID)
                 .addColumn(tableSalesName);
         d.addTable(tableSales);
+    }
+
+    void prepareSQLStructure(Database database, DataSet dataSet, List<Segment> segments) {
+        for(Segment segment : segments) {
+            database.addTable(segment.toSQLStructure(database));
+        }
     }
 }

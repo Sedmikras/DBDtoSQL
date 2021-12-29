@@ -1,7 +1,14 @@
 package cz.kiv.sar.structure.dbd;
 
+import cz.kiv.sar.structure.sql.Database;
+import cz.kiv.sar.structure.sql.Table;
+import org.springframework.beans.BeanWrapper;
+import org.springframework.beans.BeanWrapperImpl;
+
+import java.beans.PropertyDescriptor;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class Segment {
     String name;
@@ -53,5 +60,22 @@ public class Segment {
 
     public void setParameters(Params parameters) {
         this.parameters = parameters;
+    }
+
+    public Table toSQLStructure(Database database) {
+        Table t = new Table(database);
+        BeanWrapper bw = new BeanWrapperImpl(t);
+        for(PropertyDescriptor descriptor : bw.getPropertyDescriptors()) {
+            String attributeName = descriptor.getName();
+            Param param = parameters.getParam(attributeName.toUpperCase(Locale.ROOT));
+            if (param != null) {
+                bw.setPropertyValue(descriptor.getName(), param.getSingleValue());
+            }
+        }
+
+        for(Field field : fields) {
+            t.addColumn(field.toSQLStructure());
+        }
+        return t;
     }
 }

@@ -26,4 +26,10 @@ public class IdentifierColumn extends Column {
     public IdentifierColumn(String name, DataType<?> type, boolean unique) {
         super(name, type, true);
     }
+
+    public IdentifierColumn(Column c) {
+        this.name = c.getName();
+        this.unique = c.isUnique();
+        this.dataType = c.dataType;
+    }
 }

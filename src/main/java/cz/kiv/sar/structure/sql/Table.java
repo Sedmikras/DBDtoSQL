@@ -1,14 +1,18 @@
 package cz.kiv.sar.structure.sql;
 
+import com.ibm.icu.impl.locale.LocaleDistance;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import static cz.kiv.sar.utils.GenUtils.DEFAULT_SCHEMA;
+import static cz.kiv.sar.utils.GenUtils.*;
 
 /**
  * Sql table
  */
 public class Table {
+    Database database;
+
     /**
      * Table name
      */
@@ -17,11 +21,12 @@ public class Table {
     /**
      * List of table columns
      */
-    private List<Column> columns;
-    private String Collation;
-    private String CharacterSet;
+    private List<Column> columns = new ArrayList<>();
+    private String Collation = DEFAULT_COLLATION;
+    private String CharacterSet = DEFAULT_CHARACTER_SET;
 
-    public Table() {
+    public Table(Database d) {
+        this.database = d;
     }
 
     public Table(String name) {
@@ -79,5 +84,19 @@ public class Table {
     public Table setCharacterSet(String characterSet) {
         CharacterSet = characterSet;
         return this;
+    }
+
+    public void setParent(String parentName) {
+        for(Table t : this.database.getTables()) {
+            if(t.getName().equalsIgnoreCase(parentName))
+            {
+                for(Column c : t.getColumns()) {
+                    if(c.getClass() == IdentifierColumn.class)
+                    {
+                        this.columns.add(new ForeignKeyColumn(t, c));
+                    }
+                }
+            }
+        }
     }
 }

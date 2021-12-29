@@ -33,7 +33,7 @@ public class CodeGen {
             CreateTableColumnStep c = create.createTable(table.getName());
 
             for (Column column : table.getColumns()) {
-                c = c.column(column.getName(), column.getType());
+                c = c.column(column.getName(), column.getDataType());
 
                 if (column.isUnique()) {
                     c.unique(column.getName());
@@ -67,7 +67,7 @@ public class CodeGen {
             sb.append(";\n\n");
         }
 
-        System.out.println(sb.toString());
+        System.out.println(sb);
     }
 
 }
