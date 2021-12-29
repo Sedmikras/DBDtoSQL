@@ -1,10 +1,7 @@
 package cz.kiv.sar.codegen.exceptions;
 
 /**
- * Created by Martin Forejt on 29.12.2021.
- * me@martinforejt.cz
- *
- * @author Martin Forejt
+ * CodeGen exception
  */
 public class CodeGenException extends Exception {
     public CodeGenException(String message) {
