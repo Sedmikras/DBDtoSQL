@@ -2,7 +2,7 @@ package cz.kiv.sar;
 
 import cz.kiv.sar.antlr.DBDLexer;
 import cz.kiv.sar.antlr.DBDParser;
-import cz.kiv.sar.codegen.CodeGen;
+import cz.kiv.sar.codegen.SqlCodeGen;
 import cz.kiv.sar.preprocessing.Configuration;
 import cz.kiv.sar.preprocessing.SimpleProcessor;
 import cz.kiv.sar.structure.sql.Database;
@@ -29,7 +29,7 @@ public class Main {
             SourceVisitor v = new SourceVisitor();
             Database d = v.visitSource(parser.source());
 
-            new CodeGen(d, g.getOutputFile(), g.getSqlDialect()).run();
+            new SqlCodeGen(d, g.getOutputFile(), g.getSqlDialect()).run();
 
         } catch (Exception e) {
             if (e.getMessage() != null) {

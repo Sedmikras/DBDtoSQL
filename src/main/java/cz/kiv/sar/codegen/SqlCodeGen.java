@@ -12,25 +12,38 @@ import java.io.IOException;
 import static org.jooq.impl.DSL.constraint;
 
 /**
- * Created by Martin Forejt on 28.12.2021.
- * me@martinforejt.cz
- *
- * @author Martin Forejt
+ * Sql codegen used to generate (and write to file) database creation sql script
+ * based on {@link Database}
+ * <p>
+ * Usage - create new instance and call {@link SqlCodeGen#run()}
  */
 @SuppressWarnings("ResultOfMethodCallIgnored")
-public class CodeGen {
+public class SqlCodeGen {
 
     private final Database db;
     private final String file;
     private final SQLDialect dialect;
     private FileWriter writer;
 
-    public CodeGen(Database db, String file, SQLDialect dialect) {
+    /**
+     * Create new SqlCodeGen
+     *
+     * @param db      database
+     * @param file    output file to write sql creation script in
+     * @param dialect sql dialect
+     */
+    public SqlCodeGen(Database db, String file, SQLDialect dialect) {
         this.db = db;
         this.file = file;
         this.dialect = dialect;
     }
 
+    /**
+     * Start sql generation, if success after method finish, generated sql will
+     * be written in output file passed to {@link SqlCodeGen#SqlCodeGen(Database, String, SQLDialect)}
+     *
+     * @throws CodeGenException on any err
+     */
     public void run() throws CodeGenException {
         try {
             writer = new FileWriter(file);
@@ -47,6 +60,11 @@ public class CodeGen {
         }
     }
 
+    /**
+     * Generate sql
+     *
+     * @throws IOException on any file related error
+     */
     private void generate() throws IOException {
         System.getProperties().setProperty("org.jooq.no-logo", "true");
 
@@ -94,7 +112,15 @@ public class CodeGen {
         }
     }
 
-    private CodeGen w(String data) throws IOException {
+    /**
+     * Write string to {@link SqlCodeGen#writer}
+     * Note: Can be only called after creation of {@link SqlCodeGen#writer}
+     *
+     * @param data string to write
+     * @return self
+     * @throws IOException on file related exception
+     */
+    private SqlCodeGen w(String data) throws IOException {
         writer.write(data);
         return this;
     }
