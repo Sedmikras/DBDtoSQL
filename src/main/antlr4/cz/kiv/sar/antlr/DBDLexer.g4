@@ -1,0 +1,106 @@
+lexer grammar DBDLexer;
+
+tokens {
+    COM,
+    LPAREN,
+    RPAREN
+}
+
+EQUAL: '=' -> pushMode(PARAM);
+
+DBD: 'DBD';
+DBD_GEN: 'DBDGEN';
+FINISH: 'FINISH';
+END: 'END';
+
+DATASET: 'DATASET';
+SEGM: 'SEGM';
+FIELD: 'FIELD';
+LCHILD: 'LCHILD';
+XDFLD: 'XDFLD';
+
+/*NAME: 'NAME';
+ACCESS: 'ACCESS';
+RMNAME: 'RMNAME';
+DBVER: 'DBVER';
+PASSWD: 'PASSWD';
+EXIT: 'EXIT';
+NONE: 'NONE';
+VERSION: 'VERSION';
+DATXEXIT: 'DATXEXIT';
+ENCODING: 'ENCODING';
+REMARKS: 'REMARKS';
+
+DD1: 'DD1';
+SIZE: 'SIZE';
+BLOCK: 'BLOCK';
+DEVICE: 'DEVICE';
+SCAN: 'SCAN';
+FRSPC: 'FRSPC';
+SEARCHA: 'SEARCHA';
+
+EXTERNAL_NAME: 'EXTERNALNAME';
+PARENT: 'PARENT';
+SOURCE: 'SOURCE';
+BYTES: 'BYTES';
+DATA: 'DATA';
+FREQ: 'FREQ';
+POINTER: 'POINTER' | 'PTR';
+RULES: 'RULES';
+COMPRTN: 'COMPRTN';
+
+MAXBYTES: 'MAXBYTES';
+START: 'START';
+STARTAFTER: 'STARTAFTER';
+RELSTART: 'RELSTART';
+DATATYPE: 'DATATYPE';
+TYPE: 'TYPE';
+CASENAME: 'CASENAME';
+DEPENDSON: 'DEPENDSON';
+MINOCCURS: 'MINOCCURS';
+MAXOCCURS: 'MAXOCCURS';
+REDEFINES: 'REDEFINES';
+
+PAIR: 'PAIR';
+SEGMENT: 'SEGMENT';
+CONST: 'CONST';
+SRCH: 'SRCH';
+SUBSEQ: 'SUBSEQ';
+DDATA: 'DDATA';
+NULLVAL: 'NULLVAL';
+EXTRTN: 'EXTRTN';*/
+
+WS: [ \t\r\n]+ -> skip ;
+//Any: .*;
+
+String: [a-zA-Z0-9]+;
+
+Int
+ : [1-9] Digit*
+ | '0'
+ ;
+
+Number
+ : Int ( '.' Digit* )?
+ ;
+
+Digit
+ : [0-9]
+ ;
+
+mode PARAM;
+
+PARAM_LPAREN: '(' -> type(LPAREN) , pushMode(CLOSED_PARAM) ;
+PARAM_COM: ',' -> type(COM) , popMode ;
+PARAM_WS: WS -> popMode , skip ;
+PARAM_String: String -> type(String);
+PARAM_Int: Int -> type(Int);
+
+mode CLOSED_PARAM;
+
+CPARAM_LPAREN: '(' -> type(LPAREN) , pushMode(CLOSED_PARAM) ;
+CPARAM_RPAREN: ')' -> type(RPAREN) , popMode ;
+CPARAM_COM: ',' -> type(COM) ;
+CPARAM_WS: WS -> skip;
+CPARAM_String: String -> type(String);
+CPARAM_Int: Int -> type(Int);

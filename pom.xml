@@ -28,6 +28,12 @@
             <version>${antlr4.version}</version>
             <scope>compile</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.jooq</groupId>
+            <artifactId>jooq</artifactId>
+            <version>3.15.5</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -36,11 +42,19 @@
                 <groupId>org.antlr</groupId>
                 <artifactId>antlr4-maven-plugin</artifactId>
                 <version>${antlr4.version}</version>
+                <configuration>
+                    <listener>true</listener>
+                    <visitor>true</visitor>
+                </configuration>
                 <executions>
                     <execution>
                         <goals>
                             <goal>antlr4</goal>
                         </goals>
+                        <configuration>
+                            <listener>true</listener>
+                            <visitor>true</visitor>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>
