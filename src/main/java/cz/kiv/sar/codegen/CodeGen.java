@@ -1,9 +1,13 @@
 package cz.kiv.sar.codegen;
 
+import cz.kiv.sar.codegen.exceptions.CodeGenException;
 import cz.kiv.sar.structure.sql.*;
 import cz.kiv.sar.structure.sql.Table;
 import org.jooq.*;
 import org.jooq.impl.DSL;
+
+import java.io.FileWriter;
+import java.io.IOException;
 
 import static org.jooq.impl.DSL.constraint;
 
@@ -16,18 +20,42 @@ import static org.jooq.impl.DSL.constraint;
 @SuppressWarnings("ResultOfMethodCallIgnored")
 public class CodeGen {
 
-    public static void codeGen(Database db) {
+    private final Database db;
+    private final String file;
+    private final SQLDialect dialect;
+    private FileWriter writer;
+
+    public CodeGen(Database db, String file, SQLDialect dialect) {
+        this.db = db;
+        this.file = file;
+        this.dialect = dialect;
+    }
+
+    public void run() throws CodeGenException {
+        try {
+            writer = new FileWriter(file);
+            generate();
+        } catch (IOException e) {
+            throw new CodeGenException(e.getMessage());
+        } finally {
+            if (writer != null) {
+                try {
+                    writer.close();
+                } catch (IOException e) { /* empty */ }
+                writer = null;
+            }
+        }
+    }
+
+    private void generate() throws IOException {
         System.getProperties().setProperty("org.jooq.no-logo", "true");
-        DSLContext create = DSL.using(SQLDialect.MYSQL);
 
-        StringBuilder sb = new StringBuilder();
-        String sql;
+        DSLContext create = DSL.using(dialect);
 
-        sql = create.createDatabase(db.getName()).getSQL();
-        sb.append(sql).append("\n");
-        sb.append("CHARACTER SET `").append(db.getCharacterSet()).append("`\n");
-        sb.append("COLLATE `").append(db.getCollation()).append("`;\n");
-        sb.append("USE `").append(db.getName()).append("`;\n\n");
+        w(create.createDatabase(db.getName()).getSQL()).w("\n");
+        w("CHARACTER SET `").w(db.getCharacterSet()).w("`\n");
+        w("COLLATE `").w(db.getCollation()).w("`;\n");
+        w("USE `").w(db.getName()).w("`;\n\n");
 
         for (Table table : db.getTables()) {
             CreateTableColumnStep c = create.createTable(table.getName());
@@ -54,20 +82,21 @@ public class CodeGen {
                 }
             }
 
-            sql = c.getSQL();
-            sb.append(sql);
-
+            w(c.getSQL());
             if (table.getCharacterSet() != null) {
-                sb.append("\n").append("CHARACTER SET ").append(table.getCharacterSet());
+                w("\n").w("CHARACTER SET ").w(table.getCharacterSet());
             }
             if (table.getCollation() != null) {
-                sb.append("\n").append("COLLATE ").append(table.getCollation());
+                w("\n").w("COLLATE ").w(table.getCollation());
             }
 
-            sb.append(";\n\n");
+            w(";\n\n");
         }
+    }
 
-        System.out.println(sb.toString());
+    private CodeGen w(String data) throws IOException {
+        writer.write(data);
+        return this;
     }
 
 }
