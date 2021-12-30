@@ -28,6 +28,18 @@ public class DBDParserBaseListener implements DBDParserListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterTitle(DBDParser.TitleContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitTitle(DBDParser.TitleContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterDbd(DBDParser.DbdContext ctx) { }
 	/**
 	 * {@inheritDoc}

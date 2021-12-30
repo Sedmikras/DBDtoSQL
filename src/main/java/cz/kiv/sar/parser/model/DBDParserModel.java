@@ -26,6 +26,8 @@ public class DBDParserModel {
 
     public void setAccess(Param param) {
         dbd.setAccessMethod(param.getAttrs().get(0).getValue());
-        dbd.setOsAccessMethod(param.getAttrs().get(1).getValue());
+        if (param.getAttrs().size() > 1) {
+            dbd.setOsAccessMethod(param.getAttrs().get(1).getValue());
+        }
     }
 }
