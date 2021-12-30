@@ -30,8 +30,7 @@ public class SourceVisitor extends DBDParserBaseVisitor<Database> {
             segments.add(sv.visitSegment(segmentContext));
         }
 
-        //prepareSQLStructure(d, ds, segments);
-        mockTables(d);
+        prepareSQLStructure(d, ds, segments);
         return d;
     }
 
