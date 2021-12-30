@@ -23,26 +23,4 @@ public class Field {
         this.params = params;
     }
 
-    public Column toSQLStructure() {
-        Column c = new Column();
-        BeanWrapper bw = new BeanWrapperImpl(c);
-        for(PropertyDescriptor descriptor : bw.getPropertyDescriptors()) {
-            String attributeName = descriptor.getName();
-            if(attributeName.equals("name") && params.getParam("dataType") == null) {
-                Param param = params.getParam(attributeName.toUpperCase(Locale.ROOT));
-                if (param != null) {
-                    bw.setPropertyValue(descriptor.getName(), param.getAttrs());
-                }
-                c.setDataTypeByString(params.getParam("Type").getSingleValue(), Integer.parseInt(params.getParam("Bytes").getSingleValue()));
-            }
-            Param param = params.getParam(attributeName.toUpperCase(Locale.ROOT));
-            if (param != null) {
-                bw.setPropertyValue(descriptor.getName(), param.getAttrs());
-            }
-        }
-        if(c.isUnique() && c.getName().equalsIgnoreCase("ID")) {
-            return new IdentifierColumn(c);
-        }
-        return c;
-    }
 }

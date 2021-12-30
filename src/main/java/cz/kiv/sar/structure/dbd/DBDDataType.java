@@ -72,32 +72,10 @@ public class DBDDataType {
         XML
     }
 
-    public static DBDDataType getTypeByString(ArrayList<ParamAttr> paramAttrList) {
-        ParamAttr attributes = paramAttrList.get(0);
-        String dataType = attributes.getValue();
-        int length, precision, scale;
-        DBDDataType type = getTypeByString(dataType);
-
-        length = Integer.parseInt(attributes.getAttrs().get(0).getValue());
-        assert type != null;
-        type.setLength(length);
-        if(attributes.getAttrs().size() > 1) {
-            precision = Integer.parseInt(attributes.getAttrs().get(1).getValue());
-            type.setPrecision(precision);
-        }
-        if(attributes.getAttrs().size() > 2) {
-            scale = Integer.parseInt(attributes.getAttrs().get(2).getValue());
-            type.setScale(scale);
-        }
-        return type;
-    }
-
-    public static DBDDataType getTypeByString(String s) {
-        DBDDataType dataType = new DBDDataType();
+    public static Type getTypeByString(String s) {
         for(Type t : Type.values()) {
             if(t.name().equalsIgnoreCase(s)) {
-                dataType.type = t;
-                return dataType;
+                return t;
             }
         }
         return null;

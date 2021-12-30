@@ -4,6 +4,7 @@ import com.ibm.icu.impl.locale.LocaleDistance;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import static cz.kiv.sar.utils.GenUtils.*;
 
@@ -98,5 +99,13 @@ public class Table {
                 }
             }
         }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Table table = (Table) o;
+        return Objects.equals(database, table.database) && Objects.equals(name, table.name) && Objects.equals(schema, table.schema) && Objects.equals(columns, table.columns) && Objects.equals(Collation, table.Collation) && Objects.equals(CharacterSet, table.CharacterSet);
     }
 }

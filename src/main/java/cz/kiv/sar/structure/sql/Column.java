@@ -6,6 +6,7 @@ import org.jooq.DataType;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import static cz.kiv.sar.structure.DataTypeMapper.dbdToSqlDataType;
 import static cz.kiv.sar.structure.dbd.DBDDataType.dbdDataType;
@@ -30,10 +31,8 @@ public class Column {
         return name;
     }
 
-    public Column setName(List<ParamAttr> attrList) {
-        if(attrList.size() > 2)
-            this.unique = attrList.get(2).getValue().equals("U");
-        this.name = attrList.get(0).getValue();
+    public Column setName(String name) {
+        this.name = name;
         return this;
     }
 
@@ -41,25 +40,9 @@ public class Column {
         return dataType;
     }
 
-    public Column setDataType(ArrayList<ParamAttr> attrList) {
-        DBDDataType dbdDataType;
-        ParamAttr atr = attrList.get(0);
-        if(atr.getAttrs() != null && atr.getAttrs().size() > 1) {
-            dbdDataType = DBDDataType.getTypeByString(attrList);
-        } else {
-            dbdDataType = DBDDataType.getTypeByString(atr.getValue());
-        }
-        assert dbdDataType != null;
-        this.dataType = dbdToSqlDataType(dbdDataType);
+    public Column setDataType(DataType<?> dataType) {
+        this.dataType = dataType;
         return this;
-    }
-
-    public void setDataTypeByString(String s, int bytes) {
-        if(s.equals("C")) {
-            this.dataType = dbdToSqlDataType(dbdDataType(DBDDataType.Type.CHAR).setLength(bytes));
-        } else {
-            this.dataType = dbdToSqlDataType(dbdDataType(DBDDataType.Type.BINARY).setLength(bytes));
-        }
     }
 
     public boolean isUnique() {
@@ -69,5 +52,13 @@ public class Column {
     public Column setUnique(boolean unique) {
         this.unique = unique;
         return this;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Column column = (Column) o;
+        return unique == column.unique && Objects.equals(name, column.name) && Objects.equals(dataType, column.dataType);
     }
 }

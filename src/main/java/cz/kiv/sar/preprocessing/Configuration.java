@@ -20,6 +20,10 @@ public class Configuration {
         }
     }
 
+    public Configuration(String fileName) {
+        this.fileName = fileName;
+    }
+
     public String getFileName() {
         return fileName;
     }

@@ -1,5 +1,6 @@
 package cz.kiv.sar.structure.dbd;
 
+import cz.kiv.sar.structure.FieldToColumnBuilder;
 import cz.kiv.sar.structure.sql.Database;
 import cz.kiv.sar.structure.sql.Table;
 import org.springframework.beans.BeanWrapper;
@@ -74,7 +75,7 @@ public class Segment {
         }
 
         for(Field field : fields) {
-            t.addColumn(field.toSQLStructure());
+            t.addColumn(FieldToColumnBuilder.getInstance().toColumn(field));
         }
         return t;
     }
