@@ -2,6 +2,7 @@ package cz.kiv.sar.parser.vistor;
 
 import cz.kiv.sar.antlr.DBDParser;
 import cz.kiv.sar.antlr.DBDParserBaseVisitor;
+import cz.kiv.sar.parser.exceptions.ParserException;
 import cz.kiv.sar.structure.dbd.DBD;
 import cz.kiv.sar.structure.dbd.DataSet;
 import cz.kiv.sar.structure.dbd.Field;
@@ -16,6 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static cz.kiv.sar.structure.DataTypeMapper.dbdToSqlDataType;
+import static cz.kiv.sar.utils.GenUtils.SUPPORTED_DBD_ACCESS;
 
 public class SourceVisitor extends DBDParserBaseVisitor<Database> {
 
@@ -28,6 +30,10 @@ public class SourceVisitor extends DBDParserBaseVisitor<Database> {
         DBDVisitor dbdVisitor = new DBDVisitor();
         DBD dbd = dbdVisitor.visitDbd(ctx.dbd());
         setDatabaseProperties(db, dbd);
+
+        if (!dbd.getAccessMethod().equalsIgnoreCase(SUPPORTED_DBD_ACCESS)) {
+            throw new ParserException("Invalid dbd access. " + SUPPORTED_DBD_ACCESS + " is only supported");
+        }
 
         DatasetVisitor datasetVisitor = new DatasetVisitor();
         DataSet dataSet = datasetVisitor.visitDataset(ctx.dataset());

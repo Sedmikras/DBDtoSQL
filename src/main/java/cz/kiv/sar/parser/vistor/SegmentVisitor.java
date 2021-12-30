@@ -3,15 +3,10 @@ package cz.kiv.sar.parser.vistor;
 import cz.kiv.sar.antlr.DBDParser;
 import cz.kiv.sar.antlr.DBDParserBaseVisitor;
 import cz.kiv.sar.parser.model.SegmentParserModel;
-import cz.kiv.sar.structure.dbd.Param;
 import cz.kiv.sar.structure.dbd.Params;
 import cz.kiv.sar.structure.dbd.Segment;
-import org.springframework.beans.BeanWrapper;
-import org.springframework.beans.BeanWrapperImpl;
 
-import java.beans.PropertyDescriptor;
-import java.util.Locale;
-
+import static cz.kiv.sar.parser.utils.ParserModelUtils.setModelProperties;
 import static cz.kiv.sar.structure.dbd.ParamParser.parseParams;
 
 public class SegmentVisitor extends DBDParserBaseVisitor<Segment> {
@@ -30,14 +25,7 @@ public class SegmentVisitor extends DBDParserBaseVisitor<Segment> {
 
     private Segment parseSegment(Params params) {
         SegmentParserModel model = new SegmentParserModel();
-        BeanWrapper bw = new BeanWrapperImpl(model);
-        for (PropertyDescriptor descriptor : bw.getPropertyDescriptors()) {
-            String attributeName = descriptor.getName();
-            Param param = params.getParam(attributeName.toUpperCase(Locale.ROOT));
-            if (param != null) {
-                bw.setPropertyValue(descriptor.getName(), param);
-            }
-        }
+        setModelProperties(model, params);
         return model.getSegment();
     }
 }
