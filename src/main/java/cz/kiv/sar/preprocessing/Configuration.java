@@ -61,6 +61,12 @@ public class Configuration {
         }
     }
 
+    public Configuration(String inputFile, String outputFile, SQLDialect sqlDialect) {
+        this.inputFile = inputFile;
+        this.outputFile = outputFile;
+        this.sqlDialect = sqlDialect;
+    }
+
     /**
      * Check if input file is valid (exist, not dir)
      *

@@ -1,5 +1,13 @@
 package cz.kiv.sar.structure.dbd;
 
+import cz.kiv.sar.structure.sql.Column;
+import cz.kiv.sar.structure.sql.IdentifierColumn;
+import org.springframework.beans.BeanWrapper;
+import org.springframework.beans.BeanWrapperImpl;
+
+import java.beans.PropertyDescriptor;
+import java.util.Locale;
+
 public class Field {
     Params params;
 
@@ -14,4 +22,5 @@ public class Field {
     public void setParams(Params params) {
         this.params = params;
     }
+
 }

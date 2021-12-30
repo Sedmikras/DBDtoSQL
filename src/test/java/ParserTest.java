@@ -1,38 +1,35 @@
-package cz.kiv.sar.visitors;
-
+import cz.kiv.sar.antlr.DBDLexer;
 import cz.kiv.sar.antlr.DBDParser;
-import cz.kiv.sar.antlr.DBDParserBaseVisitor;
+import cz.kiv.sar.preprocessing.Configuration;
+import cz.kiv.sar.preprocessing.SimpleProcessor;
 import cz.kiv.sar.structure.dbd.DBDDataType;
-import cz.kiv.sar.structure.dbd.DataSet;
-import cz.kiv.sar.structure.dbd.Segment;
 import cz.kiv.sar.structure.sql.*;
+import cz.kiv.sar.visitors.SourceVisitor;
+import org.antlr.v4.runtime.CharStream;
+import org.antlr.v4.runtime.CommonTokenStream;
+import org.jooq.SQLDialect;
+import org.junit.Test;
 
-import java.util.List;
-import java.util.ArrayList;
-
-import static cz.kiv.sar.structure.dbd.DBDDataType.dbdDataType;
 import static cz.kiv.sar.structure.DataTypeMapper.dbdToSqlDataType;
+import static cz.kiv.sar.structure.dbd.DBDDataType.dbdDataType;
+import static org.junit.Assert.assertEquals;
 
-public class SourceVisitor extends DBDParserBaseVisitor<Database> {
-    Database database;
+public class ParserTest {
 
-    @Override
-    public Database visitSource(DBDParser.SourceContext ctx) {
-        DBDVisitor v = new DBDVisitor();
-        Database d = v.visitDbd(ctx.dbd());
-
-        DatasetVisitor dv = new DatasetVisitor();
-        DataSet ds = dv.visitDataset(ctx.dataset());
-
-        SegmentVisitor sv = new SegmentVisitor();
-        List<Segment> segments = new ArrayList<>();
-        for (DBDParser.SegmentContext segmentContext : ctx.segment()) {
-            segments.add(sv.visitSegment(segmentContext));
-        }
-
-        prepareSQLStructure(d, ds, segments);
-        return d;
+    @Test
+    public void Test() throws Exception {
+        Database mock = new Database();
+        mockTables(mock);
+        Configuration g = new Configuration("resources/test-file1.dbd", "", SQLDialect.MYSQL);
+        CharStream s = new SimpleProcessor().processFile(g.getInputFile());
+        DBDLexer lexer = new DBDLexer(s);
+        DBDParser parser = new DBDParser(new CommonTokenStream(lexer));
+        parser.setBuildParseTree(true);
+        SourceVisitor v = new SourceVisitor();
+        Database generated = v.visitSource(parser.source());
+        assertEquals(generated, mock);
     }
+
 
     private void mockTables(Database d) {
         Table tableOrder = new Table("XXORDER");
@@ -84,11 +81,8 @@ public class SourceVisitor extends DBDParserBaseVisitor<Database> {
                 .addColumn(tableSalesID)
                 .addColumn(tableSalesName);
         d.addTable(tableSales);
-    }
-
-    void prepareSQLStructure(Database database, DataSet dataSet, List<Segment> segments) {
-        for(Segment segment : segments) {
-            database.addTable(segment.toSQLStructure(database));
-        }
+        d.setName("ORDRMR");
+        d.setCollation("utf8");
+        d.setCharacterSet("utf8");
     }
 }

@@ -1,5 +1,8 @@
 package cz.kiv.sar.structure.dbd;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class DBDDataType {
     private Type type;
     private int length;
@@ -69,4 +72,12 @@ public class DBDDataType {
         XML
     }
 
+    public static Type getTypeByString(String s) {
+        for(Type t : Type.values()) {
+            if(t.name().equalsIgnoreCase(s)) {
+                return t;
+            }
+        }
+        return null;
+    }
 }

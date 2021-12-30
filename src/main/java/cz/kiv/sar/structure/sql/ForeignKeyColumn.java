@@ -7,7 +7,7 @@ public class ForeignKeyColumn extends Column {
     private Column referencedColumn;
 
     public ForeignKeyColumn(Table referencedTable, Column referencedColumn) {
-        super("FK_" + referencedTable.getName() + "_" + referencedColumn.getName(), referencedColumn.getType(), true);
+        super("FK_" + referencedTable.getName() + "_" + referencedColumn.getName(), referencedColumn.getDataType(), true);
         this.referencedTable = referencedTable;
         this.referencedColumn = referencedColumn;
     }
