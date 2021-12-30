@@ -32,15 +32,17 @@ public class ParserTest {
 
 
     private void mockTables(Database d) {
-        Table tableOrder = new Table("XXORDER");
+        Table tableOrder = new Table(d);
+        tableOrder.setName("XXORDER");
         Column ID = new IdentifierColumn();
-        Column ORDID = new Column("ORDID", dbdToSqlDataType(dbdDataType(DBDDataType.Type.INT)), false);
+        Column ORDID = new Column("ORDID", dbdToSqlDataType(dbdDataType(DBDDataType.Type.INT).setPrecision(0).setScale(0).setLength(4)), false);
         tableOrder
                 .addColumn(ID)
                 .addColumn(ORDID);
         d.addTable(tableOrder);
 
-        Table tableCust = new Table("XXCUST");
+        Table tableCust = new Table(d);
+        tableCust.setName("XXCUST");
         Column tableCustForeignKey = new ForeignKeyColumn(tableOrder, ID);
         Column tableCustID = new IdentifierColumn();
         Column tableCustName = new Column("NAME", dbdToSqlDataType(dbdDataType(DBDDataType.Type.CHAR).setLength(24)), false);
@@ -50,7 +52,8 @@ public class ParserTest {
                 .addColumn(tableCustName);
         d.addTable(tableCust);
 
-        Table tableProd = new Table("XXPROD");
+        Table tableProd = new Table(d);
+        tableProd.setName("XXPROD");
         Column tableProdForeignKey = new ForeignKeyColumn(tableOrder, ID);
         Column tableProdID = new IdentifierColumn();
         Column tableProdName = new Column("NAME", dbdToSqlDataType(dbdDataType(DBDDataType.Type.CHAR).setLength(24)), false);
@@ -62,7 +65,8 @@ public class ParserTest {
                 .addColumn(tableProdPrice);
         d.addTable(tableProd);
 
-        Table tableStore = new Table("XXSTORE");
+        Table tableStore = new Table(d);
+        tableStore.setName("XXSTORE");
         Column tableStoreForeignKey = new ForeignKeyColumn(tableOrder, ID);
         Column tableStoreID = new IdentifierColumn();
         Column tableStoreName = new Column("NAME", dbdToSqlDataType(dbdDataType(DBDDataType.Type.CHAR).setLength(20)), false);
@@ -72,7 +76,8 @@ public class ParserTest {
                 .addColumn(tableStoreName);
         d.addTable(tableStore);
 
-        Table tableSales = new Table("XXSALES");
+        Table tableSales = new Table(d);
+        tableSales.setName("XXSALES");
         Column tableSalesForeignKey = new ForeignKeyColumn(tableStore, tableStoreID);
         Column tableSalesID = new IdentifierColumn();
         Column tableSalesName = new Column("NAME", dbdToSqlDataType(dbdDataType(DBDDataType.Type.CHAR).setLength(20)), false);

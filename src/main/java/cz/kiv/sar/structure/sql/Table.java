@@ -105,6 +105,6 @@ public class Table {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Table table = (Table) o;
-        return Objects.equals(database, table.database) && Objects.equals(name, table.name) && Objects.equals(schema, table.schema) && Objects.equals(columns, table.columns) && Objects.equals(collation, table.collation) && Objects.equals(characterSet, table.characterSet);
+        return Objects.equals(name, table.name) && Objects.equals(schema, table.schema) && Objects.equals(columns, table.columns) && Objects.equals(collation, table.collation) && Objects.equals(characterSet, table.characterSet);
     }
 }

@@ -52,6 +52,6 @@ public class Column {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Column column = (Column) o;
-        return unique == column.unique && Objects.equals(name, column.name) && Objects.equals(dataType, column.dataType);
+        return unique == column.unique && Objects.equals(name, column.name) && Objects.equals(dataType.getTypeName(), column.dataType.getTypeName());
     }
 }
