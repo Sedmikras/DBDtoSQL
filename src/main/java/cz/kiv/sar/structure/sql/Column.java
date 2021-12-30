@@ -1,15 +1,8 @@
 package cz.kiv.sar.structure.sql;
 
-import cz.kiv.sar.structure.dbd.DBDDataType;
-import cz.kiv.sar.structure.dbd.ParamAttr;
 import org.jooq.DataType;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
-
-import static cz.kiv.sar.structure.DataTypeMapper.dbdToSqlDataType;
-import static cz.kiv.sar.structure.dbd.DBDDataType.dbdDataType;
 
 /**
  * Sql column

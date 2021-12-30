@@ -1,15 +1,22 @@
 package cz.kiv.sar.structure.dbd;
 
-import java.util.List;
-
 public class DataSet {
-    private List<Param> params;
+    private String dd1;
+    private int size;
 
-    public List<Param> getParams() {
-        return params;
+    public String getDd1() {
+        return dd1;
     }
 
-    public void setParams(List<Param> params) {
-        this.params = params;
+    public void setDd1(String dd1) {
+        this.dd1 = dd1;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
     }
 }

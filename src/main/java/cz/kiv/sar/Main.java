@@ -6,7 +6,7 @@ import cz.kiv.sar.codegen.SqlCodeGen;
 import cz.kiv.sar.preprocessing.Configuration;
 import cz.kiv.sar.preprocessing.SimpleProcessor;
 import cz.kiv.sar.structure.sql.Database;
-import cz.kiv.sar.visitors.SourceVisitor;
+import cz.kiv.sar.parser.vistor.SourceVisitor;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 
