@@ -9,7 +9,7 @@ import org.jooq.impl.DSL;
 import java.io.FileWriter;
 import java.io.IOException;
 
-import static org.jooq.impl.DSL.constraint;
+import static org.jooq.impl.DSL.*;
 
 /**
  * Sql codegen used to generate (and write to file) database creation sql script
@@ -82,11 +82,11 @@ public class SqlCodeGen {
                 c = c.column(column.getName(), column.getDataType());
 
                 if (column.isUnique()) {
-                    c.unique(column.getName());
+                    c.constraint(unique(column.getName()));
                 }
 
                 if (column instanceof IdentifierColumn) {
-                    c.primaryKey(column.getName());
+                    c.constraint(primaryKey(column.getName()));
                 }
 
                 if (column instanceof ForeignKeyColumn) {
