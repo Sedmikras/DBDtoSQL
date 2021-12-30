@@ -61,8 +61,10 @@ public class Configuration {
         }
     }
 
-    public Configuration(String fileName) {
-        this.fileName = fileName;
+    public Configuration(String inputFile, String outputFile, SQLDialect sqlDialect) {
+        this.inputFile = inputFile;
+        this.outputFile = outputFile;
+        this.sqlDialect = sqlDialect;
     }
 
     /**
@@ -94,10 +96,6 @@ public class Configuration {
      */
     public String getOutputFile() {
         return outputFile;
-    }
-
-    public String getFileName() {
-        return fileName;
     }
 
     /**

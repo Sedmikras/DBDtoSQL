@@ -79,7 +79,7 @@ public class SqlCodeGen {
             CreateTableColumnStep c = create.createTable(table.getName());
 
             for (Column column : table.getColumns()) {
-                c = c.column(column.getName(), column.getType());
+                c = c.column(column.getName(), column.getDataType());
 
                 if (column.isUnique()) {
                     c.unique(column.getName());
@@ -102,10 +102,10 @@ public class SqlCodeGen {
 
             w(c.getSQL());
             if (table.getCharacterSet() != null) {
-                w("\n").w("CHARACTER SET ").w(table.getCharacterSet());
+                w("\n").w("CHARACTER SET `").w(table.getCharacterSet()).w("`");
             }
             if (table.getCollation() != null) {
-                w("\n").w("COLLATE ").w(table.getCollation());
+                w("\n").w("COLLATE `").w(table.getCollation()).w("`");
             }
 
             w(";\n\n");

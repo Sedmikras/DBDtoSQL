@@ -7,6 +7,7 @@ import cz.kiv.sar.structure.sql.*;
 import cz.kiv.sar.visitors.SourceVisitor;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CommonTokenStream;
+import org.jooq.SQLDialect;
 import org.junit.Test;
 
 import static cz.kiv.sar.structure.DataTypeMapper.dbdToSqlDataType;
@@ -19,8 +20,8 @@ public class ParserTest {
     public void Test() throws Exception {
         Database mock = new Database();
         mockTables(mock);
-        Configuration g = new Configuration("resources/test-file1.dbd");
-        CharStream s = new SimpleProcessor().processFile(g.getFileName());
+        Configuration g = new Configuration("resources/test-file1.dbd", "", SQLDialect.MYSQL);
+        CharStream s = new SimpleProcessor().processFile(g.getInputFile());
         DBDLexer lexer = new DBDLexer(s);
         DBDParser parser = new DBDParser(new CommonTokenStream(lexer));
         parser.setBuildParseTree(true);
