@@ -7,6 +7,7 @@ tokens {
 }
 
 EQUAL: '=' -> pushMode(PARAM);
+QUOTE: '\'' -> pushMode(TEXT);
 
 DBD: 'DBD';
 DBD_GEN: 'DBDGEN';
@@ -18,6 +19,7 @@ SEGM: 'SEGM';
 FIELD: 'FIELD';
 LCHILD: 'LCHILD';
 XDFLD: 'XDFLD';
+TITLE: 'TITLE';
 
 /*NAME: 'NAME';
 ACCESS: 'ACCESS';
@@ -71,7 +73,6 @@ NULLVAL: 'NULLVAL';
 EXTRTN: 'EXTRTN';*/
 
 WS: [ \t\r\n]+ -> skip ;
-//Any: .*;
 
 String: [a-zA-Z0-9]+;
 
@@ -87,6 +88,8 @@ Number
 Digit
  : [0-9]
  ;
+
+//Any: .*;
 
 mode PARAM;
 
@@ -104,3 +107,8 @@ CPARAM_COM: ',' -> type(COM) ;
 CPARAM_WS: WS -> skip;
 CPARAM_String: String -> type(String);
 CPARAM_Int: Int -> type(Int);
+
+mode TEXT;
+
+TEXT_QUOTE: '\'' -> type(QUOTE) , popMode;
+TEXT_String: [a-zA-Z0-9 -]+;

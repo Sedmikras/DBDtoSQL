@@ -18,6 +18,16 @@ public interface DBDParserListener extends ParseTreeListener {
 	 */
 	void exitSource(DBDParser.SourceContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link DBDParser#title}.
+	 * @param ctx the parse tree
+	 */
+	void enterTitle(DBDParser.TitleContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link DBDParser#title}.
+	 * @param ctx the parse tree
+	 */
+	void exitTitle(DBDParser.TitleContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link DBDParser#dbd}.
 	 * @param ctx the parse tree
 	 */

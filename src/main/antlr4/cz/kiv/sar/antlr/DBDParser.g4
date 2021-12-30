@@ -4,7 +4,9 @@ parser grammar DBDParser;
 
 options { tokenVocab=DBDLexer; } // use tokens from DBDLexer.g4
 
-source: dbd dataset segment* end;
+source: title? dbd dataset segment* end;
+
+title: TITLE QUOTE TEXT_String QUOTE;
 
 dbd: DBD params;
 
@@ -39,7 +41,7 @@ segment_definition: SEGM params ;
 
 field: FIELD params ;
 
-lchild: LCHILD params xdfld+;
+lchild: LCHILD params xdfld*;
 
 xdfld: XDFLD params;
 

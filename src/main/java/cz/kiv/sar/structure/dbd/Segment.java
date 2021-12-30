@@ -1,27 +1,15 @@
 package cz.kiv.sar.structure.dbd;
 
-import cz.kiv.sar.structure.FieldToColumnBuilder;
-import cz.kiv.sar.structure.sql.Database;
-import cz.kiv.sar.structure.sql.Table;
-import org.springframework.beans.BeanWrapper;
-import org.springframework.beans.BeanWrapperImpl;
-
-import java.beans.PropertyDescriptor;
-import java.util.List;
 import java.util.ArrayList;
-import java.util.Locale;
+import java.util.List;
 
 public class Segment {
-    String name;
-    String collation;
-    String whatever;
-    List<Field> fields;
-    Params parameters;
-
-    public Segment() {
-        this.fields = new ArrayList<>();
-        this.parameters = new Params();
-    }
+    private String name;
+    private String parent;
+    private int bytes;
+    private String encoding;
+    private List<String> pointer;
+    private List<Field> fields;
 
     public String getName() {
         return name;
@@ -31,20 +19,36 @@ public class Segment {
         this.name = name;
     }
 
-    public String getCollation() {
-        return collation;
+    public String getParent() {
+        return parent;
     }
 
-    public void setCollation(String collation) {
-        this.collation = collation;
+    public void setParent(String parent) {
+        this.parent = parent;
     }
 
-    public String getWhatever() {
-        return whatever;
+    public int getBytes() {
+        return bytes;
     }
 
-    public void setWhatever(String whatever) {
-        this.whatever = whatever;
+    public void setBytes(int bytes) {
+        this.bytes = bytes;
+    }
+
+    public String getEncoding() {
+        return encoding;
+    }
+
+    public void setEncoding(String encoding) {
+        this.encoding = encoding;
+    }
+
+    public List<String> getPointer() {
+        return pointer;
+    }
+
+    public void setPointer(List<String> pointer) {
+        this.pointer = pointer;
     }
 
     public List<Field> getFields() {
@@ -55,28 +59,10 @@ public class Segment {
         this.fields = fields;
     }
 
-    public Params getParameters() {
-        return parameters;
-    }
-
-    public void setParameters(Params parameters) {
-        this.parameters = parameters;
-    }
-
-    public Table toSQLStructure(Database database) {
-        Table t = new Table(database);
-        BeanWrapper bw = new BeanWrapperImpl(t);
-        for(PropertyDescriptor descriptor : bw.getPropertyDescriptors()) {
-            String attributeName = descriptor.getName();
-            Param param = parameters.getParam(attributeName.toUpperCase(Locale.ROOT));
-            if (param != null) {
-                bw.setPropertyValue(descriptor.getName(), param.getSingleValue());
-            }
+    public void addField(Field field) {
+        if (fields == null) {
+            fields = new ArrayList<>();
         }
-
-        for(Field field : fields) {
-            t.addColumn(FieldToColumnBuilder.getInstance().toColumn(field));
-        }
-        return t;
+        fields.add(field);
     }
 }

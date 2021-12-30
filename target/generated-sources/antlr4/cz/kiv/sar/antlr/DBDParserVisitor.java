@@ -17,6 +17,12 @@ public interface DBDParserVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitSource(DBDParser.SourceContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link DBDParser#title}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitTitle(DBDParser.TitleContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link DBDParser#dbd}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
