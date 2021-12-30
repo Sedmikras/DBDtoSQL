@@ -1,11 +1,9 @@
 package cz.kiv.sar.structure;
 
-import cz.kiv.sar.structure.dbd.DBDDataType;
-import cz.kiv.sar.structure.dbd.Field;
-import cz.kiv.sar.structure.dbd.Param;
-import cz.kiv.sar.structure.dbd.Params;
+import cz.kiv.sar.structure.dbd.*;
 import cz.kiv.sar.structure.sql.Column;
 import cz.kiv.sar.structure.sql.IdentifierColumn;
+import cz.kiv.sar.utils.GenUtils;
 import org.jooq.DataType;
 import org.springframework.beans.BeanWrapper;
 import org.springframework.beans.BeanWrapperImpl;
@@ -24,6 +22,8 @@ public class FieldToColumnBuilder {
     private int bytes;
     private boolean unique;
     private boolean isSeq;
+    private int precision = 0;
+    private int scale = 0;
 
     public static FieldToColumnBuilder getInstance() {
         return instance;
@@ -31,11 +31,7 @@ public class FieldToColumnBuilder {
 
 
     public Column toColumn(Field field) {
-        instance.dataType = null;
-        instance.name = null;
-        instance.bytes = 0;
-        instance.unique = false;
-        instance.isSeq = false;
+        clearProperties();
         BeanWrapper bw = new BeanWrapperImpl(FieldToColumnBuilder.class);
         Params params = field.getParams();
         for(PropertyDescriptor descriptor : bw.getPropertyDescriptors()) {
@@ -76,10 +72,30 @@ public class FieldToColumnBuilder {
     }*/
 
     public void setDataType(Param dataType) {
-        instance.dataType = DBDDataType.getTypeByString(dataType.getSingleValue());
+        ParamAttr parAttr = dataType.getAttrs().get(0);
+        String dataTypeString = dataType.getSingleValue();
+        instance.dataType = DBDDataType.getTypeByString(dataTypeString);
+        if (instance.dataType == DBDDataType.Type.DECIMAL && parAttr.getAttrs() != null && parAttr.getAttrs().size() == 2) {
+            instance.precision = Integer.parseInt(parAttr.getAttrs().get(0).getValue());
+            instance.scale = Integer.parseInt(parAttr.getAttrs().get(1).getValue());
+        }
     }
 
     private DataType<?> createDataType() {
-        return dbdToSqlDataType(dbdDataType(dataType).setLength(bytes));
+        if (dataType.equals(DBDDataType.Type.DECIMAL)) {
+            return dbdToSqlDataType(dbdDataType(dataType).setLength(bytes).setScale(scale).setPrecision(precision));
+        } else {
+            return dbdToSqlDataType(dbdDataType(dataType).setLength(bytes));
+        }
+    }
+
+    private void clearProperties() {
+        instance.dataType = null;
+        instance.name = null;
+        instance.bytes = 0;
+        instance.unique = false;
+        instance.isSeq = false;
+        instance.precision = 0;
+        instance.scale = 0;
     }
 }
