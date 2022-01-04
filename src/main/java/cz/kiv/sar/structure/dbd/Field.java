@@ -8,8 +8,6 @@ public class Field {
     private int start;
     private DBDDataType dataType;
 
-    Params params;
-
     public String getName() {
         return name;
     }
@@ -56,14 +54,6 @@ public class Field {
 
     public void setDataType(DBDDataType dataType) {
         this.dataType = dataType;
-    }
-
-    public Params getParams() {
-        return params;
-    }
-
-    public void setParams(Params params) {
-        this.params = params;
     }
 
 }
