@@ -17,7 +17,6 @@ import static org.jooq.impl.DSL.*;
  * <p>
  * Usage - create new instance and call {@link SqlCodeGen#run()}
  */
-@SuppressWarnings("ResultOfMethodCallIgnored")
 public class SqlCodeGen {
 
     private final Database db;
@@ -71,8 +70,8 @@ public class SqlCodeGen {
         DSLContext create = DSL.using(dialect);
 
         w(create.createDatabase(db.getName()).getSQL()).w("\n");
-        w("CHARACTER SET `").w(db.getCharacterSet()).w("`\n");
-        w("COLLATE `").w(db.getCollation()).w("`;\n");
+        w("CHARACTER SET `").w(db.getCharacterSet()).w("`;\n");
+        //w("COLLATE `").w(db.getCollation()).w("`;\n");
         w("USE `").w(db.getName()).w("`;\n\n");
 
         for (Table table : db.getTables()) {
@@ -104,9 +103,9 @@ public class SqlCodeGen {
             if (table.getCharacterSet() != null) {
                 w("\n").w("CHARACTER SET `").w(table.getCharacterSet()).w("`");
             }
-            if (table.getCollation() != null) {
-                w("\n").w("COLLATE `").w(table.getCollation()).w("`");
-            }
+            //if (table.getCollation() != null) {
+            //    w("\n").w("COLLATE `").w(table.getCollation()).w("`");
+            //}
 
             w(";\n\n");
         }

@@ -76,7 +76,7 @@ public class Configuration {
     private void checkFile(String path) throws FileNotFoundException {
         File f = new File(path);
         if (!f.exists() || f.isDirectory()) {
-            throw new FileNotFoundException();
+            throw new FileNotFoundException("File " + path + " not found!");
         }
     }
 
